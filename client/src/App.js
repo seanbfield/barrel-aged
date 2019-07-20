@@ -1,19 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import glass from './/img/glass.png'
+import { Route, Link } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={glass} className="App-logo" alt="logo" />
-        <p>
-          Welcome to Barrel-Aged React!
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={glass} className="App-logo" alt="logo" />
+          <p>
+            Welcome to Barrel-Aged React!
         </p>
-      </header>
-    </div>
-  );
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;
