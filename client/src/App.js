@@ -3,6 +3,7 @@ import './App.css';
 import glass from './/img/glass.png'
 import AgeGate from './components/AgeGate';
 import Home from './components/Home';
+import User from './components/User';
 import { Route, Link } from 'react-router-dom';
 
 class App extends React.Component {
@@ -19,6 +20,7 @@ class App extends React.Component {
         <main>
           <Route exact path='/' render={() => <AgeGate />} />
           <Route path='/home' render={() => <Home />} />
+          <Route path='/user' render={() => <User />} />
         </main>
       </div>
     );

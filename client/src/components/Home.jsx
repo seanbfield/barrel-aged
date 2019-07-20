@@ -1,5 +1,8 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, withRouter } from 'react-router-dom';
+import RegisterForm from './RegisterForm';
+import LoginForm from './LoginForm';
+import User from './User';
 
 class Home extends React.Component {
   constructor(props) {
@@ -21,16 +24,28 @@ class Home extends React.Component {
       register: false
     })
   }
+
+  goToUser = () => {
+    this.props.history.push('/user')
+  }
   render() {
     return (
       <div>
         <nav>
-
+          <Link to='/home/register' onClick={this.handleRegister}>Register</Link>
+          <Link to='/home/login' onClick={this.handleLogin}>Log In</Link>
         </nav>
-        <p>This is our homepage</p>
+        <main>
+          <p>This is our homepage</p>
+          {this.state.register &&
+            <Route path='/home/register' render={() => <RegisterForm handleSubmit={this.goToUser} />} />}
+          {this.state.login &&
+            <Route path='/home/login' render={() => <LoginForm handleSubmit={this.goToUser} />} />}
+        </main>
+
 
       </div>
     )
   }
 }
-export default Home
+export default withRouter(Home)
