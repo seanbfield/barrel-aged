@@ -26,7 +26,7 @@ const Whiskey = sequelize.define('whiskey', {
 
   name: Sequelize.STRING,
   type: Sequelize.STRING,
-  agg: Sequelize.FLOAT,
+  agg: Sequelize.DECIMAL(10, 2),
 });
 
 
