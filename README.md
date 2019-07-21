@@ -1,12 +1,14 @@
 # Barrel-Aged
 
-![Drunk Panda, P3 Challenge](https://pbs.twimg.com/profile_images/690117532469084160/WZshTTrI_400x400.png)
+![Drunk Panda P3 Challenge](https://pbs.twimg.com/profile_images/690117532469084160/WZshTTrI_400x400.png)
 
 
 ## Table of Contents
 --------------------
 - [Project Description](#project-description)
+  - [Project Inspiration](#project-inspiration)
   - [Project Team](#project-team)
+- [Sitemap](#sitemap)
 - [Wireframes](#wireframes)
 - [Functional Goals](#functional-goals)
   - [MVP](#mvp)
@@ -27,10 +29,18 @@
 ---
 Barrel-Aged is a social forum and review website for whiskey lovers. Through a modern and attractive user interface, convenient browsing and review functionality, and a well-designed database of whiskeys, Barrel-Aged will enable whiskey consumers to discuss, rate, and find their next favorite bottle.
 
+### Project Inspiration
+
+Barrel-Aged is modeled with functional inspiration from [Distiller](https://distiller.com/), [GoodReads](https://www.goodreads.com/), and [Untappd](https://untappd.com), and design and branding inspiration from [Flaviar](https://flaviar.com) and [Touch of Modern](https://www.touchofmodern.com). Digital assets used with full licensing and permission from [Death to Stock Photo](https://deathtothestockphoto.com/), [Freepik](https://www.freepik.com/home), and [Unsplash](https://unsplash.com/).
+
 ### Project Team
 
-Created, designed, and developed by **Brian Weitz**, **Misha Kessler**, **Naz Babu**, & **Sean Blanchfield (Git Czar)** for the GA Software Engineering Immersive (May '19 Cohort) Unit 3 Project._
+Created, designed, and developed by [Brian Weitz](https://github.com/GuildensternDies), [Misha Kessler](https://github.com/mishakessler), [Naz Babu](https://github.com/n95babu), & [Sean Blanchfield](https://github.com/seanbfield) (Git Czar) for the GA Software Engineering Immersive (May '19 Cohort) Unit 3 Project.
 
+
+## Sitemap
+---
+> Sitemap will go here.
 
 ## Wireframes
 ---
@@ -54,18 +64,50 @@ Created, designed, and developed by **Brian Weitz**, **Misha Kessler**, **Naz Ba
 
 ## Functional Heirarchy
 ---
+> Files and directories that are key to our production (and thus, have been- or will be- edited) will be listed here in tree form.
+
 ### Repo Structure
+<!-- Subdirectories first, filenames second, separated by line break. -->
 
 ```
 barrel-aged
-|___
+
+|___ client
+
+|___ readme.md
+|___ models.js
+|___ resetDb.js
+|___ seed.js
+|___ scratch.js
+|___ server.js
 ```
 
 ### React Structure
 
 ```
 client
-|___
+
+|___ public
+      |___ favicon.ico
+      |___ index.html
+
+|___ src
+      |___ assets
+            |___
+            
+      |___ components
+            |___
+
+      |___ services
+            |___
+
+      |___ App.css
+      |___ App.js
+      |___ index.css
+      |___ index.js
+      |___ logo.svg
+
+|___ readme.md
 ```
 
 
