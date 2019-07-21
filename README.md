@@ -1,6 +1,7 @@
 # Barrel-Aged
 
-![P3 Challenge GIF - A Bunch of Drunk Pandas](https://media.giphy.com/media/QoCoLo2opwUW4/giphy.gif)
+![P3 Challenge GIF](https://media.giphy.com/media/QoCoLo2opwUW4/giphy.gif)
+<p style="text-align: center;"><em>P3 Challenge GIF</em></p>
 
 ## Table of Contents
 - [Project Description](#project-description)
@@ -63,9 +64,13 @@ Digital assets used with full licensing and permission from [Death to Stock Phot
 
 ## Wireframes
 
-<!-- Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. -->
-
 > Wireframes from Brian's [DocDroid](https://www.docdroid.net/4njapHK/barrelaged.pdf) will go here.
+
+<br>
+
+## Databases
+
+> Table Map from Sean's [Draw.io](https://www.draw.io) will go here.
 
 <br>
 <br>
@@ -77,22 +82,39 @@ Digital assets used with full licensing and permission from [Death to Stock Phot
 
 ### MVP
 
-> MVP details will go here.
+- CRUD Functionality on All Resources via Axios
+- Sequelize Resource Tables
+  - Users (Name, Email, Password)
+    - FK: Reviews
+  - Whiskeys (Name, Type, Description, Avg. Rating)
+    - FK: Reviews
+  - Reviews (Rating, Comment)
+    - FK: Users, Whiskeys
+- Core React Components
+  - Pages
+    - Age Gate
+    - Landing (Hero, Overview, Login, Register)
+    - Homepage (_Index_)(View All Whiskies, Whiskies By Type)
+    - User (_Show_)
+    - Whiskey (_Show_)
+  - Modules
+    - Login Form
+    - Register Form
 
 
 ### Post-MVP
 
-> Post MVP details will go here.
+- Additional "Favorite" functionality, db table, and corresponding components for viewing and reordering favorite whiskeys from user dashboard.
+- "Like" functionality on reviews, plus sorting reviews by popularity.
+- Third party whiskey API to build out our database, enable "Add new whiskey for review." by user, with autofill.
 
 <br>
 
 ## Functional Heirarchy
 
-> Files and directories that are key to our production (and thus, have been- or will be- edited) are listed here in tree form here.
+> Files and directories that are key to our production (and thus, have been- or will be- edited) are listed here in tree form here. Subdirectories should appear first, followed by filenames.
 
 #### Repo Structure
-
-> Subdirectories, followed by filenames, go here.
 
 ```
 barrel-aged
@@ -134,10 +156,11 @@ client
 
 |___ src
       |___ assets
-            |___
+            |___ images
+            |___ graphics
             
       |___ components
-            |___
+            |___ 
 
       |___ services
             |___
