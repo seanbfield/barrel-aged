@@ -1,19 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import glass from './/img/glass.png'
+import AgeGate from './components/AgeGate';
+import Home from './components/Home';
+import User from './components/User';
+import { Route, Link } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={glass} className="App-logo" alt="logo" />
-        <p>
-          Welcome to Barrel-Aged React!
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <Link to='/home'>Verify Age</Link>
+          <img src={glass} className="App-logo" alt="logo" />
+          <p>
+            Welcome to Barrel-Aged React!
         </p>
-      </header>
-    </div>
-  );
+        </header>
+        <main>
+          <Route exact path='/' render={() => <AgeGate />} />
+          <Route path='/home' render={() => <Home />} />
+          <Route path='/user' render={() => <User />} />
+        </main>
+      </div>
+    );
+  }
 }
 
 export default App;
