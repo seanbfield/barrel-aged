@@ -1,83 +1,109 @@
 # Barrel-Aged
 
-![Drunk Panda P3 Challenge](https://pbs.twimg.com/profile_images/690117532469084160/WZshTTrI_400x400.png)
-
+![P3 Challenge GIF - A Bunch of Drunk Pandas](https://media.giphy.com/media/QoCoLo2opwUW4/giphy.gif)
 
 ## Table of Contents
---------------------
 - [Project Description](#project-description)
   - [Project Team](#project-team)
   - [Project Inspiration](#project-inspiration)
   - [Project Permissions](#project-permissions)
-- [Sitemap](#sitemap)
-- [Wireframes](#wireframes)
-- [Functional Goals](#functional-goals)
-  - [MVP](#mvp)
-  - [Post-MVP](#post-mvp)
-- [Functional Heirarchy](#functional-heirarchy)
-  - [Repo Structure](#repo-structure)
-  - [React Structure](#react-structure)
-- [Functional Components](#functional-components)
-  - [Component Breakdown](#component-breakdown)
-  - [Component Timeframes](#component-timeframes)
-  - [Helper Functions](#helper-functions)
-- [Supporting Libraries](#supporting-libraries)
-- [Bugs, Issues, and Resolutions](#issues-&-resolutions)
+- [Design](#design)  
+  - [Sitemap](#sitemap)
+  - [Wireframes](#wireframes)
+- [Development](#development)
+  - [Functional Goals](#functional-goals)
+    - [MVP](#mvp)
+    - [Post-MVP](#post-mvp)
+  - [Functional Heirarchy](#functional-heirarchy)
+    - [Repo Structure](#repo-structure)
+    - [Database Table Structure](#express-database-structure)
+    - [React Structure](#react-structure)
+  - [Functional Components](#functional-components)
+    - [Component Breakdown](#component-breakdown)
+    - [Component Timeframes](#component-timeframes)
+    - [Helper Functions](#helper-functions)
+  - [Supporting Libraries](#supporting-libraries)
+- [Project Review](#project-review)
+  - [Code Showcase](#code-showcase)
+  - [Bugs, Issues, and Resolutions](#issues-&-resolutions)
 - [Project Followup](#project-followup)
 
+<br>
+<br>
 
-## Project Description 
----
+# Overview
+
+## Project Description
 Barrel-Aged is a social forum and review website for whiskey lovers. Through a modern and attractive user interface, convenient browsing and review functionality, and a well-designed database of whiskeys, Barrel-Aged will enable whiskey consumers to discuss, rate, and find their next favorite bottle.
 
-### Project Team
+#### Project Team
 
 Created, designed, and developed by [Brian Weitz](https://github.com/GuildensternDies), [Misha Kessler](https://github.com/mishakessler), [Naz Babu](https://github.com/n95babu), & [Sean Blanchfield](https://github.com/seanbfield) (Git Czar) for the GA Software Engineering Immersive (May '19 Cohort) Unit 3 Project.
 
-### Project Inspiration
+Team values, communication preferences, and other group expectations can be found on the [Barrel-Aged google doc](https://docs.google.com/document/d/12Y6Uepqbnv3tS8xEpuS2KN-N3yHhyMqZA6CAT63p2YY/edit).
 
-Barrel-Aged is modeled with functional inspiration from [Distiller](https://distiller.com/), [GoodReads](https://www.goodreads.com/), and [Untappd](https://untappd.com), and design and branding inspiration from [Flaviar](https://flaviar.com) and [Touch of Modern](https://www.touchofmodern.com).
+#### Project Inspiration
 
-### Project Permissions
+Barrel-Aged is modeled with functional inspiration from [Distiller](https://distiller.com/), [GoodReads](https://www.goodreads.com/), [Connosr](https://www.connosr.com/), and [Untappd](https://untappd.com); design and branding inspiration from [Flaviar](https://flaviar.com) and [Touch of Modern](https://www.touchofmodern.com).
+
+#### Project Permissions
 
 Digital assets used with full licensing and permission from [Death to Stock Photo](https://deathtothestockphoto.com/), [Freepik](https://www.freepik.com/home), and [Unsplash](https://unsplash.com/). Custom digital design and branding by [Misha Kessler](https://www.mishakessler.com).
 
+<br>
+<br>
+
+# Design
 
 ## Sitemap
----
-> Sitemap will go here.
+
+> Sitemap from Naz's [GlooMap](https://www.gloomaps.com/sKZtWehfzJ) will go here. 
+
+<br>
 
 ## Wireframes
----
+
 <!-- Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. -->
 
-> Wireframes will go here.
+> Wireframes from Brian's [DocDroid](https://www.docdroid.net/4njapHK/barrelaged.pdf) will go here.
+
+<br>
+<br>
+
+# Development
 
 ## Functional Goals
----
+
 
 ### MVP
 
 > MVP details will go here.
 
 
-### PostMVP
+### Post-MVP
 
 > Post MVP details will go here.
 
-
+<br>
 
 ## Functional Heirarchy
----
-> Files and directories that are key to our production (and thus, have been- or will be- edited) will be listed here in tree form.
 
-### Repo Structure
-<!-- Subdirectories first, filenames second, separated by line break. -->
+> Files and directories that are key to our production (and thus, have been- or will be- edited) are listed here in tree form here.
+
+#### Repo Structure
+
+> Subdirectories, followed by filenames, go here.
 
 ```
 barrel-aged
 
 |___ client
+      (Refer to React Structure below.)
+      
+|___ routes
+      |___ reviewRouter.js
+      |___ userRouter.js
+      |___ whiskeyRouter.js
 
 |___ readme.md
 |___ models.js
@@ -87,7 +113,17 @@ barrel-aged
 |___ server.js
 ```
 
-### React Structure
+#### Express Database Structure
+
+```
+barrelaged_db
+
+|___ reviews 
+|___ users
+|___ whiskeys
+```
+
+#### React Structure
 
 ```
 client
@@ -115,41 +151,70 @@ client
 |___ readme.md
 ```
 
-
+<br>
 
 ## Functional Components
----
 
-### Component Breakdown
-<!-- Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components.  -->
+#### Component Breakdown
+
+> Components (and a description with a stateful or stateless tag) go here.
 
 | Component | State | Description | 
 | --- | :---: | :---: |  
 | Lorem ipsum | Stateless | Lorem ipsum dolor sit amet, consecteteur adupiscing elit, sed do eiusmod tempor incididunt ut labore... | 
 
-### Component Timeframes
-<!-- Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize. -->
+#### Component Timeframes
+
+> Time expectation (padded with an extra hour, minimum, to play it safe) go here.
 
 | Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: |
 | Lorem ipsum | High | x hrs | y hrs |
 
 
-### Helper Functions
-<!-- Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category. -->
+#### Helper Functions
+
+> Generic helper functions go here.
 
 | Function | Description | 
 | --- | :---: |  
 | Lorem | ipsum dolor sit amet | 
 
+<br>
+
 ## Supporting Libraries
----
-> Supporting Libraries will go here.
+
+> Packages installed via node go here.
+
+* Server-Side
+  * body-parser
+  * cors
+  * express
+  * morgan
+  * nodemon
+  * pg
+  * sequelize
+
+* Authentication
+  * bcrypt
+  * jsonwebtoken
+
+* Client-Side
+  * axios
+  * material-ui
+  * react
+  * react-router-dom
+  * react-spring
+
+
+<br>
+<br>
+
+# Project Review
 
 ## Code Showcase
----
 
-> Code we are proud of will go here.
+> Any code of which we are proud go here.
 
 ```
 function reverse(string) {
@@ -157,10 +222,11 @@ function reverse(string) {
 }
 ```
 
-## Issues & Resolutions
----
+<br>
 
-> Errors and resolutions will go here.
+## Issues & Resolutions
+
+> Any code bugs, errors, and fixes go here.
 
 ```
 **ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier
@@ -170,6 +236,9 @@ function reverse(string) {
 **RESOLUTION**: Missing comma after first object in sources {} object
 ```
 
-## Project Followup
----
-> Tasks we would like to revisit will go here.
+<br>
+<br>
+
+# Project Followup
+
+> Any tasks we would like to revisit after graduation go here.
