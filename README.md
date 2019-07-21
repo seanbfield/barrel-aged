@@ -56,21 +56,33 @@ Digital assets used with full licensing and permission from [Death to Stock Phot
 
 # Design
 
+## ERD Model
+
+![ERD Model](https://imgur.com/Zv8VacQ.png)
+
+> ERD Model from Sean's [Draw.io](https://www.draw.io).
+
+<br>
+
 ## Sitemap
 
-> Sitemap from Naz's [GlooMap](https://www.gloomaps.com/sKZtWehfzJ) will go here. 
+![Sitemap](https://imgur.com/LyjmAkZ.png)
+
+> Sitemap from Naz's [GlooMap](https://www.gloomaps.com/sKZtWehfzJ).
 
 <br>
 
 ## Wireframes
 
-> Wireframes from Brian's [DocDroid](https://www.docdroid.net/4njapHK/barrelaged.pdf) will go here.
+![Age Gate Wireframe](https://imgur.com/DH5XNMo.png)
+![Landing Wireframe](https://imgur.com/VJPriDW.png)
+![Homepage Wireframe](https://imgur.com/TQ82GMH.png)
+![User Dashboard Wireframe](https://imgur.com/dlVpM5W.png)
+![Whiskey Review Wireframe](https://imgur.com/oL5J3Gd.png)
+![Whiskey News Wireframe](https://imgur.com/sxgOGCy.png)
 
-<br>
+> Wireframes from Brian's [DocDroid](https://www.docdroid.net/4njapHK/barrelaged.pdf).
 
-## Databases
-
-> Table Map from Sean's [Draw.io](https://www.draw.io) will go here.
 
 <br>
 <br>
@@ -79,17 +91,17 @@ Digital assets used with full licensing and permission from [Death to Stock Phot
 
 ## Functional Goals
 
-
 ### MVP
 
-- CRUD Functionality on All Resources via Axios
+- User Authentication & Password Hashing
 - Sequelize Resource Tables
-  - Users (Name, Email, Password)
+  - Users (Name, Email, Password; Image, Location)
     - FK: Reviews
-  - Whiskeys (Name, Type, Description, Avg. Rating)
+  - Whiskeys (Name, Type, Description, Avg. Rating; Brand, Region, Image, ABV)
     - FK: Reviews
   - Reviews (Rating, Comment)
     - FK: Users, Whiskeys
+- CRUD Functionality on All Resources via Axios
 - Core React Components
   - Pages
     - Age Gate
@@ -104,6 +116,7 @@ Digital assets used with full licensing and permission from [Death to Stock Phot
 
 ### Post-MVP
 
+- Pagination on Whiskeys, Advanced Sorting & Filtering
 - Additional "Favorite" functionality, db table, and corresponding components for viewing and reordering favorite whiskeys from user dashboard.
 - "Like" functionality on reviews, plus sorting reviews by popularity.
 - Third party whiskey API to build out our database, enable "Add new whiskey for review." by user, with autofill.
@@ -160,7 +173,11 @@ client
             |___ graphics
             
       |___ components
-            |___ 
+            |___ AgeGate.jsx
+            |___ Home.jsx
+            |___ LoginForm.jsx
+            |___ RegisterForm.jsx
+            |___ User.jsx
 
       |___ services
             |___
@@ -173,6 +190,7 @@ client
 
 |___ readme.md
 ```
+
 
 <br>
 
@@ -258,6 +276,7 @@ function reverse(string) {
 ```                
 **RESOLUTION**: Missing comma after first object in sources {} object
 ```
+
 
 <br>
 <br>
