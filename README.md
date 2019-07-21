@@ -6,8 +6,9 @@
 ## Table of Contents
 --------------------
 - [Project Description](#project-description)
-  - [Project Inspiration](#project-inspiration)
   - [Project Team](#project-team)
+  - [Project Inspiration](#project-inspiration)
+  - [Project Permissions](#project-permissions)
 - [Sitemap](#sitemap)
 - [Wireframes](#wireframes)
 - [Functional Goals](#functional-goals)
@@ -29,13 +30,17 @@
 ---
 Barrel-Aged is a social forum and review website for whiskey lovers. Through a modern and attractive user interface, convenient browsing and review functionality, and a well-designed database of whiskeys, Barrel-Aged will enable whiskey consumers to discuss, rate, and find their next favorite bottle.
 
-### Project Inspiration
-
-Barrel-Aged is modeled with functional inspiration from [Distiller](https://distiller.com/), [GoodReads](https://www.goodreads.com/), and [Untappd](https://untappd.com), and design and branding inspiration from [Flaviar](https://flaviar.com) and [Touch of Modern](https://www.touchofmodern.com). Digital assets used with full licensing and permission from [Death to Stock Photo](https://deathtothestockphoto.com/), [Freepik](https://www.freepik.com/home), and [Unsplash](https://unsplash.com/).
-
 ### Project Team
 
 Created, designed, and developed by [Brian Weitz](https://github.com/GuildensternDies), [Misha Kessler](https://github.com/mishakessler), [Naz Babu](https://github.com/n95babu), & [Sean Blanchfield](https://github.com/seanbfield) (Git Czar) for the GA Software Engineering Immersive (May '19 Cohort) Unit 3 Project.
+
+### Project Inspiration
+
+Barrel-Aged is modeled with functional inspiration from [Distiller](https://distiller.com/), [GoodReads](https://www.goodreads.com/), and [Untappd](https://untappd.com), and design and branding inspiration from [Flaviar](https://flaviar.com) and [Touch of Modern](https://www.touchofmodern.com).
+
+### Project Permissions
+
+Digital assets used with full licensing and permission from [Death to Stock Photo](https://deathtothestockphoto.com/), [Freepik](https://www.freepik.com/home), and [Unsplash](https://unsplash.com/). Custom digital design and branding by [Misha Kessler](https://www.mishakessler.com).
 
 
 ## Sitemap
