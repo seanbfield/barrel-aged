@@ -1,7 +1,7 @@
 # Barrel-Aged
 
-![P3 Challenge GIF](https://media.giphy.com/media/QoCoLo2opwUW4/giphy.gif)
-<p style="text-align: center;"><em>P3 Challenge GIF</em></p>
+![P3 Challenge](https://imgur.com/C9HvtYu.png)
+<p style="text-align: center;"><em>P3 Challenge</em></p>
 
 ## Table of Contents
 - [Project Description](#project-description)
@@ -58,7 +58,7 @@ Digital assets used with full licensing and permission from [Death to Stock Phot
 
 ## ERD Model
 
-![ERD Model](https://imgur.com/Zv8VacQ.png)
+![ERD Model](https://imgur.com/AtoYeE3.png)
 
 > ERD Model from Sean's [Draw.io](https://www.draw.io).
 
