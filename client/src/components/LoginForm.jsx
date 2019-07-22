@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LoginForm = (props) => {
+export default LoginForm = (props) => {
   return (
     <div>
       <p>This is the login form</p>
@@ -8,5 +8,3 @@ const LoginForm = (props) => {
     </div>
   )
 }
-
-export default LoginForm;
