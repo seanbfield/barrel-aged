@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-// sb-model-update
+
 
 //Sequelize
 
@@ -15,7 +15,6 @@ const sequelize = new Sequelize({
 //USER MODEL
 
 const User = sequelize.define('users', {
-  first_name: Sequelize.STRING,
   user_name: Sequelize.STRING,
   email: {
     type: Sequelize.STRING,
@@ -28,8 +27,6 @@ const User = sequelize.define('users', {
     }
   },
   password_digest: Sequelize.STRING,
-  location: Sequelize.STRING,
-  fav_whiskey: Sequelize.STRING,
 });
 
 
@@ -37,25 +34,17 @@ const User = sequelize.define('users', {
 const Whiskey = sequelize.define('whiskey', {
 
   name: Sequelize.STRING,
-  brand: Sequelize.STRING,
   type: Sequelize.STRING,
-  description: Sequelize.STRING,
-  url_to_image: Sequelize.STRING,
-
 });
 
 
 //REVIEW
-const Reviews = sequelize.define('review', {
-  rating: Sequelize.INTEGER,
-  comment: Sequelize.STRING,
+const Review = sequelize.define('review', {
+
+  score: Sequelize.INTEGER,
+  review: Sequelize.STRING,
+
 });
-
-
-User.hasMany(Whiskey, Reviews);
-Whiskey.hasMany(Reviews);
-Review.belongsTo(User);
-Review.belongsTo(Whiskey);
 
 module.exports = {
   sequelize,
