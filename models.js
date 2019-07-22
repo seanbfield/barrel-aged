@@ -4,7 +4,7 @@ const Sequelize = require('sequelize');
 //Sequelize
 
 const sequelize = new Sequelize({
-  database: 'barrelaged_db ',
+  database: 'barrelaged_db',
   dialect: 'postgres',
   define: {
     underscored: true,
