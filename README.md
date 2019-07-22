@@ -74,12 +74,16 @@ Digital assets used with full licensing and permission from [Death to Stock Phot
 
 ## Wireframes
 
-![Age Gate Wireframe](https://imgur.com/DH5XNMo.png)
-![Landing Wireframe](https://imgur.com/VJPriDW.png)
-![Homepage Wireframe](https://imgur.com/TQ82GMH.png)
-![User Dashboard Wireframe](https://imgur.com/dlVpM5W.png)
-![Whiskey Review Wireframe](https://imgur.com/oL5J3Gd.png)
-![Whiskey News Wireframe](https://imgur.com/sxgOGCy.png)
+![Age Gate Wireframe](https://imgur.com/Jg7ghQO.png)
+![Landing Wireframe](https://imgur.com/XngdLOl.png)
+![Homepage Wireframe](https://imgur.com/Yk2DLKf.png)
+![User Dashboard Wireframe](https://imgur.com/Njt1euU.png)
+![Whiskey Review Wireframe](https://imgur.com/0wNtEPS.png)
+![Whiskey News Wireframe 1](https://imgur.com/oT2kzL8.png)
+![Whiskey News Wireframe 2](https://imgur.com/Q3qhUvc.png)
+
+![Mobile Age Gate Wireframe](https://imgur.com/sn2SbP2.png)
+![Mobile Landing Wireframe](https://imgur.com/yFe3NH8.png)
 
 > Wireframes from Brian's [DocDroid](https://www.docdroid.net/4njapHK/barrelaged.pdf).
 
