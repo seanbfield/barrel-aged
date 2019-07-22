@@ -14,7 +14,7 @@ const sequelize = new Sequelize({
 
 //USER MODEL
 
-const User = sequelize.define('users', {
+const User = sequelize.define('user', {
   first_name: Sequelize.STRING,
   user_name: Sequelize.STRING,
   email: {
@@ -46,14 +46,15 @@ const Whiskey = sequelize.define('whiskey', {
 
 
 //REVIEW
-const Reviews = sequelize.define('review', {
+const Review = sequelize.define('review', {
   rating: Sequelize.INTEGER,
   comment: Sequelize.STRING,
 });
 
 
-User.hasMany(Whiskey, Reviews);
-Whiskey.hasMany(Reviews);
+User.hasMany(Whiskey);
+User.hasMany(Review);
+Whiskey.hasMany(Review);
 Review.belongsTo(User);
 Review.belongsTo(Whiskey);
 
