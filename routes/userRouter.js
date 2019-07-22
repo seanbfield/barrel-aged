@@ -74,10 +74,6 @@ userRouter.delete('/:id/review/:rid', async (req, res) => {
     res.status(401).send('Not Authorized');
   }
 })
-userRouter.get('/:id/review/:rid', async (req, res) => {
-  const review = await Review.findByPk(req.params.rid);
-  res.json(review);
-})
 
 userRouter.get('/verify', restrict, (req, res) => {
   res.json(res.locals.user);
