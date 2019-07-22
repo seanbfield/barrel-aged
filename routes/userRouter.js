@@ -43,6 +43,9 @@ userRouter.post('/login', async (req, res) => {
     res.json(e.message);
   }
 });
+
+
+
 userRouter.post('/:user_id/whiskey/:id/review', async (req, res) => {
   // add 'restrict, ' before async when tokens are running on front end and uncomment userid check
   const user = await User.findByPk(req.params.user_id);
@@ -74,6 +77,53 @@ userRouter.delete('/:user_id/review/:id', async (req, res) => {
     res.status(401).send('Not Authorized');
   }
 })
+
+
+// Get user by ID
+
+
+userRouter.get('/:id', async (req, res) => {
+  const specificUser = await User.findByPk(req.params.id)
+  res.json({
+    specificUser
+  })
+})
+
+
+
+//Get all reviews
+
+userRouter.get('/review', async (req, res) => {
+  const everyReview = await Review.findAll()
+  console.log(everyReview);
+  res.json({
+    everyReview
+  })
+})
+
+
+// Update a review:
+// Put: /users/:id/review/:rid
+// Verify, match user.id to review.user_id, update review from formdata -Sean
+
+
+
+
+// See all reviews of a user:
+// Get: /users/:id/review
+// Verify, find user by id, get all reviews where user.id matches review.user_id -Sean
+
+userRouter.get('/:id/review', async (req, res) => {
+  const id = req.params.userId
+  const findReview = await Review.findAll({
+    where: {
+      userId: id
+    }
+  })
+  res.json({ findReview })
+})
+
+
 
 userRouter.get('/verify', restrict, (req, res) => {
   res.json(res.locals.user);
