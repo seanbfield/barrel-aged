@@ -1,7 +1,9 @@
+
+
 const Sequelize = require('sequelize');
 // sb-model-update
 
-//Sequelize
+// Sequelize
 
 const sequelize = new Sequelize({
   database: 'barrelaged_db',
@@ -11,12 +13,12 @@ const sequelize = new Sequelize({
   },
 });
 
-
-//USER MODEL
+// USER MODEL
 
 const User = sequelize.define('user', {
   first_name: Sequelize.STRING,
   user_name: Sequelize.STRING,
+
   email: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -25,7 +27,7 @@ const User = sequelize.define('user', {
     validate: {
       isEmail: true,
       notEmpty: true,
-    }
+    },
   },
   password_digest: Sequelize.STRING,
   location: Sequelize.STRING,
@@ -33,7 +35,7 @@ const User = sequelize.define('user', {
 });
 
 
-//WHISKEY MODEL
+// WHISKEY MODEL
 const Whiskey = sequelize.define('whiskey', {
 
   name: Sequelize.STRING,
@@ -45,7 +47,7 @@ const Whiskey = sequelize.define('whiskey', {
 });
 
 
-//REVIEW
+// REVIEW
 const Review = sequelize.define('review', {
   rating: Sequelize.INTEGER,
   comment: Sequelize.STRING,
