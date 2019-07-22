@@ -9,10 +9,17 @@ const jwt = require('jsonwebtoken');
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+const auth = require('./Authentication/user');
+
+
 
 app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
+
+// Routes
+app.use('/user', auth);
+
 
 app.get('/ping', (req, res) => {
   res.json('pong!');
