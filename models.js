@@ -4,7 +4,7 @@ const Sequelize = require('sequelize');
 //Sequelize
 
 const sequelize = new Sequelize({
-  database: 'barrelaged_db ',
+  database: 'barrelaged_db',
   dialect: 'postgres',
   define: {
     underscored: true,
@@ -15,8 +15,17 @@ const sequelize = new Sequelize({
 //USER MODEL
 
 const User = sequelize.define('users', {
-  name: Sequelize.STRING,
-  email: Sequelize.STRING,
+  user_name: Sequelize.STRING,
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    unique: true,
+    lowercase: true,
+    validate: {
+      isEmail: true,
+      notEmpty: true,
+    }
+  },
   password_digest: Sequelize.STRING,
 });
 
@@ -26,7 +35,6 @@ const Whiskey = sequelize.define('whiskey', {
 
   name: Sequelize.STRING,
   type: Sequelize.STRING,
-  agg: Sequelize.DECIMAL(10, 2),
 });
 
 
