@@ -43,10 +43,10 @@ userRouter.post('/login', async (req, res) => {
     res.json(e.message);
   }
 });
-userRouter.post('/:id/whiskey/:wid/review', async (req, res) => {
+userRouter.post('/:user_id/whiskey/:id/review', async (req, res) => {
   // add 'restrict, ' before async when tokens are running on front end and uncomment userid check
-  const user = await User.findByPk(req.params.id);
-  const whiskey = await Whiskey.findByPk(req.params.wid);
+  const user = await User.findByPk(req.params.user_id);
+  const whiskey = await Whiskey.findByPk(req.params.id);
   // if (user.id === res.locals.user.id) {
   const review = await Review.create(req.body);
   review.setUser(user);
@@ -57,10 +57,10 @@ userRouter.post('/:id/whiskey/:wid/review', async (req, res) => {
   // }
 })
 
-userRouter.delete('/:id/review/:rid', async (req, res) => {
+userRouter.delete('/:user_id/review/:id', async (req, res) => {
   // add 'restrict, ' before async when tokens are running on front end and uncomment userid check
-  const user = await User.findByPk(req.params.id);
-  const review = await Review.findByPk(req.params.rid);
+  const user = await User.findByPk(req.params.user_id);
+  const review = await Review.findByPk(req.params.id);
   if (
     // user.id === res.locals.user.id && 
     user.id === review.userId) {
