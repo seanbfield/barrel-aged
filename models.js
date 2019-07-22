@@ -15,7 +15,7 @@ const sequelize = new Sequelize({
 //USER MODEL
 
 const User = sequelize.define('users', {
-  name: Sequelize.STRING,
+  userName: Sequelize.STRING,
   email: {
     type: Sequelize.STRING,
     allowNull: false,

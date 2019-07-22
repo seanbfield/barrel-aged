@@ -11,15 +11,15 @@ userRouter.get('/', async (req, res) => {
   res.json(users);
 })
 userRouter.post('/signup', async (req, res) => {
-  const { name, password, email } = req.body;
+  const { userName, password, email } = req.body;
   const pwDigest = await bcrypt.hash(password, SALT);
   const newUser = await User.create({
-    name: name,
+    userName: userName,
     password_digest: pwDigest,
     email: email
   });
   const tokenData = {
-    name: newUser.name,
+    userName: newUser.userName,
     email: newUser.email,
     id: newUser.id
   }
@@ -27,11 +27,11 @@ userRouter.post('/signup', async (req, res) => {
   res.json(token);
 })
 userRouter.post('/login', async (req, res) => {
-  const { name, password } = req.body;
+  const { username, password } = req.body;
   try {
     const user = await User.findOne({
       where: {
-        name: name
+        username: username
       }
     });
     const isValid = await bcrypt.compare(password, user.password_digest)
