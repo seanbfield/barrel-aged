@@ -16,7 +16,16 @@ const sequelize = new Sequelize({
 
 const User = sequelize.define('users', {
   name: Sequelize.STRING,
-  email: Sequelize.STRING,
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    unique: true,
+    lowercase: true,
+    validate: {
+      isEmail: true,
+      notEmpty: true,
+    }
+  },
   password_digest: Sequelize.STRING,
 });
 
