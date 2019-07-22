@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken');
 const PORT = process.env.PORT || 3000;
 
 const app = express();
-const auth = require('./Authentication/user');
+const { UserRouter } = require('./Authentication/user');
 
 
 
@@ -18,7 +18,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 
 // Routes
-app.use('/user', auth);
+app.use('/user', UserRouter);
 
 
 app.get('/ping', (req, res) => {
