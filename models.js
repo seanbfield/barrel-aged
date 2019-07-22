@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-
+// sb-model-update
 
 //Sequelize
 
