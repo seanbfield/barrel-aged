@@ -1,11 +1,9 @@
-<<<<<<< HEAD
-const { Sequelize } = require('sequelize');
-=======
+
+
 const Sequelize = require('sequelize');
 
 
-//Sequelize
->>>>>>> 10c2b1d7223a963fa1a5dad5b909d1a24f9a4795
+// Sequelize
 
 const sequelize = new Sequelize({
   database: 'barrelaged_db',
@@ -15,16 +13,11 @@ const sequelize = new Sequelize({
   },
 });
 
-<<<<<<< HEAD
-const User = sequelize.define('user', {
-  name: Sequelize.STRING,
-=======
-
-//USER MODEL
+// USER MODEL
 
 const User = sequelize.define('users', {
   user_name: Sequelize.STRING,
->>>>>>> 10c2b1d7223a963fa1a5dad5b909d1a24f9a4795
+
   email: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -33,23 +26,13 @@ const User = sequelize.define('users', {
     validate: {
       isEmail: true,
       notEmpty: true,
-<<<<<<< HEAD
     },
-=======
-    }
->>>>>>> 10c2b1d7223a963fa1a5dad5b909d1a24f9a4795
   },
   password_digest: Sequelize.STRING,
 });
 
-<<<<<<< HEAD
-module.exports = {
-  User,
-  sequelize,
-};
-=======
 
-//WHISKEY MODEL
+// WHISKEY MODEL
 const Whiskey = sequelize.define('whiskey', {
 
   name: Sequelize.STRING,
@@ -57,7 +40,7 @@ const Whiskey = sequelize.define('whiskey', {
 });
 
 
-//REVIEW
+// REVIEW
 const Review = sequelize.define('review', {
 
   score: Sequelize.INTEGER,
@@ -71,4 +54,3 @@ module.exports = {
   Whiskey,
   Review,
 };
->>>>>>> 10c2b1d7223a963fa1a5dad5b909d1a24f9a4795

@@ -4,14 +4,12 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { userRouter } = require('./routes/userRouter');
-
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
-const { UserRouter } = require('./Authentication/user');
-
+const { userRouter } = require('./routes/userRouter');
+const { whiskeyRouter } = require('./routes/wiskeyRouter');
 
 
 app.use(cors());
@@ -20,7 +18,8 @@ app.use(bodyParser.json());
 app.use('/users', userRouter);
 
 // Routes
-app.use('/user', UserRouter);
+app.use('/user', userRouter);
+app.use('/whiskey', whiskeyRouter);
 
 
 app.get('/ping', (req, res) => {
