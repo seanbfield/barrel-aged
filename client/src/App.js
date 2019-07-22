@@ -1,12 +1,18 @@
 import React from 'react';
-import './App.css';
-import glass from './/img/glass.png'
-import AgeGate from './components/AgeGate';
-import Home from './components/Home';
-import User from './components/User';
 import { Route, Link } from 'react-router-dom';
 
-class App extends React.Component {
+import './App.css';
+
+import AgeGate from './AgeGate'
+import Landing from './Landing'
+import User from './User';
+import Whiskey from './Whiskey';
+
+import RegisterForm from '../components/RegisterForm';
+import LoginForm from '../components/LoginForm';
+import ReviewForm from '../components/ReviewForm';
+
+export default class App extends React.Component {
   render() {
     return (
       <div className="App">
