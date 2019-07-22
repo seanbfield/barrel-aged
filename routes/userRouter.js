@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const bcrypt = require('bcrypt');
-const { User } = require('../models');
+const { User, Whiskey, Review } = require('../models');
 const { genToken, restrict } = require('../auth');
 
 const SALT = 4;
@@ -43,6 +43,37 @@ userRouter.post('/login', async (req, res) => {
     res.json(e.message);
   }
 });
+userRouter.post('/:user_id/whiskey/:id/review', async (req, res) => {
+  // add 'restrict, ' before async when tokens are running on front end and uncomment userid check
+  const user = await User.findByPk(req.params.user_id);
+  const whiskey = await Whiskey.findByPk(req.params.id);
+  // if (user.id === res.locals.user.id) {
+  const review = await Review.create(req.body);
+  review.setUser(user);
+  review.setWhiskey(whiskey);
+  res.json(review);
+  // } else {
+  //   res.status(401).send('Not Authorized');
+  // }
+})
+
+userRouter.delete('/:user_id/review/:id', async (req, res) => {
+  // add 'restrict, ' before async when tokens are running on front end and uncomment userid check
+  const user = await User.findByPk(req.params.user_id);
+  const review = await Review.findByPk(req.params.id);
+  if (
+    // user.id === res.locals.user.id && 
+    user.id === review.userId) {
+    await Review.destroy({
+      where: {
+        id: review.id
+      }
+    });
+    res.json('Review deleted');
+  } else {
+    res.status(401).send('Not Authorized');
+  }
+})
 
 userRouter.get('/verify', restrict, (req, res) => {
   res.json(res.locals.user);
