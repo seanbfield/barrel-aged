@@ -4,6 +4,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const { userRouter } = require('./routes/userRouter');
 
 
 const PORT = process.env.PORT || 3000;
@@ -13,6 +14,7 @@ const app = express();
 app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
+app.use('/users', userRouter);
 
 app.get('/ping', (req, res) => {
   res.json('pong!');
