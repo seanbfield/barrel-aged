@@ -10,6 +10,7 @@ userRouter.get('/', async (req, res) => {
   const users = await User.findAll();
   res.json(users);
 });
+
 userRouter.post('/signup', async (req, res) => {
   const { userName, password, email } = req.body;
   const pwDigest = await bcrypt.hash(password, SALT);
@@ -26,6 +27,7 @@ userRouter.post('/signup', async (req, res) => {
   const token = await genToken(tokenData);
   res.json(token);
 });
+
 userRouter.post('/login', async (req, res) => {
   const { userName, password } = req.body;
   try {
@@ -34,7 +36,7 @@ userRouter.post('/login', async (req, res) => {
         user_name: userName,
       },
     });
-    const isValid = await bcrypt.compare(password, user.password_digest)
+    const isValid = await bcrypt.compare(password, user.password_digest);
     if (isValid) {
       const token = genToken(req.body);
       res.json(token);
@@ -43,8 +45,6 @@ userRouter.post('/login', async (req, res) => {
     res.json(e.message);
   }
 });
-
-
 
 userRouter.post('/:user_id/whiskey/:id/review', async (req, res) => {
   // add 'restrict, ' before async when tokens are running on front end and uncomment userid check
@@ -58,89 +58,110 @@ userRouter.post('/:user_id/whiskey/:id/review', async (req, res) => {
   // } else {
   //   res.status(401).send('Not Authorized');
   // }
-})
+});
 
 userRouter.delete('/:user_id/review/:id', async (req, res) => {
   // add 'restrict, ' before async when tokens are running on front end and uncomment userid check
   const user = await User.findByPk(req.params.user_id);
   const review = await Review.findByPk(req.params.id);
   if (
-    // user.id === res.locals.user.id && 
+    // user.id === res.locals.user.id &&
     user.id === review.userId) {
     await Review.destroy({
       where: {
-        id: review.id
-      }
+        id: review.id,
+      },
     });
     res.json('Review deleted');
   } else {
     res.status(401).send('Not Authorized');
   }
-})
-
+});
 
 
 // SB - Get user by ID
 userRouter.get('/:id', async (req, res) => {
-  const specificUser = await User.findByPk(req.params.id)
+  const specificUser = await User.findByPk(req.params.id);
   res.json({
-    specificUser
-  })
-})
+    specificUser,
+  });
+});
 
 
-
-//SB - Get all reviews
+// SB - Get all reviews
 userRouter.get('/review', async (req, res) => {
-  const everyReview = await Review.findAll()
+  const everyReview = await Review.findAll();
   console.log(everyReview);
   res.json({
-    everyReview
-  })
-})
-
+    everyReview,
+  });
+});
 
 
 // SB - See all reviews of a user.
 
 userRouter.get('/:id/review', async (req, res) => {
   try {
-    const id = req.params.id
+    const { id } = req.params;
     const findReview = await Review.findAll({
-      where: { id: id },
-      include: [{ model: User, }]
-    })
-    res.json({ findReview })
+      where: { id },
+      include: [{ model: User }],
+    });
+    res.json({ findReview });
   } catch (e) {
     console.log(e.message);
     res.status(500).send(e.message);
   }
-})
+});
 
+
+// MK - Update user.
+
+userRouter.put('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    // const data = req.body;
+    await User.update({
+      first_name: req.body.first_name,
+      user_name: req.body.user_name,
+      email: req.body.email,
+      password_digest: req.body.password_digest,
+      location: req.body.location,
+      fav_whiskey: req.body.fav_whiskey,
+    }, {
+      where: {
+        id,
+      },
+    });
+    const updateUser = await User.findByPk(id);
+    res.json(updateUser);
+  } catch (e) {
+    console.log(e.message);
+    res.status(500).send(e.message);
+  }
+});
 
 // SB - Update a review.
 
 userRouter.put('/:user_id/review/:id', async (req, res) => {
   try {
-
-    const id = req.params.id;
+    const { id } = req.params;
     // const data = req.body;
     await Review.update({
       rating: req.body.rating,
-      comment: req.body.comment
+      comment: req.body.comment,
     }, {
-        where: {
-          id
-        },
-      });
-    const editReview = await Review.findByPk(id)
+      where: {
+        id,
+      },
+    });
+    const editReview = await Review.findByPk(id);
     res.json(editReview);
-
   } catch (e) {
     console.log(e.message);
     res.status(500).send(e.message);
   }
-})
+});
 
 module.exports = {
   userRouter,
