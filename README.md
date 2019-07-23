@@ -59,7 +59,7 @@ Digital assets used with full licensing and permission from [Death to Stock Phot
 
 ## ERD Model
 
-![ERD Model](https://imgur.com/D7NUsJb.png)
+![ERD Model V2](https://imgur.com/D7NUsJb.png)
 
 > ERD Model from Sean's [Draw.io](https://www.draw.io).
 
@@ -67,7 +67,7 @@ Digital assets used with full licensing and permission from [Death to Stock Phot
 
 ## Sitemap
 
-![Sitemap](https://imgur.com/LyjmAkZ.png)
+![Sitemap V2](https://imgur.com/LyjmAkZ.png)
 
 > Sitemap from Naz's [GlooMap](https://www.gloomaps.com/sKZtWehfzJ).
 
@@ -76,15 +76,15 @@ Digital assets used with full licensing and permission from [Death to Stock Phot
 ## Wireframes
 
 ![Age Gate Wireframe](https://imgur.com/Jg7ghQO.png)
-![Landing Wireframe](https://imgur.com/XngdLOl.png)
-![Homepage Wireframe](https://imgur.com/Yk2DLKf.png)
+![Home Wireframe](https://imgur.com/XngdLOl.png)
+![Landing Wireframe](https://imgur.com/Yk2DLKf.png)
 ![User Dashboard Wireframe](https://imgur.com/Njt1euU.png)
 ![Whiskey Review Wireframe](https://imgur.com/0wNtEPS.png)
 ![Whiskey News Wireframe 1](https://imgur.com/oT2kzL8.png)
 ![Whiskey News Wireframe 2](https://imgur.com/Q3qhUvc.png)
 
 ![Mobile Age Gate Wireframe](https://imgur.com/sn2SbP2.png)
-![Mobile Landing Wireframe](https://imgur.com/yFe3NH8.png)
+![Mobile Home Wireframe](https://imgur.com/yFe3NH8.png)
 
 > Wireframes from Brian's [DocDroid](https://www.docdroid.net/4njapHK/barrelaged.pdf).
 
