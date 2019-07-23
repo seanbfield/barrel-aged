@@ -6,11 +6,11 @@ import './App.css';
 
 import { findReview } from './services/api-helper'
 
-import AgeGate from './pages/AgeGate'
-import Landing from './pages/Landing'
+import AgeGate from './pages/AgeGate';
+import Landing from './pages/Landing';
 import User from './pages/User';
 import Whiskey from './pages/Whiskey';
-import Home from './pages/Home'
+import Home from './pages/Home';
 
 
 class App extends React.Component {
