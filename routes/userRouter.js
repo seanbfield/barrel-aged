@@ -75,10 +75,6 @@ userRouter.delete('/:user_id/review/:id', async (req, res) => {
   }
 })
 
-userRouter.get('/verify', restrict, (req, res) => {
-  res.json(res.locals.user);
-});
-
 module.exports = {
   userRouter,
 };
