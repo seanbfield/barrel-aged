@@ -15,8 +15,10 @@ whiskeyRouter.post('/', async (req, res) => {
 // Index Whiskeys – NB
 
 whiskeyRouter.get('/', async (req, res) => {
-  const allWhiskeys = await Whiskey.findAll();
-  res.json(allWhiskeys);
+  const AllWhiskey = await Whiskey.findAll({
+    include: [Review]
+  });
+  res.json(AllWhiskey);
 });
 
 // Index Whiskey's Reviews - MK
