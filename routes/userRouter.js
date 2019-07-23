@@ -43,6 +43,9 @@ userRouter.post('/login', async (req, res) => {
     res.json(e.message);
   }
 });
+
+
+
 userRouter.post('/:user_id/whiskey/:id/review', async (req, res) => {
   // add 'restrict, ' before async when tokens are running on front end and uncomment userid check
   const user = await User.findByPk(req.params.user_id);
@@ -75,9 +78,69 @@ userRouter.delete('/:user_id/review/:id', async (req, res) => {
   }
 })
 
-userRouter.get('/verify', restrict, (req, res) => {
-  res.json(res.locals.user);
-});
+
+
+// SB - Get user by ID
+userRouter.get('/:id', async (req, res) => {
+  const specificUser = await User.findByPk(req.params.id)
+  res.json({
+    specificUser
+  })
+})
+
+
+
+//SB - Get all reviews
+userRouter.get('/review', async (req, res) => {
+  const everyReview = await Review.findAll()
+  console.log(everyReview);
+  res.json({
+    everyReview
+  })
+})
+
+
+
+// SB - See all reviews of a user.
+
+userRouter.get('/:id/review', async (req, res) => {
+  try {
+    const id = req.params.id
+    const findReview = await Review.findAll({
+      where: { id: id },
+      include: [{ model: User, }]
+    })
+    res.json({ findReview })
+  } catch (e) {
+    console.log(e.message);
+    res.status(500).send(e.message);
+  }
+})
+
+
+// SB - Update a review.
+
+userRouter.put('/:user_id/review/:id', async (req, res) => {
+  try {
+
+    const id = req.params.id;
+    // const data = req.body;
+    await Review.update({
+      rating: req.body.rating,
+      comment: req.body.comment
+    }, {
+        where: {
+          id
+        },
+      });
+    const editReview = await Review.findByPk(id)
+    res.json(editReview);
+
+  } catch (e) {
+    console.log(e.message);
+    res.status(500).send(e.message);
+  }
+})
 
 module.exports = {
   userRouter,
