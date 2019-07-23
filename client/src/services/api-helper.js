@@ -68,7 +68,6 @@ export const updateUser = async (userId, data) => {
 export const fetchWhiskey = async () => {
   getToken();
   const resp = await axios.get(`/whiskey`);
-  console.log(res);
   return resp.data;
 }
 

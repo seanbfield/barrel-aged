@@ -32,7 +32,7 @@ class Home extends React.Component {
   }
 
   goToUser = () => {
-    this.props.history.push('/user')
+    this.props.history.push('/landing')
   }
   render() {
     return (

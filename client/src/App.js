@@ -32,6 +32,7 @@ class App extends React.Component {
         <main>
           <Route exact path='/' render={() => <AgeGate />} />
           <Route path='/home' render={() => <Home />} />
+          <Route path='/landing' render={() => <Landing />} />
           <Route path='/user' render={() => <User />} />
         </main>
       </div>
