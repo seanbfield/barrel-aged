@@ -28,7 +28,6 @@ const main = async () => {
   })
 
   const review2 = await Review.create({
-
     rating: 3,
     comment: "If it was up to me, I'd let you go, but the boys have a temper, and they've been drinking all day."
   })

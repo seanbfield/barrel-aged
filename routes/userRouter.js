@@ -104,20 +104,32 @@ userRouter.get('/review', async (req, res) => {
 // Put: /users/:id/review/:rid
 // Verify, match user.id to review.user_id, update review from formdata -Sean
 
-
+userRouter.put('/users/:id/review/:rid', async (req, res, next) => {
+  Book.update(
+    { comment: req.body.comment },
+    { returning: true, where: { id: req.params.id } }
+  )
+    .then(function ([rowsUpdate, [updateReview]]) {
+      res.json(updateReview)
+    })
+    .catch(next)
+})
 
 
 // See all reviews of a user:
-// Get: /users/:id/review
-// Verify, find user by id, get all reviews where user.id matches review.user_id -Sean
 
 userRouter.get('/:id/review', async (req, res) => {
-  const id = req.params.userId
-  const findReview = await Review.findAll({
-    where: { id: id },
-    include: [{ model: User, }]
-  })
-  res.json({ findReview })
+  try {
+    const id = req.params.id
+    const findReview = await Review.findAll({
+      where: { id: id },
+      include: [{ model: User, }]
+    })
+    res.json({ findReview })
+  } catch (e) {
+    console.log(e.message);
+    res.status(500).send(e.message);
+  }
 })
 
 
