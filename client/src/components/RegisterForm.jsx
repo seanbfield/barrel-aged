@@ -9,4 +9,4 @@ const RegisterForm = (props) => {
   )
 }
 
-export default RegisterForm
+export default RegisterForm;

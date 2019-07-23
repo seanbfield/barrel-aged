@@ -9,4 +9,4 @@ const ReviewForm = (props) => {
   )
 }
 
-export default ReviewForm
+export default ReviewForm;
