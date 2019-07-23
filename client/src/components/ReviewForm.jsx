@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ReviewForm = (props) => {
+const ReviewForm = (props) => {
   return (
     <div>
       <p>This is the whiskey review form.</p>
@@ -8,3 +8,5 @@ export default ReviewForm = (props) => {
     </div>
   )
 }
+
+export default ReviewForm

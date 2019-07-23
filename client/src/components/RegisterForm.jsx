@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default RegisterForm = (props) => {
+const RegisterForm = (props) => {
   return (
     <div>
       <p>This is the register form</p>
@@ -8,3 +8,5 @@ export default RegisterForm = (props) => {
     </div>
   )
 }
+
+export default RegisterForm
