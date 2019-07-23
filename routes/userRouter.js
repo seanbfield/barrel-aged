@@ -80,8 +80,6 @@ userRouter.delete('/:user_id/review/:id', async (req, res) => {
 
 
 // Get user by ID
-
-
 userRouter.get('/:id', async (req, res) => {
   const specificUser = await User.findByPk(req.params.id)
   res.json({
@@ -116,9 +114,8 @@ userRouter.get('/review', async (req, res) => {
 userRouter.get('/:id/review', async (req, res) => {
   const id = req.params.userId
   const findReview = await Review.findAll({
-    where: {
-      userId: id
-    }
+    where: { id: id },
+    include: [{ model: User, }]
   })
   res.json({ findReview })
 })
