@@ -4,7 +4,26 @@ const api = axios.create({
   baseURL: 'http://localhost:3000'
 })
 
+
+// RESPONSE
+
+export const ping = async () => {
+  const resp = await api.get('/ping');
+  return resp.data;
+};
+
+
+
+//SIGNUP
+
+export const userSignup = async (userInfo) => {
+  const resp = await api.post(`/users/signup/`, userInfo);
+  console.log(resp);
+  return (resp);
+}
+
 // AUTH
+
 const storeToken = (token) => {
   localStorage.setItem('authToken', token);
   api.defaults.headers.common.authorization = `Bearer ${token}`;
