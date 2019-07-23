@@ -8,18 +8,18 @@ const whiskeyRouter = Router();
 
 whiskeyRouter.get('/', async (req, res) => {
   const AllWhiskey = await Whiskey.findAll();
-  res.json({ AllWhiskey });
+  res.json(AllWhiskey);
 });
 
 // MK – Index Whiskey Reviews
 
 whiskeyRouter.get('/:id/review', async (req, res) => {
   const { id } = req.params;
-  const findReview = await Review.findAll({
-    where: { whiskeyId: id },
-    include: [{ model: Whiskey }],
+  const findReview = await Whiskey.findOne({
+    where: { id },
+    include: [{ model: Review }],
   });
-  res.json({ findReview });
+  res.json(findReview);
 });
 
 // Create a whiskey: NB
@@ -28,7 +28,7 @@ whiskeyRouter.post('/', async (req, res) => {
   try {
     const data = req.body;
     const AllWhiskey = await Whiskey.create(data);
-    res.json({ AllWhiskey });
+    res.json(AllWhiskey);
   } catch (e) {
     res.json({ err: e.message });
   }
