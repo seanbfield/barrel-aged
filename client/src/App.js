@@ -20,12 +20,6 @@ import glass from './assets/images/glass.png'
 class App extends React.Component {
 
 
-  async componentDidMount() {
-    const resp = await axios.get('http://localhost:3000')
-    console.log(resp);
-  }
-
-
   render() {
     return (
       <div className="App">
