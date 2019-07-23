@@ -3,22 +3,24 @@ import { Route, Link } from 'react-router-dom';
 
 import './App.css';
 
-import AgeGate from './AgeGate'
-import Landing from './Landing'
-import User from './User';
-import Whiskey from './Whiskey';
+import AgeGate from './pages/AgeGate'
+import Landing from './pages/Landing'
+import Home from './pages/Home'
+import User from './pages/User';
+import Whiskey from './pages/Whiskey';
 
-import RegisterForm from '../components/RegisterForm';
-import LoginForm from '../components/LoginForm';
-import ReviewForm from '../components/ReviewForm';
+import glass from './assets/images/glass.png'
 
-export default class App extends React.Component {
+import RegisterForm from './components/RegisterForm';
+import LoginForm from './components/LoginForm';
+import ReviewForm from './components/ReviewForm';
+
+class App extends React.Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <Link to='/home'>Verify Age</Link>
-          <img src={glass} className="App-logo" alt="logo" />
+          <img src={glass} width="200px" height="200px" className="App-logo" alt="logo" />
           <p>
             Welcome to Barrel-Aged React!
         </p>
