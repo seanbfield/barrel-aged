@@ -1,10 +1,6 @@
-
-
 const Sequelize = require('sequelize');
-// sb-model-update
 
 // Sequelize
-
 const sequelize = new Sequelize({
   database: 'barrelaged_db',
   dialect: 'postgres',
@@ -13,12 +9,10 @@ const sequelize = new Sequelize({
   },
 });
 
-// USER MODEL
-
+// User Model
 const User = sequelize.define('user', {
   first_name: Sequelize.STRING,
   user_name: Sequelize.STRING,
-
   email: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -34,25 +28,20 @@ const User = sequelize.define('user', {
   fav_whiskey: Sequelize.STRING,
 });
 
-
-// WHISKEY MODEL
+// Whiskey Model
 const Whiskey = sequelize.define('whiskey', {
-
   name: Sequelize.STRING,
   brand: Sequelize.STRING,
   type: Sequelize.STRING,
   description: Sequelize.STRING,
   url_to_image: Sequelize.STRING,
-
 });
 
-
-// REVIEW
+// Review Model
 const Review = sequelize.define('review', {
   rating: Sequelize.INTEGER,
   comment: Sequelize.STRING,
 });
-
 
 User.hasMany(Whiskey);
 User.hasMany(Review);
