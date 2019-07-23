@@ -36,6 +36,28 @@ const main = async () => {
   await review2.setUser(userB);
 };
 
-
-
+const whiskey = async () => {
+  await Whiskey.create({
+    name: 'BUCHANAN',
+    brand: 'BUCHANAN’S Delux',
+    type: 'SCOTCH',
+    description: 'Popular in the States as well as Latin America, Buchanan’s 12 Year is noted for its honey toast, spice, and fruit flavors.',
+    url_to_image: '',
+  });
+  await Whiskey.create({
+    name: 'RICH AND RARE CANADIAN ',
+    brand: 'R & R',
+    type: 'WHISKY',
+    description: 'What’s in a name? In the case of Rich & Rare, not much — the widely available whisky averages $6 a bottle. Nevertheless, this Sazerac-owned Canadian staple nabs a spot on the list.',
+    url_to_image: '',
+  });
+  await Whiskey.create({
+    name: 'KESSLER AMERICAN',
+    brand: 'KESSLER',
+    type: 'WHISKY',
+    description: 'This Beam Suntory-owned whiskey claims to be “smooth as silk,” which could contribute to its success in the American market.',
+    url_to_image: '',
+  });
+};
+whiskey();
 main();
