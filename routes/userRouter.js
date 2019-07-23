@@ -101,7 +101,7 @@ userRouter.get('/review', async (req, res) => {
 
 
 
-// SB - See all reviews of a user.
+// SB - See all reviews of a user
 
 userRouter.get('/:id/review', async (req, res) => {
   try {
@@ -118,7 +118,7 @@ userRouter.get('/:id/review', async (req, res) => {
 })
 
 
-// SB - Update a review.
+// SB - Update a review
 
 userRouter.put('/:user_id/review/:id', async (req, res) => {
   try {
