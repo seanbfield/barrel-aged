@@ -7,7 +7,9 @@ const whiskeyRouter = Router();
 // See all whiskeys: NB
 
 whiskeyRouter.get('/', async (req, res) => {
-  const AllWhiskey = await Whiskey.findAll();
+  const AllWhiskey = await Whiskey.findAll({
+    include: [Review]
+  });
   res.json(AllWhiskey);
 });
 

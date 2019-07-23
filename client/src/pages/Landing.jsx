@@ -11,15 +11,11 @@ class Landing extends React.Component {
 
   componentDidMount = async () => {
     const whiskeys = await fetchWhiskey();
-    const reviewArr = []
-    const whiskeyReviews = whiskeys.map(async (whiskey) => {
-      const review = await findWhiskeyReviews(whiskey.id);
-      reviewArr.push(review);
-    })
     this.setState({
-      whiskeys: whiskeyReviews,
+      whiskeys: whiskeys,
     })
   };
+
 
   render() {
     return (
