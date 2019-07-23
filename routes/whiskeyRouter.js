@@ -13,6 +13,15 @@ whiskeyRouter.get('/', async (req, res) => {
   res.json(AllWhiskey);
 });
 
+// Create aggregate score for one whiskey: BW
+
+// whiskeyRouter.get('/:id/aggregate', async (req, res) => {
+//   const { id } = req.params
+//   const whiskey = await Whiskey.findByPk(id);
+
+
+// })
+
 // MK – Index Whiskey Reviews
 
 whiskeyRouter.get('/:id/review', async (req, res) => {
