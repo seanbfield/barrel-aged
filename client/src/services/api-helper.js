@@ -45,3 +45,15 @@ export const editReview = async (userId, reviewId, data) => {
   return resp.data;
 }
 
+export const fetchWhiskey = async () => {
+  const resp = await axios.get(`${baseURL}/whiskey`);
+  console.log(res);
+  return resp.data;
+}
+
+export const postWhiskey = async (data) => {
+  getToken();
+  const resp = await axios.post(`${baseURL}/whiskey`, data);
+  return resp.data;
+}
+
