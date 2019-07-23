@@ -37,19 +37,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <nav>
-          <Link to='/home/register' onClick={this.handleRegister}>Register</Link>
-          <Link to='/home/login' onClick={this.handleLogin}>Log In</Link>
-        </nav>
-        <main>
-          <p>This is our homepage</p>
-          {this.state.register &&
-            <Route path='/home/register' render={() => <RegisterForm handleSubmit={this.goToUser} />} />}
-          {this.state.login &&
-            <Route path='/home/login' render={() => <LoginForm handleSubmit={this.goToUser} />} />}
-        </main>
-
-
+        <LoginForm />
       </div>
     )
   }
