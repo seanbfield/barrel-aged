@@ -23,7 +23,15 @@ class App extends React.Component {
           <Route path="/home" component={Home} />
           <Route path="/landing" component={Landing} />
           <Route path="/whiskey" component={Whiskey} />
-          <Route path="/user" component={User} />
+          <Route path="/user" render={() => (
+            <User
+              currentUser={{
+                id: 1,
+                username: "john",
+                email: "john@email.com"
+              }}
+            />
+          )} />
         </Switch>
       </>
     );

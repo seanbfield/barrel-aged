@@ -64,17 +64,29 @@ export const updateUser = async (userId, data) => {
 
 // WHISKEY
 
-// Show Whiskey
+//  NB -Show Whiskey
 export const fetchWhiskey = async () => {
   getToken();
   const resp = await api.get(`/whiskey`);
   return resp.data;
 }
 
-// Create Whiskey
+//NB - Create Whiskey
 export const postWhiskey = async (data) => {
   getToken();
   const resp = await api.post(`/whiskey`, data);
   return resp.data;
 }
 
+// NB - See a user 
+export const userByID = async (id) => {
+  try {
+    const resp = await api.get(`/users/${id}`);
+    const datas = resp.data
+    console.log(datas);
+
+    return datas;
+  } catch (e) {
+    console.log(e.message)
+  }
+}
