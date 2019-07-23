@@ -86,14 +86,14 @@ export const updateUser = async (userId, data) => {
 // Show Whiskey
 export const fetchWhiskey = async () => {
   getToken();
-  const resp = await axios.get(`/whiskey`);
+  const resp = await api.get(`/whiskey`);
   return resp.data;
 }
 
 // Create Whiskey
 export const postWhiskey = async (data) => {
   getToken();
-  const resp = await axios.post(`/whiskey`, data);
+  const resp = await api.post(`/whiskey`, data);
   return resp.data;
 }
 
