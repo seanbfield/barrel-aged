@@ -11,16 +11,15 @@ whiskeyRouter.get('/', async (req, res) => {
   res.json({ AllWhiskey });
 });
 
-// MK – See whiskey reviews.
+// MK – Index Whiskey Reviews
 
-whiskeyRouter.get('/:id/reviews', async (req, res) => {
+whiskeyRouter.get('/:id/review', async (req, res) => {
   const { id } = req.params;
-  const whiskeyReviews = await Review.getAll({
-    where: {
-      id,
-    },
+  const findReview = await Review.findAll({
+    where: { whiskeyId: id },
+    include: [{ model: Whiskey }],
   });
-  res.json({ whiskeyReviews });
+  res.json({ findReview });
 });
 
 // Create a whiskey: NB
