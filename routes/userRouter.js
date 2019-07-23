@@ -79,7 +79,7 @@ userRouter.delete('/:user_id/review/:id', async (req, res) => {
 })
 
 
-// Get user by ID
+// SB - Get user by ID
 userRouter.get('/:id', async (req, res) => {
   const specificUser = await User.findByPk(req.params.id)
   res.json({
@@ -89,8 +89,7 @@ userRouter.get('/:id', async (req, res) => {
 
 
 
-//Get all reviews
-
+//SB - Get all reviews
 userRouter.get('/review', async (req, res) => {
   const everyReview = await Review.findAll()
   console.log(everyReview);
@@ -100,23 +99,8 @@ userRouter.get('/review', async (req, res) => {
 })
 
 
-// Update a review:
-// Put: /users/:id/review/:rid
-// Verify, match user.id to review.user_id, update review from formdata -Sean
 
-userRouter.put('/users/:id/review/:rid', async (req, res, next) => {
-  Book.update(
-    { comment: req.body.comment },
-    { returning: true, where: { id: req.params.id } }
-  )
-    .then(function ([rowsUpdate, [updateReview]]) {
-      res.json(updateReview)
-    })
-    .catch(next)
-})
-
-
-// See all reviews of a user:
+// SB - See all reviews of a user.
 
 userRouter.get('/:id/review', async (req, res) => {
   try {
@@ -133,10 +117,31 @@ userRouter.get('/:id/review', async (req, res) => {
 })
 
 
+// SB - Update a review.
 
-userRouter.get('/verify', restrict, (req, res) => {
-  res.json(res.locals.user);
-});
+userRouter.put('/:user_id/review/:id', async (req, res) => {
+  try {
+
+    const id = req.params.id;
+    // const data = req.body;
+    await Review.update({
+      rating: req.body.rating,
+      comment: req.body.comment
+    }, {
+        where: {
+          id
+        },
+      });
+    const editReview = await Review.findByPk(id)
+    res.json(editReview);
+
+  } catch (e) {
+    console.log(e.message);
+    res.status(500).send(e.message);
+  }
+})
+
+
 
 module.exports = {
   userRouter,

@@ -18,7 +18,6 @@ app.use(bodyParser.json());
 app.use('/users', userRouter);
 
 // Routes
-app.use('/user', userRouter);
 app.use('/whiskey', whiskeyRouter);
 
 
