@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 const { userRouter } = require('./routes/userRouter');
-const { whiskeyRouter } = require('./routes/wiskeyRouter');
+const { whiskeyRouter } = require('./routes/whiskeyRouter');
 
 
 app.use(cors());
@@ -25,7 +25,6 @@ app.use('/whiskey', whiskeyRouter);
 app.get('/ping', (req, res) => {
   res.json('pong!');
 });
-
 
 
 app.listen(PORT, () => {

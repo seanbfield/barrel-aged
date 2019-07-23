@@ -125,7 +125,6 @@ userRouter.put('/:id', async (req, res) => {
       first_name: req.body.first_name,
       user_name: req.body.user_name,
       email: req.body.email,
-      password_digest: req.body.password_digest,
       location: req.body.location,
       fav_whiskey: req.body.fav_whiskey,
     }, {
