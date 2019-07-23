@@ -1,14 +1,25 @@
 const { Router } = require('express');
-const { User, Whiskey } = require('../models');
+const { User, Whiskey, Review } = require('../models');
 const { genToken, restrict } = require('../auth');
-
 
 const whiskeyRouter = Router();
 
 // See all whiskeys: NB
+
 whiskeyRouter.get('/', async (req, res) => {
   const AllWhiskey = await Whiskey.findAll();
   res.json({ AllWhiskey });
+});
+
+// MK – Index Whiskey Reviews
+
+whiskeyRouter.get('/:id/review', async (req, res) => {
+  const { id } = req.params;
+  const findReview = await Review.findAll({
+    where: { whiskeyId: id },
+    include: [{ model: Whiskey }],
+  });
+  res.json({ findReview });
 });
 
 // Create a whiskey: NB

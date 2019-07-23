@@ -1,6 +1,7 @@
 # Barrel-Aged
 
-![P3 Challenge](https://imgur.com/C9HvtYu.png)
+![P3 Challenge](https://imgur.com/P0kiHOf.png)
+![P3 Challenge](https://imgur.com/nB8w4Xt.png)
 <p style="text-align: center;"><em>P3 Challenge</em></p>
 
 ## Table of Contents
@@ -58,7 +59,7 @@ Digital assets used with full licensing and permission from [Death to Stock Phot
 
 ## ERD Model
 
-![ERD Model](https://imgur.com/AtoYeE3.png)
+![ERD Model](https://imgur.com/D7NUsJb.png)
 
 > ERD Model from Sean's [Draw.io](https://www.draw.io).
 
@@ -99,12 +100,12 @@ Digital assets used with full licensing and permission from [Death to Stock Phot
 
 - User Authentication & Password Hashing
 - Sequelize Resource Tables
-  - Users (Name, Email, Password; Image, Location)
-    - FK: Reviews
-  - Whiskeys (Name, Type, Description, Avg. Rating; Brand, Region, Image, ABV)
-    - FK: Reviews
-  - Reviews (Rating, Comment)
-    - FK: Users, Whiskeys
+  - Users (first_name, user_name, email, password, location, fav_whiskey)
+    - FK: User hasMany Reviews, User hasMany Whiskeys
+  - Whiskeys (name, brand, type, description, url_to_image)
+    - FK: Whiskey hasMany Reviews
+  - Reviews (rating, comment)
+    - FK: Review belongsTo Users, Review belongsTo Whiskeys
 - CRUD Functionality on All Resources via Axios
 - Core React Components
   - Pages
@@ -177,14 +178,19 @@ client
             |___ graphics
             
       |___ components
-            |___ AgeGate.jsx
-            |___ Home.jsx
             |___ LoginForm.jsx
             |___ RegisterForm.jsx
+            |___ ReviewForm.jsx
+
+      |___ pages
+            |___ AgeGate.jsx
+            |___ Landing.jsx
+            |___ Home.jsx
             |___ User.jsx
+            |___ Whiskey.jsx
 
       |___ services
-            |___
+            |___ api-helper.js
 
       |___ App.css
       |___ App.js
