@@ -6,10 +6,10 @@ const { genToken, restrict } = require('../auth');
 const SALT = 4;
 const userRouter = Router();
 
-// Create User (Signup) – BW
+// Create User (Signup) – BW/SB
 
 userRouter.post('/signup', async (req, res) => {
-  const { userName, password, email } = req.body;
+  const { user, password, email } = req.body;
   const pwDigest = await bcrypt.hash(password, SALT);
   const newUser = await User.create({
     user_name: userName,
@@ -28,11 +28,11 @@ userRouter.post('/signup', async (req, res) => {
 // Create Token (Login) – BW
 
 userRouter.post('/login', async (req, res) => {
-  const { userName, password } = req.body;
+  const { user, password } = req.body;
 
   const user = await User.findOne({
     where: {
-      user_name: userName,
+      user_name: user,
     },
   });
   const isValid = await bcrypt.compare(password, user.password_digest);
