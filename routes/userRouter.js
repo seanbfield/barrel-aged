@@ -45,7 +45,7 @@ userRouter.post('/login', async (req, res) => {
 });
 
 
-
+// BW - Create a review
 userRouter.post('/:user_id/whiskey/:id/review', async (req, res) => {
   // add 'restrict, ' before async when tokens are running on front end and uncomment userid check
   const user = await User.findByPk(req.params.user_id);
@@ -60,6 +60,7 @@ userRouter.post('/:user_id/whiskey/:id/review', async (req, res) => {
   // }
 })
 
+// BW - Delete a review
 userRouter.delete('/:user_id/review/:id', async (req, res) => {
   // add 'restrict, ' before async when tokens are running on front end and uncomment userid check
   const user = await User.findByPk(req.params.user_id);

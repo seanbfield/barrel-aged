@@ -3,6 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import axios from 'axios'
 import './App.css';
 
+
 import { findReview } from './services/api-helper'
 
 import AgeGate from './pages/AgeGate'
@@ -18,13 +19,11 @@ import ReviewForm from './components/RegisterForm';
 import glass from './assets/images/glass.png'
 
 class App extends React.Component {
-
-
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <Link to='/home'>Verify Age</Link>
+
           <img src={glass} width="200px" height="200px" className="App-logo" alt="logo" />
           <p>
             Welcome to Barrel-Aged React!
