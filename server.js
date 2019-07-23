@@ -15,9 +15,10 @@ const { whiskeyRouter } = require('./routes/wiskeyRouter');
 app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use('/users', userRouter);
+
 
 // Routes
+app.use('/users', userRouter);
 app.use('/whiskey', whiskeyRouter);
 
 

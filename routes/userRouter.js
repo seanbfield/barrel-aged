@@ -79,6 +79,7 @@ userRouter.delete('/:user_id/review/:id', async (req, res) => {
 })
 
 
+
 // SB - Get user by ID
 userRouter.get('/:id', async (req, res) => {
   const specificUser = await User.findByPk(req.params.id)
@@ -140,8 +141,6 @@ userRouter.put('/:user_id/review/:id', async (req, res) => {
     res.status(500).send(e.message);
   }
 })
-
-
 
 module.exports = {
   userRouter,
