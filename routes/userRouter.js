@@ -46,6 +46,9 @@ userRouter.post('/login', async (req, res) => {
   }
 });
 
+
+// BW - Create a review
+
 userRouter.post('/:user_id/whiskey/:id/review', async (req, res) => {
   // add 'restrict, ' before async when tokens are running on front end and uncomment userid check
   const user = await User.findByPk(req.params.user_id);
@@ -129,10 +132,10 @@ userRouter.put('/:id', async (req, res) => {
       location: req.body.location,
       fav_whiskey: req.body.fav_whiskey,
     }, {
-      where: {
-        id,
-      },
-    });
+        where: {
+          id,
+        },
+      });
     const updateUser = await User.findByPk(id);
     res.json(updateUser);
   } catch (e) {
@@ -151,10 +154,10 @@ userRouter.put('/:user_id/review/:id', async (req, res) => {
       rating: req.body.rating,
       comment: req.body.comment,
     }, {
-      where: {
-        id,
-      },
-    });
+        where: {
+          id,
+        },
+      });
     const editReview = await Review.findByPk(id);
     res.json(editReview);
   } catch (e) {
