@@ -18,8 +18,7 @@ class App extends React.Component {
     this.state = {
       currentView: 'login',
       loginFormData: {
-        user: '',
-        name: '',
+        username: '',
         password: '',
       },
       registerFormData: {
@@ -64,6 +63,41 @@ class App extends React.Component {
     }
   }
 
+  //SB - Handle Login Change
+
+  handleLoginFormChange = (ev) => {
+    const { name, value } = ev.target;
+    this.setState(prevState => ({
+      loginFormData: {
+        ...prevState.loginFormData,
+        [name]: value,
+      },
+    }));
+  }
+
+
+  // SB - Handle Login Submit
+
+
+  handleLoginSubmit = async (ev) => {
+    try {
+      ev.preventDefault();
+      const user = await userLogin(this.state.loginFormData);
+      console.log(user);
+      this.setState({
+        loginFormData: {
+          username: '',
+          password: '',
+        },
+        currentUser: user,
+        currentView: 'landing'
+      });
+      this.props.history.push('/landing')
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
 
   async componentDidMount() {
     const data = await axios.get('http://localhost:3000/users');
@@ -80,10 +114,12 @@ class App extends React.Component {
           <Route path="/home" render={() => (
             <Home
               registerForm={this.state.registerFormData}
-              handleSubmit={this.handleRegisterSubmit}
-              handleChange={this.handleRegisterFormChange}
+              handleRegisterSubmit={this.handleRegisterSubmit}
+              handleRegisterFormChange={this.handleRegisterFormChange}
 
-
+              loginForm={this.state.loginFormData}
+              handleLoginSubmit={this.handleLoginSubmit}
+              handleLoginFormChange={this.handleLoginFormChange}
             />
 
           )} />

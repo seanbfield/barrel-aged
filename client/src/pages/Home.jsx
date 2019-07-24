@@ -11,17 +11,14 @@ import LoginForm from '../components/LoginForm';
 class Home extends React.Component {
   render() {
     return (
-      <div>
-        <Header />
-        <>
-          <RegisterForm
-            {...this.props}
-          />
-          <LoginForm
-            {...this.props}
-          />
-        </>
-      </div>
+      <>
+        <RegisterForm
+          {...this.props}
+        />
+        <LoginForm
+          {...this.props}
+        />
+      </>
     )
   }
 }

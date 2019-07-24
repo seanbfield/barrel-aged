@@ -3,7 +3,7 @@ import React from 'react'
 export default (props) => (
   <>
     <h3>Register Form</h3>
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={props.handleRegisterSubmit}>
       <label
         htmlFor="name">Name</label>
 
@@ -12,7 +12,7 @@ export default (props) => (
         name="username"
         value={props.registerForm.username}
         id="name"
-        onChange={props.handleChange} />
+        onChange={props.handleRegisterFormChange} />
 
       <label
         htmlFor="password">Password</label>
@@ -21,7 +21,7 @@ export default (props) => (
         name="password"
         value={props.registerForm.password}
         id="password"
-        onChange={props.handleChange} />
+        onChange={props.handleRegisterFormChange} />
 
       <label
         htmlFor="email">Email</label>
@@ -30,10 +30,9 @@ export default (props) => (
         name="email"
         value={props.registerForm.email}
         id="email"
-        onChange={props.handleChange} />
+        onChange={props.handleRegisterFormChange} />
 
       <input type="submit" value="Sign Up!" />
     </form>
-    <h1>Empty</h1>
   </>
 );

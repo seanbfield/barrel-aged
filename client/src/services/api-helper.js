@@ -34,10 +34,13 @@ export const userSignup = async (userInfo) => {
   return (resp.data);
 }
 
+// LOGIN
 
-export const userLogin = async (userData) => {
-  const resp = await api.post('/users/login', userData);
+export const userLogin = async (userInfo) => {
+  const resp = await api.post('/users/login', userInfo);
   console.log(resp);
+  // const { username, token } = resp.data;
+  // storeToken(token);
   return (resp)
 }
 

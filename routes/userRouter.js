@@ -8,25 +8,22 @@ const userRouter = Router();
 
 // Create User (Signup) – BW/SB
 
-userRouter.post('/signup', async (req, res, next) => {
-  try {
-    const { user, password, email } = req.body;
-    const pwDigest = await bcrypt.hash(password, SALT);
-    const newUser = await User.create({
-      username: user,
-      password_digest: pwDigest,
-      email,
-    });
-    const tokenData = {
-      username: newUser.username,
-      email: newUser.email,
-      id: newUser.id,
-    };
-    const token = await genToken(tokenData);
-    res.json(token);
-  } catch (e) {
-    next(e);
-  }
+
+userRouter.post('/signup', async (req, res) => {
+  const { username, password, email } = req.body;
+  const pwDigest = await bcrypt.hash(password, SALT);
+  const newUser = await User.create({
+    username: username,
+    password_digest: pwDigest,
+    email,
+  });
+  const tokenData = {
+    username: newUser.username,
+    email: newUser.email,
+    id: newUser.id,
+  };
+  const token = await genToken(tokenData);
+  res.json(token);
 });
 
 // Create Token (Login) – BW
@@ -43,9 +40,10 @@ userRouter.post('/login', async (req, res, next) => {
     if (isValid) {
       const token = genToken(req.body);
       res.json(token);
-    } else res.status(401).send('Not Authorized');
+    } else res.status(401).send('Invalid credentials');
   } catch (e) {
-    next(e);
+    console.log(e.message);
+    res.status(401).send('Invalid credentials');
   }
 });
 
