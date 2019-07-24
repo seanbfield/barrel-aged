@@ -8,42 +8,50 @@ const userRouter = Router();
 
 // Create User (Signup) – BW/SB
 
-userRouter.post('/signup', async (req, res) => {
-  const { user, password, email } = req.body;
-  const pwDigest = await bcrypt.hash(password, SALT);
-  const newUser = await User.create({
-    username: user,
-    password_digest: pwDigest,
-    email,
-  });
-  const tokenData = {
-    username: newUser.username,
-    email: newUser.email,
-    id: newUser.id,
-  };
-  const token = await genToken(tokenData);
-  res.json(token);
+userRouter.post('/signup', async (req, res, next) => {
+  try {
+    const { user, password, email } = req.body;
+    const pwDigest = await bcrypt.hash(password, SALT);
+    const newUser = await User.create({
+      username: user,
+      password_digest: pwDigest,
+      email,
+    });
+    const tokenData = {
+      username: newUser.username,
+      email: newUser.email,
+      id: newUser.id,
+    };
+    const token = await genToken(tokenData);
+    res.json(token);
+  } catch (e) {
+    next(e);
+  }
 });
 
 // Create Token (Login) – BW
 
-userRouter.post('/login', async (req, res) => {
-  const { username, password } = req.body;
-  const user = await User.findOne({
-    where: {
-      username: username,
-    },
-  });
-  const isValid = await bcrypt.compare(password, user.password_digest);
-  if (isValid) {
-    const token = genToken(req.body);
-    res.json(token);
-  } else res.status(401).send('Not Authorized');
+userRouter.post('/login', async (req, res, next) => {
+  try {
+    const { username, password } = req.body;
+    const user = await User.findOne({
+      where: {
+        username: username,
+      },
+    });
+    const isValid = await bcrypt.compare(password, user.password_digest);
+    if (isValid) {
+      const token = genToken(req.body);
+      res.json(token);
+    } else res.status(401).send('Not Authorized');
+  } catch (e) {
+    next(e);
+  }
 });
 
 // Index Users – BW
 
-userRouter.get('/', async (req, res) => {
+userRouter.get('/', async (req, res, next) => {
   try {
     const users = await User.findAll();
     res.json(users);
@@ -54,7 +62,7 @@ userRouter.get('/', async (req, res) => {
 
 // Show User – SB
 
-userRouter.get('/:id', async (req, res) => {
+userRouter.get('/:id', async (req, res, next) => {
   try {
     const specificUser = await User.findByPk(req.params.id);
     res.json(specificUser);
@@ -65,7 +73,7 @@ userRouter.get('/:id', async (req, res) => {
 
 // Update User – MK
 
-userRouter.put('/:id', async (req, res) => {
+userRouter.put('/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
     await User.update({
@@ -88,7 +96,7 @@ userRouter.put('/:id', async (req, res) => {
 
 // Create Review - BW
 
-userRouter.post('/:user_id/whiskey/:id/review', async (req, res) => {
+userRouter.post('/:user_id/whiskey/:id/review', async (req, res, next) => {
   try {
     const user = await User.findByPk(req.params.user_id);
     const whiskey = await Whiskey.findByPk(req.params.id);
@@ -103,7 +111,7 @@ userRouter.post('/:user_id/whiskey/:id/review', async (req, res) => {
 
 // Index Reviews - SB
 
-userRouter.get('/review', async (req, res) => {
+userRouter.get('/review', async (req, res, next) => {
   try {
     const everyReview = await Review.findAll();
     console.log(everyReview);
@@ -115,7 +123,7 @@ userRouter.get('/review', async (req, res) => {
 
 // Index User's Reviews - SB
 
-userRouter.get('/:id/review', async (req, res) => {
+userRouter.get('/:id/review', async (req, res, next) => {
   try {
     const { id } = req.params;
     const findReview = await Review.findAll({
@@ -130,7 +138,7 @@ userRouter.get('/:id/review', async (req, res) => {
 
 // Update Review - SB
 
-userRouter.put('/:user_id/review/:id', async (req, res) => {
+userRouter.put('/:user_id/review/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
     await Review.update({
@@ -150,7 +158,7 @@ userRouter.put('/:user_id/review/:id', async (req, res) => {
 
 // Delete Review - BW
 
-userRouter.delete('/:user_id/review/:id', async (req, res) => {
+userRouter.delete('/:user_id/review/:id', async (req, res, next) => {
   try {
     const user = await User.findByPk(req.params.user_id);
     const review = await Review.findByPk(req.params.id);
