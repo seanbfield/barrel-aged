@@ -9,10 +9,11 @@ const userRouter = Router();
 // Create User (Signup) – BW
 
 userRouter.post('/signup', async (req, res) => {
-  const { userName, password, email } = req.body;
+  debugger;
+  const { user, password, email } = req.body;
   const pwDigest = await bcrypt.hash(password, SALT);
   const newUser = await User.create({
-    user_name: userName,
+    user_name: user,
     password_digest: pwDigest,
     email,
   });
@@ -67,10 +68,10 @@ userRouter.put('/:id', async (req, res) => {
     location: req.body.location,
     fav_whiskey: req.body.fav_whiskey,
   }, {
-    where: {
-      id,
-    },
-  });
+      where: {
+        id,
+      },
+    });
   const updateUser = await User.findByPk(id);
   res.json(updateUser);
 });
@@ -113,10 +114,10 @@ userRouter.put('/:user_id/review/:id', async (req, res) => {
     rating: req.body.rating,
     comment: req.body.comment,
   }, {
-    where: {
-      id,
-    },
-  });
+      where: {
+        id,
+      },
+    });
   const editReview = await Review.findByPk(id);
   res.json(editReview);
 });

@@ -1,12 +1,38 @@
-import React from 'react';
+import React from 'react'
 
-const RegisterForm = (props) => {
-  return (
-    <div>
-      <p>This is the register form</p>
-      <button onClick={props.handleSubmit}>Register</button>
-    </div>
-  )
-}
+export default (props) => (
+  <>
+    <h3>Register Form</h3>
+    <form onSubmit={props.handleSubmit}>
+      <label
+        htmlFor="name">Name</label>
 
-export default RegisterForm;
+      <input
+        type="text"
+        name="name"
+        value={props.registerForm.name}
+        id="name"
+        onChange={props.handleChange} />
+
+      <label
+        htmlFor="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        value={props.registerForm.password}
+        id="password"
+        onChange={props.handleChange} />
+
+      <label
+        htmlFor="email">Email</label>
+      <input
+        type="text"
+        name="email"
+        value={props.registerForm.email}
+        id="email"
+        onChange={props.handleChange} />
+
+      <input type="submit" value="Sign Up!" />
+    </form>
+  </>
+);
