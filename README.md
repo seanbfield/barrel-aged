@@ -88,7 +88,6 @@ Digital assets used with full licensing and permission from [Death to Stock Phot
 
 > Wireframes from Brian's [DocDroid](https://www.docdroid.net/4njapHK/barrelaged.pdf).
 
-
 <br>
 <br>
 
