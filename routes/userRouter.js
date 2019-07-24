@@ -34,7 +34,7 @@ userRouter.post('/login', async (req, res) => {
       username: username,
     },
   });
-  const isValid = await bcrypt.compare(password, email.password_digest);
+  const isValid = await bcrypt.compare(password, user.password_digest);
   if (isValid) {
     const token = genToken(req.body);
     res.json(token);
