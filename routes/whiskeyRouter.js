@@ -28,7 +28,9 @@ whiskeyRouter.get('/:id', async (req, res) => {
     where: {
       id,
     },
-    include: [Review],
+    include: [
+      Review,
+    ],
   });
   res.json(whiskey);
 });
