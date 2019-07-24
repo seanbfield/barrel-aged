@@ -25,12 +25,20 @@ const getToken = () => {
   api.defaults.headers.common.authorization = `Bearer ${token}`;
 }
 
+
 //SIGNUP
 
 export const userSignup = async (userInfo) => {
   const resp = await api.post(`/users/signup/`, userInfo);
   storeToken(resp.data)
   return (resp.data);
+}
+
+
+export const userLogin = async (userData) => {
+  const resp = await api.post('/users/login', userData);
+  console.log(resp);
+  return (resp)
 }
 
 

@@ -6,7 +6,7 @@ const { genToken, restrict } = require('../auth');
 const SALT = 4;
 const userRouter = Router();
 
-// Create User (Signup) – BW
+// Create User (Signup) – BW/SB
 
 userRouter.post('/signup', async (req, res) => {
   const { user, password, email } = req.body;
@@ -29,13 +29,12 @@ userRouter.post('/signup', async (req, res) => {
 
 userRouter.post('/login', async (req, res) => {
   const { username, password } = req.body;
-
   const user = await User.findOne({
     where: {
       username: username,
     },
   });
-  const isValid = await bcrypt.compare(password, user.password_digest);
+  const isValid = await bcrypt.compare(password, email.password_digest);
   if (isValid) {
     const token = genToken(req.body);
     res.json(token);

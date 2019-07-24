@@ -5,7 +5,6 @@ const main = async () => {
     username: 'Sterling Archer',
     email: 'archer@isis.gov',
     password_digest: 'lana',
-
   });
 
   const userB = await User.create({
