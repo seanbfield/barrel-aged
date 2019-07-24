@@ -18,6 +18,14 @@ app.use(bodyParser.json());
 app.use('/users', userRouter);
 app.use('/whiskey', whiskeyRouter);
 
+app.use((e, req, res, next) => {
+  if (e) {
+    console.log(e);
+    res.status(500).send(e.message);
+  }
+  next();
+});
+
 app.listen(PORT, () => {
   console.log(`Barrel-Aged server is listening on PORT ${PORT}.`);
 });
