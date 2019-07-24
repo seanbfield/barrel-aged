@@ -4,9 +4,9 @@
   "description": "![alt text](https://pbs.twimg.com/profile_images/690117532469084160/WZshTTrI_400x400.png)",
   "main": "models.js",
   "dependencies": {
+    "axios": "^0.19.0",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
-    "axios": "^0.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
@@ -15,7 +15,6 @@
     "pg": "^7.11.0",
     "sequelize": "^5.10.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
@@ -27,10 +26,16 @@
     "type": "git",
     "url": "git+https://github.com/seanbfield/barrel-aged.git"
   },
-  "author": "Nazrul Babu",
+  "author": "Sean Blanchfield",
+  "contributors": [
+    "Sean Blanchfield",
+    "Nazrul Babu",
+    "Misha Kessler",
+    "Brian Weitz"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/seanbfield/barrel-aged/issues"
   },
-  "homepage": "https://github.com/seanbfield/barrel-aged#readme"
+  "homepage": "https://github.com/seanbfield/barrel-aged#readme",
 }
