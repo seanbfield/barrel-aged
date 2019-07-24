@@ -13,15 +13,6 @@ export const ping = async () => {
 };
 
 
-
-//SIGNUP
-
-export const userSignup = async (userInfo) => {
-  const resp = await api.post(`/users/signup/`, userInfo);
-  console.log(resp);
-  return (resp);
-}
-
 // AUTH
 
 const storeToken = (token) => {
@@ -32,6 +23,22 @@ const storeToken = (token) => {
 const getToken = () => {
   const token = localStorage.getItem('authToken');
   api.defaults.headers.common.authorization = `Bearer ${token}`;
+}
+
+
+//SIGNUP
+
+export const userSignup = async (userInfo) => {
+  const resp = await api.post(`/users/signup/`, userInfo);
+  storeToken(resp.data)
+  return (resp.data);
+}
+
+
+export const userLogin = async (userData) => {
+  const resp = await api.post('/users/login', userData);
+  console.log(resp);
+  return (resp)
 }
 
 
@@ -83,17 +90,39 @@ export const updateUser = async (userId, data) => {
 
 // WHISKEY
 
-// Show Whiskey
+
+// Show All Whiskeys
 export const fetchWhiskey = async () => {
   getToken();
   const resp = await api.get(`/whiskey`);
   return resp.data;
 }
 
-// Create Whiskey
+
+// Show One Whiskey
+export const showWhiskey = async (id) => {
+  getToken();
+  const resp = await api.get(`/whiskey/${id}`);
+  return resp.data;
+}
+
+
+//NB - Create Whiskey
 export const postWhiskey = async (data) => {
   getToken();
   const resp = await api.post(`/whiskey`, data);
   return resp.data;
 }
 
+// NB - See a user 
+export const userByID = async (id) => {
+  try {
+    const resp = await api.get(`/users/${id}`);
+    const datas = resp.data
+    console.log(datas);
+
+    return datas;
+  } catch (e) {
+    console.log(e.message)
+  }
+}

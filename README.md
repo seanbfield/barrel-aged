@@ -131,7 +131,7 @@ V2
 
 - User Authentication & Password Hashing
 - Sequelize Resource Tables
-  - Users (first_name, user_name, email, password, location, fav_whiskey)
+  - Users (first_name, username, email, password, location, fav_whiskey)
     - FK: User hasMany Reviews, User hasMany Whiskeys
   - Whiskeys (name, brand, type, description, url_to_image)
     - FK: Whiskey hasMany Reviews
