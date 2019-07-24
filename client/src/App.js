@@ -26,7 +26,15 @@ class App extends React.Component {
             <Whiskey
               id={props.match.params.id} />
           )} />
-          <Route path="/user" component={User} />
+          <Route path="/user" render={() => (
+            <User
+              currentUser={{
+                id: 1,
+                username: "john",
+                email: "john@email.com"
+              }}
+            />
+          )} />
         </Switch>
       </>
     );
