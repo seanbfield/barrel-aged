@@ -32,8 +32,6 @@ class ReviewForm extends React.Component {
             onChange={this.handleChange}
             value={this.state.review}
           />
-
-
           <select name="rating" onChange={this.handleChange}>
             <option> -- </option>
             <option value='1'>1</option>
