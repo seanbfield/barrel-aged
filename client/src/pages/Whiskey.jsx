@@ -1,6 +1,7 @@
 import React from 'react';
 import { showWhiskey } from '../services/api-helper';
 import ReviewForm from '../components/ReviewForm';
+import { createReview } from '../services/api-helper';
 
 class Whiskey extends React.Component {
   constructor(props) {
@@ -16,6 +17,17 @@ class Whiskey extends React.Component {
     this.setState({
       whiskey: whiskey,
     })
+  };
+
+  handleSubmit = async (reviewInfo) => {
+    // Add the user id here 
+    const newReview = await createReview(1, this.state.whiskey.id, reviewInfo);
+    this.setState((prevState) => ({
+      whiskey: {
+        ...prevState.whiskey,
+        reviews: [...prevState.whiskey.reviews, newReview]
+      }
+    }));
   };
 
   showReviewForm = () => {
@@ -40,7 +52,9 @@ class Whiskey extends React.Component {
           ))}
         </div>}
         <button onClick={this.showReviewForm}>Add a review</button>
-        {this.state.showForm && <ReviewForm />}
+        {this.state.showForm && <ReviewForm
+          handleSubmit={this.handleSubmit}
+        />}
       </main>
     )
   }
