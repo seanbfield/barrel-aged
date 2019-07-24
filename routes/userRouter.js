@@ -9,7 +9,6 @@ const userRouter = Router();
 // Create User (Signup) – BW
 
 userRouter.post('/signup', async (req, res) => {
-  debugger;
   const { user, password, email } = req.body;
   const pwDigest = await bcrypt.hash(password, SALT);
   const newUser = await User.create({

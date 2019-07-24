@@ -13,15 +13,6 @@ export const ping = async () => {
 };
 
 
-
-//SIGNUP
-
-export const userSignup = async (userInfo) => {
-  const resp = await api.post(`/users/signup/`, userInfo);
-  console.log(resp);
-  return (resp);
-}
-
 // AUTH
 
 const storeToken = (token) => {
@@ -32,6 +23,14 @@ const storeToken = (token) => {
 const getToken = () => {
   const token = localStorage.getItem('authToken');
   api.defaults.headers.common.authorization = `Bearer ${token}`;
+}
+
+//SIGNUP
+
+export const userSignup = async (userInfo) => {
+  const resp = await api.post(`/users/signup/`, userInfo);
+  storeToken(resp.data)
+  return (resp.data);
 }
 
 
@@ -83,10 +82,17 @@ export const updateUser = async (userId, data) => {
 
 // WHISKEY
 
-// Show Whiskey
+// Show All Whiskeys
 export const fetchWhiskey = async () => {
   getToken();
   const resp = await api.get(`/whiskey`);
+  return resp.data;
+}
+
+// Show One Whiskey
+export const showWhiskey = async (id) => {
+  getToken();
+  const resp = await api.get(`/whiskey/${id}`);
   return resp.data;
 }
 
