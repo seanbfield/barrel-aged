@@ -12,7 +12,7 @@ userRouter.post('/signup', async (req, res) => {
   const { user, password, email } = req.body;
   const pwDigest = await bcrypt.hash(password, SALT);
   const newUser = await User.create({
-    user_name: userName,
+    user_name: user,
     password_digest: pwDigest,
     email,
   });
@@ -28,14 +28,13 @@ userRouter.post('/signup', async (req, res) => {
 // Create Token (Login) – BW
 
 userRouter.post('/login', async (req, res) => {
-  const { user, password } = req.body;
-
-  const user = await User.findOne({
+  const { email, password } = req.body;
+  const email = await User.findOne({
     where: {
-      user_name: user,
+      email: email.id,
     },
   });
-  const isValid = await bcrypt.compare(password, user.password_digest);
+  const isValid = await bcrypt.compare(password, email.password_digest);
   if (isValid) {
     const token = genToken(req.body);
     res.json(token);
@@ -67,10 +66,10 @@ userRouter.put('/:id', async (req, res) => {
     location: req.body.location,
     fav_whiskey: req.body.fav_whiskey,
   }, {
-    where: {
-      id,
-    },
-  });
+      where: {
+        id,
+      },
+    });
   const updateUser = await User.findByPk(id);
   res.json(updateUser);
 });
@@ -113,10 +112,10 @@ userRouter.put('/:user_id/review/:id', async (req, res) => {
     rating: req.body.rating,
     comment: req.body.comment,
   }, {
-    where: {
-      id,
-    },
-  });
+      where: {
+        id,
+      },
+    });
   const editReview = await Review.findByPk(id);
   res.json(editReview);
 });
