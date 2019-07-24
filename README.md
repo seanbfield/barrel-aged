@@ -11,6 +11,8 @@
 - [Design](#design)
   - [Sitemap](#sitemap)
   - [Wireframes](#wireframes)
+    - [Desktop](#desktop)
+    - [Mobile](#mobile)
   - [Branding](#branding)
 - [Development](#development)
   - [Functional Goals](#functional-goals)
