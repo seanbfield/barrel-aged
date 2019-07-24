@@ -9,10 +9,10 @@ const userRouter = Router();
 // Create User (Signup) – BW/SB
 
 userRouter.post('/signup', async (req, res) => {
-  const { user, password, email } = req.body;
+  const { username, password, email } = req.body;
   const pwDigest = await bcrypt.hash(password, SALT);
   const newUser = await User.create({
-    username: user,
+    username: username,
     password_digest: pwDigest,
     email,
   });
@@ -28,17 +28,23 @@ userRouter.post('/signup', async (req, res) => {
 // Create Token (Login) – BW
 
 userRouter.post('/login', async (req, res) => {
-  const { username, password } = req.body;
-  const user = await User.findOne({
-    where: {
-      username: username,
-    },
-  });
-  const isValid = await bcrypt.compare(password, user.password_digest);
-  if (isValid) {
-    const token = genToken(req.body);
-    res.json(token);
-  } else res.status(401).send('Not Authorized');
+  try {
+    const { username, password } = req.body;
+    const user = await User.findOne({
+      where: {
+        username: username,
+      },
+    });
+    debugger;
+    const isValid = await bcrypt.compare(password, user.password_digest);
+    if (isValid) {
+      const token = genToken(req.body);
+      res.json(token);
+    } else res.status(401).send('Invalid credentials');
+  } catch (e) {
+    console.log(e.message);
+    res.status(401).send('Invalid credentials');
+  }
 });
 
 // Index Users – BW
