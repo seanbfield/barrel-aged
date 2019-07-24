@@ -2,14 +2,14 @@ const { User, Whiskey, Review } = require('./models');
 
 const main = async () => {
   const userA = await User.create({
-    user_name: 'Sterling Archer',
+    username: 'Sterling Archer',
     email: 'archer@isis.gov',
     password_digest: 'lana',
 
   });
 
   const userB = await User.create({
-    user_name: 'Grounds Keeper Willy',
+    username: 'Grounds Keeper Willy',
     email: 'willy@springfieldelem.com',
     password_digest: 'aye',
 
