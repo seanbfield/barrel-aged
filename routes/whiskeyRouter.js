@@ -21,6 +21,20 @@ whiskeyRouter.get('/', async (req, res) => {
   res.json(AllWhiskey);
 });
 
+// Show one Whiskey - BW
+whiskeyRouter.get('/:id', async (req, res) => {
+  const { id } = req.params;
+  const whiskey = await Whiskey.findOne({
+    where: {
+      id,
+    },
+    include: [
+      Review,
+    ],
+  });
+  res.json(whiskey);
+});
+
 // Index Whiskey's Reviews - MK
 
 whiskeyRouter.get('/:id/review', async (req, res) => {

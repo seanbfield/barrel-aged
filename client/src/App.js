@@ -22,7 +22,10 @@ class App extends React.Component {
           <Route exact path="/" component={AgeGate} />
           <Route path="/home" component={Home} />
           <Route path="/landing" component={Landing} />
-          <Route path="/whiskey" component={Whiskey} />
+          <Route path="/whiskey/:id" render={(props) => (
+            <Whiskey
+              id={props.match.params.id} />
+          )} />
           <Route path="/user" render={() => (
             <User
               currentUser={{
