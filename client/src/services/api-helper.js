@@ -45,9 +45,9 @@ export const userLogin = async (userData) => {
 // REVIEW
 
 // – Create Review
-export const createReview = async (userId, whiskeyId, data) => {
+export const createReview = async (whiskeyId, data) => {
   getToken();
-  const resp = await api.post(`/users/${userId}/whiskey/${whiskeyId}/review`, data);
+  const resp = await api.post(`/users/whiskey/${whiskeyId}/review`, data);
   return (resp.data);
 }
 
