@@ -88,8 +88,19 @@ class App extends React.Component {
 
           )} />
           <Route path="/landing" component={Landing} />
-          <Route path="/whiskey" component={Whiskey} />
-          <Route path="/user" component={User} />
+          <Route path="/whiskey/:id" render={(props) => (
+            <Whiskey
+              id={props.match.params.id} />
+          )} />
+          <Route path="/user" render={() => (
+            <User
+              currentUser={{
+                id: 1,
+                username: "john",
+                email: "john@email.com"
+              }}
+            />
+          )} />
         </Switch>
       </>
     );
