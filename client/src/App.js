@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import axios from 'axios'
 import './App.css';
 
@@ -23,7 +23,7 @@ class App extends React.Component {
         password: '',
       },
       registerFormData: {
-        user: '',
+        username: '',
         email: '',
         password: '',
       }
@@ -51,7 +51,7 @@ class App extends React.Component {
       console.log(user);
       this.setState({
         registerForm: {
-          user: '',
+          username: '',
           password: '',
           email: ''
         },
@@ -64,36 +64,6 @@ class App extends React.Component {
     }
   }
 
-
-  // SB - Handle Login Change
-
-  handleLoginFormChange = (ev) => {
-    const { name, value } = ev.target;
-    this.setState(prevState => ({
-      loginFormData: {
-        ...prevState.loginFormData,
-        [name]: value,
-      },
-    }));
-  }
-
-  // SB - Handle Login Submit
-
-
-  handleLoginSubmit = async (ev) => {
-    ev.preventDefault();
-    const user = await userLogin(this.state.loginFormData);
-    console.log(user);
-    this.setState({
-      loginFormData: {
-        email: '',
-        password: '',
-      },
-      currentUser: user,
-      currentView: 'landing'
-    })
-    console.log(user);
-  }
 
   async componentDidMount() {
     const data = await axios.get('http://localhost:3000/users');
@@ -113,9 +83,7 @@ class App extends React.Component {
               handleSubmit={this.handleRegisterSubmit}
               handleChange={this.handleRegisterFormChange}
 
-              loginForm={this.state.loginFormData}
-              handleSubmit={this.handleLoginSubmit}
-              handleChange={this.handleLoginFormChange}
+
             />
 
           )} />
@@ -128,4 +96,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(App);

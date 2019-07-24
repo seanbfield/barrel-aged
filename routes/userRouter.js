@@ -12,12 +12,12 @@ userRouter.post('/signup', async (req, res) => {
   const { user, password, email } = req.body;
   const pwDigest = await bcrypt.hash(password, SALT);
   const newUser = await User.create({
-    user_name: user,
+    username: user,
     password_digest: pwDigest,
     email,
   });
   const tokenData = {
-    user_name: newUser.userName,
+    username: newUser.username,
     email: newUser.email,
     id: newUser.id,
   };
@@ -28,10 +28,10 @@ userRouter.post('/signup', async (req, res) => {
 // Create Token (Login) – BW
 
 userRouter.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-  const email = await User.findOne({
+  const { username, password } = req.body;
+  const user = await User.findOne({
     where: {
-      email: email.id,
+      username: username,
     },
   });
   const isValid = await bcrypt.compare(password, email.password_digest);
@@ -61,7 +61,7 @@ userRouter.put('/:id', async (req, res) => {
   const { id } = req.params;
   await User.update({
     first_name: req.body.first_name,
-    user_name: req.body.user_name,
+    username: req.body.username,
     email: req.body.email,
     location: req.body.location,
     fav_whiskey: req.body.fav_whiskey,

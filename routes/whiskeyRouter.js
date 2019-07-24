@@ -16,7 +16,7 @@ whiskeyRouter.post('/', async (req, res) => {
 
 whiskeyRouter.get('/', async (req, res) => {
   const AllWhiskey = await Whiskey.findAll({
-    include: [Review]
+    include: [Review],
   });
   res.json(AllWhiskey);
 });
