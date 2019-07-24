@@ -9,8 +9,8 @@ export default (props) => (
 
       <input
         type="text"
-        name="name"
-        value={props.registerForm.name}
+        name="username"
+        value={props.registerForm.username}
         id="name"
         onChange={props.handleChange} />
 
@@ -34,5 +34,6 @@ export default (props) => (
 
       <input type="submit" value="Sign Up!" />
     </form>
+    <h1>Empty</h1>
   </>
 );

@@ -6,18 +6,18 @@ const { genToken, restrict } = require('../auth');
 const SALT = 4;
 const userRouter = Router();
 
-// Create User (Signup) – BW
+// Create User (Signup) – BW/SB
 
 userRouter.post('/signup', async (req, res) => {
   const { user, password, email } = req.body;
   const pwDigest = await bcrypt.hash(password, SALT);
   const newUser = await User.create({
-    user_name: user,
+    username: user,
     password_digest: pwDigest,
     email,
   });
   const tokenData = {
-    user_name: newUser.userName,
+    username: newUser.username,
     email: newUser.email,
     id: newUser.id,
   };
@@ -28,11 +28,10 @@ userRouter.post('/signup', async (req, res) => {
 // Create Token (Login) – BW
 
 userRouter.post('/login', async (req, res) => {
-  const { userName, password } = req.body;
-
+  const { username, password } = req.body;
   const user = await User.findOne({
     where: {
-      user_name: userName,
+      username: username,
     },
   });
   const isValid = await bcrypt.compare(password, user.password_digest);
@@ -71,7 +70,7 @@ userRouter.put('/:id', async (req, res) => {
     const { id } = req.params;
     await User.update({
       first_name: req.body.first_name,
-      user_name: req.body.user_name,
+      username: req.body.username,
       email: req.body.email,
       location: req.body.location,
       fav_whiskey: req.body.fav_whiskey,

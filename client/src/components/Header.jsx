@@ -1,8 +1,9 @@
 //Include in pages after login
 
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { useSpring, animated } from 'react-spring'
+import React from 'react';
+
+import { Link } from 'react-router-dom';
+import { useSpring, animated } from 'react-spring';
 
 function Header() {
   const props = useSpring({ opacity: 2, from: { opacity: 0 } })
@@ -15,9 +16,6 @@ function Header() {
       <Link to="/home">registration</Link>
     </div>
   </animated.div>
-
-
-
 }
 
 export default Header
