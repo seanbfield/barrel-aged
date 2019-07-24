@@ -1,5 +1,6 @@
 import React from 'react';
 import { fetchWhiskey } from '../services/api-helper';
+import { withRouter } from 'react-router-dom';
 
 class Landing extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class Landing extends React.Component {
       whiskey.reviews.map(review => {
         counter += review.rating;
       });
-      const agg = counter / whiskey.reviews.length;
+      const agg = Math.round(counter / whiskey.reviews.length);
       this.setState(prevState => ({
         aggRatings: [...prevState.aggRatings, {
           id: whiskey.id,
@@ -32,6 +33,15 @@ class Landing extends React.Component {
         }]
       }));
     });
+  };
+
+  sendToWhiskey = (id) => {
+    this.props.history.push(`/whiskey/${id}`);
+  };
+
+  logOut = () => {
+    localStorage.clear();
+    this.props.history.push('/home');
   };
 
   render() {
@@ -48,12 +58,13 @@ class Landing extends React.Component {
             <p>{whiskey.type}</p>
             <p>{whiskey.description}</p>
             {whiskey.urlToImage && <img src={whiskey.urlToImage} />}
-            <button>Review this whiskey</button>
+            <button onClick={() => { this.sendToWhiskey(whiskey.id) }}>Review this whiskey</button>
           </div>
         ))}
+        <button onClick={this.logOut}>Log Out</button>
       </div>
     )
   }
 }
 
-export default Landing;
+export default withRouter(Landing);
