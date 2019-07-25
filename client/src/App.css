@@ -1,87 +1,117 @@
-/* Default React CSS */
+/************** Global **************/
 
-.app-main {
-  text-align: center;
+html {
+  scroll-behavior: smooth;
 }
 
-.app-main-header {
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  text-align: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
 }
 
-.header {
-  display: flex;
-  height: 48px;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 10px;
+.smooth {
+  transition: ease-in-out .4s;
+  -moz-transition: ease-in-out .4s;
+  -o-transition: ease-in-out .4s;
+  -webkit-transition: ease-in-out .4s;
 }
 
+.smooth:hover {
+  transition: ease-in-out .4s;
+  -moz-transition: ease-in-out .4s;
+  -o-transition: ease-in-out .4s;
+  -webkit-transition: ease-in-out .4s;
+}
 
-/* Custom CSS */
+.box-shadow {
+  box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.5);
+}
 
- .age-gate-page {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background-image: url('./assets/video/ba-age-gate.gif');
-  background-color: black;
-  background-size: cover;
-  opacity: 0.80;
-  -moz-opacity: 80%;
-  -webkit-opacity: 80%;
-  z-index: 2;
- }
+.text-shadow {
+  text-shadow: 8px 8px 12px rgba(0, 0, 0, 0.5);
+}
 
- .p-white{
-   color:white;
-   text-shadow: 2px 2px black;
- }
-
- .age-gate-page h1 {
+.light {
   color: white;
-  text-shadow: 2px 2px black;
+}
+
+.dark {
+  color: black;
+}
+
+.eggshell {
+  color: #f5f5f5;
+}
+
+.leather {
+  color: #ab987a;
+}
+
+.steel-blue {
+  color: #3491C6;
+}
+
+.navy {
+  color: #0F1626;
+}
+
+.gradient-background {
+  background: linear-gradient(
+    45deg,
+    rgba(171 ,152, 122, 0.8), 
+    rgba(0, 0, 128, 0.4)
+  ),
+    url('./assets/images/whiskey-barrels.jpg');
+  background-size: cover;
+  background-position: center center;
+  /* filter: blur(5px);
+  -webkit-filter: blur(5px); */
+}
+
+
+/************** PAGES **************/
+
+/****** Gate ******/
+
+ .gate-page {
+  background: linear-gradient(
+    45deg,
+    rgba(171 ,152, 122, 0.8), 
+    rgba(0, 0, 128, 0.4)
+  ),
+    url('./assets/video/ba-age-gate.gif');
+  background-size: cover;
+  background-position: center center;
+  color: white;
  }
 
- .age-gate-box{
-  display: flex;
-   width: 600px;
-   flex-direction: column;
+ .gate-hero, .home-hero {
+   max-width: 600px;
+   margin: 0 auto;
+   padding: 20px;
    align-items: center;
    justify-content: center;
  }
+
+ .gate-hero img, .home-hero img {
+   margin: 20px auto;
+   max-width: 80%;
+ }
  
- .form {
-	width: 380px;
-	margin: 4em auto;
-	padding: 3em 2em 2em 2em;
-	background: #fafafa;
-	border: 1px solid #ebebeb;
-  box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-} 
+/* Slider */
 
-#background-video{
-
-  height: 100%;
-  width: 100%;
-  float: left;
-  top: 0;
-  padding: none;
-  position: fixed; /* optional depending on what you want to do in your app */
-  }
-
-
-  /* Slider */    
-
-.item {
+.slider {
   position: relative;
+  margin: 20px auto;
   width: 300px;
   height: 100px;
   pointer-events: auto;
@@ -96,7 +126,7 @@
   box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.2);
 }
 
-.fg {
+.slider-fg {
   cursor: -webkit-grab;
   background-color: #272727;
   color: rgba(255, 255, 255, 0.8);
@@ -114,36 +144,57 @@
   transition: box-shadow 0.75s;
 }
 
-.fg:active {
+.slider-fg:active {
   cursor: -webkit-grabbing;
   box-shadow: 0px 15px 30px -5px rgba(0, 0, 0, 0.4);
 }
 
-.fg > * {
+.slider-fg > * {
   pointer-events: none;
 }
 
-.av {
+.slider-av {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   background-color: white;
 }
 
-/* Login Background */
+/****** Home ******/
 
-.home-page {
-  background: url('./assets/images/whiskey-barrels.jpg') no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
-  overflow: hidden;
+/* Login Form */
+
+.form {
+	margin: 4em auto;
+	padding: 2em;
+	background: #fafafa;
+  border: 1px solid #ebebeb;
+  border-radius: 5px;
 }
 
-.home-page-logo {
-
-  display: flex;
-
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 20px;
+.form-input {
+  margin: 10px 0;
+  padding: 0 10px;
+  width: 90%;
+  height: 50px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  font-size: 20px;
 }
+
+.form-button {
+  margin: 20px 0;
+  width: 94%;
+  height: 55px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.form-button:hover {
+  background-color: #000000;
+  color: white;
+}
+

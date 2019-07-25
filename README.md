@@ -292,7 +292,8 @@ client
   * react
   * react-router-dom
   * react-spring
-
+  * react-with-gesture
+  * react-star-rating
 
 <br>
 <br>
