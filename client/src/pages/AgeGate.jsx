@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import Slider from '../components/Slider'
-import logo from '../assets/images/ba-logo.png'
+
+import logo from '../assets/graphics/wordmark-light.png'
+
 
 
 class AgeGate extends React.Component {
