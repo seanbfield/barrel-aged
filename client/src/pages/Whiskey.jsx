@@ -47,6 +47,9 @@ class Whiskey extends React.Component {
     return (
       <div className="page whiskey-page">
         <Header />
+        <div className="hero whiskey-hero">
+
+        </div>
         <div className="whiskey-info">
           <h1>{this.state.whiskey.name}</h1>
           {this.state.whiskey.url_to_image ?
@@ -58,6 +61,11 @@ class Whiskey extends React.Component {
             <p>Reviews:</p>
             {this.state.whiskey.reviews.map(review => (
               <div key={review.id}>
+                {this.props.users.map(user => (
+                  <div key={user.id}>
+                    {(user.id === review.userId) && user.username}
+                  </div>
+                ))}
                 <p>Rating: {review.rating}</p>
                 <p>Comment: {review.comment}</p>
               </div>
