@@ -22,5 +22,6 @@ export default (props) => (
         onChange={props.handleLoginFormChange} />
       <input type="submit" value="Sign In!" />
     </form>
+    {props.loginError && <p>Username or password is incorrect, please try again.</p>}
   </div>
 );
