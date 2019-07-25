@@ -1,5 +1,3 @@
-//Include in pages after login
-
 import React from 'react';
 
 import { Link } from 'react-router-dom';
