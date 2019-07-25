@@ -16,9 +16,9 @@ function Slider({ children }) {
   })
   const avSize = x.interpolate({ map: Math.abs, range: [50, 300], output: ['scale(0.5)', 'scale(1)'], extrapolate: 'clamp' })
   return (
-    <animated.div {...bind()} classname="item" style={{ background: bg }}>
-      <animated.div classname="av" style={{ transform: avSize, justifySelf: delta[0] < 0 ? 'end' : 'start' }} />
-      <animated.div classname="fg" style={{ transform: interpolate([x, size], (x, s) => `translate3d(${x}px,0,0) scale(${s})`) }}>
+    <animated.div {...bind()} className="item" style={{ background: bg }}>
+      <animated.div className="av" style={{ transform: avSize, justifySelf: delta[0] < 0 ? 'end' : 'start' }} />
+      <animated.div className="fg" style={{ transform: interpolate([x, size], (x, s) => `translate3d(${x}px,0,0) scale(${s})`) }}>
         {children}
       </animated.div>
     </animated.div>
