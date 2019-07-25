@@ -7,6 +7,8 @@ import Header from '../components/Header';
 import CallToAction from '../components/CallToAction';
 import Footer from '../components/Footer'
 
+import bottle from '../assets/graphics/bottle.png'
+
 class Whiskey extends React.Component {
   constructor(props) {
     super(props);
