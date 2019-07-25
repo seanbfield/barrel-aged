@@ -127,12 +127,11 @@ userRouter.put('/:id', restrict, async (req, res, next) => {
 userRouter.post('/whiskey/:id/review', restrict, async (req, res, next) => {
   try {
     const localUser = res.locals.user
-    const data = await User.findOne({
+    const user = await User.findOne({
       where: {
         username: localUser.username,
       }
     });
-    const user = data.datavalues;
     const whiskey = await Whiskey.findByPk(req.params.id);
     const review = await Review.create(req.body);
     review.setUser(user);
