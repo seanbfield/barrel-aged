@@ -2,7 +2,7 @@ import React from 'react';
 
 export default (props) => (
   <div className="form login-form box-shadow">
-    <h1>hello.</h1>
+    <h2>hello.</h2>
     <form onSubmit={props.handleLoginSubmit}>
       <input
         className="form-input"

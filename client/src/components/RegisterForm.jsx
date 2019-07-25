@@ -3,41 +3,33 @@ import React from 'react'
 
 export default (props) => (
   <div className="form register-form">
-    <h3>join us.</h3>
-    <form onSubmit={props.handleRegisterSubmit}
-      className="form-size">
-      <label
-        htmlFor="name">Name</label>
-
+    <h2>Join Us</h2>
+    <form onSubmit={props.handleRegisterSubmit}>
       <input
-        className="form-input"
         type="text"
         name="username"
+        placeholder="Username"
         value={props.registerForm.username}
         id="name"
-        onChange={props.handleRegisterFormChange} />
-
-      <label
-        htmlFor="password">Password</label>
-      <input
         className="form-input"
-        type="password"
-        name="password"
-        value={props.registerForm.password}
-        id="password"
         onChange={props.handleRegisterFormChange} />
-
-      <label
-        htmlFor="email">Email</label>
       <input
-        className="form-input"
         type="text"
         name="email"
+        placeholder="Email Address"
         value={props.registerForm.email}
         id="email"
+        className="form-input"
         onChange={props.handleRegisterFormChange} />
-
-      <input className="form-button" type="submit" value="Sign Up!" />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        value={props.registerForm.password}
+        id="password"
+        className="form-input"
+        onChange={props.handleRegisterFormChange} />
+      <input className="form-button" type="submit" value="Sign Up" />
     </form>
   </div>
 );
