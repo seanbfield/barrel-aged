@@ -2,9 +2,10 @@ import React from 'react';
 
 export default (props) => (
   <div className="form login-form box-shadow">
-    <h1>Login Form</h1>
+    <h1>hello.</h1>
     <form onSubmit={props.handleLoginSubmit}>
       <input
+        className="form-input"
         type="text"
         name="username"
         placeholder="Username"
@@ -13,6 +14,7 @@ export default (props) => (
         className="form-input"
         onChange={props.handleLoginFormChange} />
       <input
+        className="form-input"
         type="password"
         name="password"
         placeholder="Password"
@@ -20,7 +22,7 @@ export default (props) => (
         id="password"
         className="form-input"
         onChange={props.handleLoginFormChange} />
-      <input type="submit" value="Sign In!" className="form-button smooth" />
+      <input type="submit" value="Sign In" className="form-button smooth" />
     </form>
   </div>
 );
