@@ -60,14 +60,14 @@ userRouter.get('/', async (req, res, next) => {
 
 // Show User – SB
 
-// userRouter.get('/id/:id', restrict, async (req, res, next) => {
-//   try {
-//     const specificUser = await User.findByPk(req.params.id);
-//     res.json(specificUser);
-//   } catch (e) {
-//     next(e);
-//   }
-// });
+userRouter.get('/id/:id', restrict, async (req, res, next) => {
+  try {
+    const specificUser = await User.findByPk(req.params.id);
+    res.json(specificUser);
+  } catch (e) {
+    next(e);
+  }
+});
 
 // Show Logged In User - BW
 
