@@ -49,7 +49,7 @@ userRouter.post('/login', async (req, res, next) => {
 
 // Index Users – BW
 
-userRouter.get('/', restrict, async (req, res, next) => {
+userRouter.get('/', async (req, res, next) => {
   try {
     const users = await User.findAll();
     res.json(users);

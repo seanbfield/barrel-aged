@@ -1,5 +1,5 @@
 import React from 'react';
-// import rating from 'react-star-rating';
+import rating from 'react-star-rating';
 import { createReview } from '../services/api-helper';
 
 class ReviewForm extends React.Component {
