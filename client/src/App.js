@@ -113,6 +113,7 @@ class App extends React.Component {
           <Route exact path="/" component={AgeGate} />
           <Route path="/home" render={() => (
             <Home
+              currentView={this.state.currentView}
               registerForm={this.state.registerFormData}
               handleRegisterSubmit={this.handleRegisterSubmit}
               handleRegisterFormChange={this.handleRegisterFormChange}
