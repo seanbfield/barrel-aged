@@ -1,12 +1,12 @@
 import React from 'react';
-import rating from 'react-star-rating';
 import { createReview } from '../services/api-helper';
+import Star from './Star'
 
 class ReviewForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      rating: '',
+      rating: 1,
       comment: '',
     }
   };
@@ -32,14 +32,15 @@ class ReviewForm extends React.Component {
             onChange={this.handleChange}
             value={this.state.review}
           />
-          <select name="rating" onChange={this.handleChange}>
+          <Star onChange={this.handleChange} />
+          {/* <select name="rating" onChange={this.handleChange}>
             <option> -- </option>
             <option value='1'>1</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
             <option value='4'>4</option>
             <option value='5'>5</option>
-          </select>
+          </select> */}
           <button type='submit' value='submit'>Submit Reviews</button>
         </form>
       </div>
