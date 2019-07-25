@@ -11,8 +11,10 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "react-spring": "^8.0.27",
+    "react-star-rating": "^1.4.2",
+    "react-star-rating-component": "^1.4.1",
     "react-video-cover": "^1.2.2",
-    "react-star-rating": "^1.4.2"
+    "react-with-gesture": "^4.0.8"
   },
   "scripts": {
     "start": "react-scripts start",

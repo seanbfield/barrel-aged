@@ -1,12 +1,12 @@
 import React from 'react';
-import rating from 'react-star-rating';
-import { createReview } from '../services/api-helper';
+import StarRatingComponent from 'react-star-rating-component';
+
 
 class ReviewForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      rating: '',
+      rating: 1,
       comment: '',
     }
   };
@@ -18,7 +18,12 @@ class ReviewForm extends React.Component {
     })
   }
 
+  onStarClick(nextValue, prevValue, name) {
+    this.setState({ rating: nextValue });
+  }
+
   render() {
+    const { rating } = this.state;
     return (
       <div className="form review-form">
         <form onSubmit={(e) => {
@@ -32,14 +37,18 @@ class ReviewForm extends React.Component {
             onChange={this.handleChange}
             value={this.state.review}
           />
-          <select name="rating" onChange={this.handleChange}>
-            <option> -- </option>
-            <option value='1'>1</option>
-            <option value='2'>2</option>
-            <option value='3'>3</option>
-            <option value='4'>4</option>
-            <option value='5'>5</option>
-          </select>
+          {/* <Star onChange={this.handleChange} /> */}
+
+          <div>
+            <h2>Rate Your Fav Whiskey</h2>
+            <StarRatingComponent
+              name="rate1"
+              starCount={5}
+              value={rating}
+              onStarClick={this.onStarClick.bind(this)}
+            />
+          </div>
+
           <button type='submit' value='submit'>Submit Reviews</button>
         </form>
       </div>
