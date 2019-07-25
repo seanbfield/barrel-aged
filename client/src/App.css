@@ -73,6 +73,8 @@ body {
     url('./assets/images/whiskey-barrels.jpg');
   background-size: cover;
   background-position: center center;
+  /* filter: blur(5px);
+  -webkit-filter: blur(5px); */
 }
 
 
@@ -100,8 +102,9 @@ body {
    justify-content: center;
  }
 
- .gate-hero img, .home-page img {
-   max-width: 100%;
+ .gate-hero img, .home-hero img {
+   margin: 20px auto;
+   max-width: 80%;
  }
  
 /* Slider */
@@ -159,15 +162,39 @@ body {
 
 /****** Home ******/
 
+/* Login Form */
 
 .form {
-	width: 380px;
 	margin: 4em auto;
-	padding: 3em 2em 2em 2em;
+	padding: 2em;
 	background: #fafafa;
-	border: 1px solid #ebebeb;
-  box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  border: 1px solid #ebebeb;
+  border-radius: 5px;
 }
+
+.form-input {
+  margin: 10px 0;
+  padding: 0 10px;
+  width: 90%;
+  height: 50px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.form-button {
+  margin: 20px 0;
+  width: 94%;
+  height: 55px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.form-button:hover {
+  background-color: #000000;
+  color: white;
+}
+
