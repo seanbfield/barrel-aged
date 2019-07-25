@@ -5,7 +5,7 @@ export default (props) => (
     <h1>Login Form</h1>
     <form onSubmit={props.handleLoginSubmit}>
       <label
-        htmlFor="email">Email</label>
+        htmlFor="username">Username</label>
       <input
         type="text"
         name="username"

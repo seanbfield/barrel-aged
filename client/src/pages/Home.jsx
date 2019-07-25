@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-import logo from '../assets/graphics/logomark'
+import logo from '../assets/graphics/logomark.png'
 
 import RegisterForm from '../components/RegisterForm';
 import LoginForm from '../components/LoginForm';
