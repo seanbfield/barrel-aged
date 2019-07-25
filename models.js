@@ -1,13 +1,23 @@
 const Sequelize = require('sequelize');
 
 // Sequelize
-const sequelize = new Sequelize({
-  database: 'barrelaged_db',
-  dialect: 'postgres',
-  define: {
-    underscored: true,
-  },
-});
+let sequelize;
+if (process.env.DATABASE_URL) {
+  sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialect: 'postgres',
+    define: {
+      underscored: true
+    }
+  });
+} else {
+  sequelize = new Sequelize({
+    database: 'barrelaged_db',
+    dialect: 'postgres',
+    define: {
+      underscored: true,
+    },
+  });
+}
 
 // User Model
 const User = sequelize.define('user', {
