@@ -1,7 +1,6 @@
 # Barrel-Aged
 
 ![P3 Challenge](https://imgur.com/P0kiHOf.png)
-![P3 Challenge](https://imgur.com/nB8w4Xt.png)
 <p style="text-align: center;"><em>P3 Challenge</em></p>
 
 ## Table of Contents
@@ -9,9 +8,12 @@
   - [Project Team](#project-team)
   - [Project Inspiration](#project-inspiration)
   - [Project Permissions](#project-permissions)
-- [Design](#design)  
+- [Design](#design)
   - [Sitemap](#sitemap)
   - [Wireframes](#wireframes)
+    - [Desktop](#desktop)
+    - [Mobile](#mobile)
+  - [Branding](#branding)
 - [Development](#development)
   - [Functional Goals](#functional-goals)
     - [MVP](#mvp)
@@ -35,6 +37,8 @@
 
 # Overview
 
+![Logo](https://imgur.com/lEgfC75.png)
+
 ## Project Description
 Barrel-Aged is a social forum and review website for whiskey lovers. Through a modern and attractive user interface, convenient browsing and review functionality, and a well-designed database of whiskeys, Barrel-Aged will enable whiskey consumers to discuss, rate, and find their next favorite bottle.
 
@@ -52,6 +56,8 @@ Barrel-Aged is modeled with functional inspiration from [Distiller](https://dist
 
 Digital assets used with full licensing and permission from [Death to Stock Photo](https://deathtothestockphoto.com/), [Freepik](https://www.freepik.com/home), and [Unsplash](https://unsplash.com/). Custom digital design and branding by [Misha Kessler](https://www.mishakessler.com).
 
+Digital assets stored locally and on Imgur at [Barrel-Aged Assets Library](https://imgur.com/a/uF7o4YS).
+
 <br>
 <br>
 
@@ -59,7 +65,7 @@ Digital assets used with full licensing and permission from [Death to Stock Phot
 
 ## ERD Model
 
-![ERD Model](https://imgur.com/D7NUsJb.png)
+![ERD Model V2](https://imgur.com/D7NUsJb.png)
 
 > ERD Model from Sean's [Draw.io](https://www.draw.io).
 
@@ -67,7 +73,9 @@ Digital assets used with full licensing and permission from [Death to Stock Phot
 
 ## Sitemap
 
-![Sitemap](https://imgur.com/LyjmAkZ.png)
+V2
+![Sitemap V2](https://imgur.com/wCQGVt7.png)
+<p style="text-align: center;"><em>Sitemap V2</em></p>
 
 > Sitemap from Naz's [GlooMap](https://www.gloomaps.com/sKZtWehfzJ).
 
@@ -75,19 +83,44 @@ Digital assets used with full licensing and permission from [Death to Stock Phot
 
 ## Wireframes
 
+#### Desktop 
+
 ![Age Gate Wireframe](https://imgur.com/Jg7ghQO.png)
-![Landing Wireframe](https://imgur.com/XngdLOl.png)
-![Homepage Wireframe](https://imgur.com/Yk2DLKf.png)
+![Home Wireframe](https://imgur.com/XngdLOl.png)
+![Landing Wireframe](https://imgur.com/Yk2DLKf.png)
 ![User Dashboard Wireframe](https://imgur.com/Njt1euU.png)
 ![Whiskey Review Wireframe](https://imgur.com/0wNtEPS.png)
 ![Whiskey News Wireframe 1](https://imgur.com/oT2kzL8.png)
 ![Whiskey News Wireframe 2](https://imgur.com/Q3qhUvc.png)
 
+#### Mobile
 ![Mobile Age Gate Wireframe](https://imgur.com/sn2SbP2.png)
-![Mobile Landing Wireframe](https://imgur.com/yFe3NH8.png)
+![Mobile Home Wireframe](https://imgur.com/yFe3NH8.png)
 
 > Wireframes from Brian's [DocDroid](https://www.docdroid.net/4njapHK/barrelaged.pdf).
 
+<br>
+
+## Branding
+
+#### Logo & Wordmarks
+
+![Logomark](https://imgur.com/lEgfC75.png)
+<p style="text-align: center;"><em>Logomark</em></p>
+
+![Wordmark Light](https://imgur.com/zpkxa4x.png)
+<p style="text-align: center;"><em>Wordmark Light</em></p>
+
+![Wordmark Dark](https://imgur.com/zTqQxx9.png)
+<p style="text-align: center;"><em>Wordmark Dark</em></p>
+
+#### Bottle Label Mockup
+
+![Label](https://imgur.com/P0kiHOf.png)
+<p style="text-align: center;"><em>Print Label</em></p>
+
+![Bottle Mockup](https://imgur.com/nB8w4Xt.png)
+<p style="text-align: center;"><em>Bottle Mockup</em></p>
 
 <br>
 <br>
@@ -100,7 +133,7 @@ Digital assets used with full licensing and permission from [Death to Stock Phot
 
 - User Authentication & Password Hashing
 - Sequelize Resource Tables
-  - Users (first_name, user_name, email, password, location, fav_whiskey)
+  - Users (first_name, username, email, password, location, fav_whiskey)
     - FK: User hasMany Reviews, User hasMany Whiskeys
   - Whiskeys (name, brand, type, description, url_to_image)
     - FK: Whiskey hasMany Reviews
@@ -141,16 +174,17 @@ barrel-aged
       (Refer to React Structure below.)
       
 |___ routes
-      |___ reviewRouter.js
       |___ userRouter.js
       |___ whiskeyRouter.js
 
-|___ readme.md
+|___ auth.js
 |___ models.js
 |___ resetDb.js
-|___ seed.js
 |___ scratch.js
+|___ seed.js
 |___ server.js
+
+|___ readme.md
 ```
 
 #### Express Database Structure
@@ -178,9 +212,11 @@ client
             |___ graphics
             
       |___ components
+            |___ Header.jsx
             |___ LoginForm.jsx
             |___ RegisterForm.jsx
             |___ ReviewForm.jsx
+            |___ Footer.jsx
 
       |___ pages
             |___ AgeGate.jsx
@@ -256,7 +292,8 @@ client
   * react
   * react-router-dom
   * react-spring
-
+  * react-with-gesture
+  * react-star-rating
 
 <br>
 <br>

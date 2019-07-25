@@ -1,55 +1,47 @@
 import React from 'react';
-import { Route, Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
+import logo from '../assets/graphics/logomark.png'
 import RegisterForm from '../components/RegisterForm';
 import LoginForm from '../components/LoginForm';
-import ReviewForm from '../components/ReviewForm';
-
-import AgeGate from './AgeGate'
-import Landing from './Landing'
-import User from './User';
-import Whiskey from './Whiskey';
 
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      register: false,
-      login: false
+      active: 'FIRST',
     }
   }
-  handleRegister = () => {
+  handleClick = (ev) => {
+    let active = this.state.active;
+    let newActive = active === 'FIRST' ? 'SECOND' : 'FIRST';
     this.setState({
-      register: true,
-      login: false
-    })
-  }
-  handleLogin = () => {
-    this.setState({
-      login: true,
-      register: false
-    })
-  }
-
-  goToUser = () => {
-    this.props.history.push('/user')
+      active: newActive
+    });
   }
   render() {
     return (
-      <div>
-        <nav>
-          <Link to='/home/register' onClick={this.handleRegister}>Register</Link>
-          <Link to='/home/login' onClick={this.handleLogin}>Log In</Link>
-        </nav>
-        <main>
-          <p>This is our homepage</p>
-          {this.state.register &&
-            <Route path='/home/register' render={() => <RegisterForm handleSubmit={this.goToUser} />} />}
-          {this.state.login &&
-            <Route path='/home/login' render={() => <LoginForm handleSubmit={this.goToUser} />} />}
-        </main>
-
-
+      <div className="page home-page gradient-background">
+        <div className="hero home-hero">
+          <img src={logo} alt="Barrel-Aged Logomark" />
+          <div>
+            {/* SB - Toggle Form */}
+            {(this.state.active === 'FIRST') && <LoginForm
+              {...this.props}
+            />}
+            {(this.state.active === 'SECOND') && <RegisterForm
+              {...this.props}
+            />}
+            {/* MK/SB - Toggle button */}
+            {(this.state.active === 'FIRST') ?
+              <button type="button" onClick={this.handleClick}>
+                Register
+            </button> : <button type="button" onClick={this.handleClick}>
+                Login
+            </button>
+            }
+          </div>
+        </div>
       </div>
     )
   }

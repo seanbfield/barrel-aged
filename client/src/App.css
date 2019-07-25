@@ -1,14 +1,200 @@
-.App {
-  text-align: center;
+/************** Global **************/
+
+html {
+  scroll-behavior: smooth;
 }
 
-.App-header {
-  background-color: white;
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  text-align: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-
 }
+
+.smooth {
+  transition: ease-in-out .4s;
+  -moz-transition: ease-in-out .4s;
+  -o-transition: ease-in-out .4s;
+  -webkit-transition: ease-in-out .4s;
+}
+
+.smooth:hover {
+  transition: ease-in-out .4s;
+  -moz-transition: ease-in-out .4s;
+  -o-transition: ease-in-out .4s;
+  -webkit-transition: ease-in-out .4s;
+}
+
+.box-shadow {
+  box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+.text-shadow {
+  text-shadow: 8px 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+.light {
+  color: white;
+}
+
+.dark {
+  color: black;
+}
+
+.eggshell {
+  color: #f5f5f5;
+}
+
+.leather {
+  color: #ab987a;
+}
+
+.steel-blue {
+  color: #3491C6;
+}
+
+.navy {
+  color: #0F1626;
+}
+
+.gradient-background {
+  background: linear-gradient(
+    45deg,
+    rgba(171 ,152, 122, 0.8), 
+    rgba(0, 0, 128, 0.4)
+  ),
+    url('./assets/images/whiskey-barrels.jpg');
+  background-size: cover;
+  background-position: center center;
+  /* filter: blur(5px);
+  -webkit-filter: blur(5px); */
+}
+
+
+/************** PAGES **************/
+
+/****** Gate ******/
+
+ .gate-page {
+  background: linear-gradient(
+    45deg,
+    rgba(171 ,152, 122, 0.8), 
+    rgba(0, 0, 128, 0.4)
+  ),
+    url('./assets/video/ba-age-gate.gif');
+  background-size: cover;
+  background-position: center center;
+  color: white;
+ }
+
+ .gate-hero, .home-hero {
+   max-width: 600px;
+   margin: 0 auto;
+   padding: 20px;
+   align-items: center;
+   justify-content: center;
+ }
+
+ .gate-hero img, .home-hero img {
+   margin: 20px auto;
+   max-width: 80%;
+ }
+ 
+/* Slider */
+
+.slider {
+  position: relative;
+  margin: 20px auto;
+  width: 300px;
+  height: 100px;
+  pointer-events: auto;
+  transform-origin: 50% 50% 0px;
+  padding-left: 32px;
+  padding-right: 32px;
+  box-sizing: border-box;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.slider-fg {
+  cursor: -webkit-grab;
+  background-color: #272727;
+  color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.2);
+  font-size: 3em;
+
+  font-weight: 600;
+  transition: box-shadow 0.75s;
+}
+
+.slider-fg:active {
+  cursor: -webkit-grabbing;
+  box-shadow: 0px 15px 30px -5px rgba(0, 0, 0, 0.4);
+}
+
+.slider-fg > * {
+  pointer-events: none;
+}
+
+.slider-av {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/****** Home ******/
+
+/* Login Form */
+
+.form {
+	margin: 4em auto;
+	padding: 2em;
+	background: #fafafa;
+  border: 1px solid #ebebeb;
+  border-radius: 5px;
+}
+
+.form-input {
+  margin: 10px 0;
+  padding: 0 10px;
+  width: 90%;
+  height: 50px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.form-button {
+  margin: 20px 0;
+  width: 94%;
+  height: 55px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.form-button:hover {
+  background-color: #000000;
+  color: white;
+}
+
