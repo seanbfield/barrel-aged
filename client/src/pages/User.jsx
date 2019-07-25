@@ -2,7 +2,7 @@ import React from 'react';
 
 import { fetchWhiskey } from '../services/api-helper';
 import { findReview } from '../services/api-helper';
-import { userByID } from '../services/api-helper'
+import { userProfile } from '../services/api-helper';
 
 import Header from '../components/Header';
 import CallToAction from '../components/CallToAction';
@@ -12,32 +12,28 @@ class User extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      reviews: [],
+      user: [],
     };
   };
 
-  // Render My Reviews
+  // Render User
   componentDidMount = async () => {
-    const review = await findReview(this.props.currentUser.id)
+    const user = await userProfile();
     this.setState({
-      reviews: review,
+      user: user,
     });
   };
 
   render() {
-    const { currentUser } = this.props;
     return (
       <div className="page user-page">
         <Header />
         <div className="user-info">
-          {/* {this.state.currentUsers.map(user => ( */}
-          <div key={currentUser.id}>
-            <h1>{currentUser.email}</h1>
-            <h1>{currentUser.username}</h1>
-
+          <div key={this.state.user.id}>
+            <h1>{this.state.user.email}</h1>
+            <h1>{this.state.user.username}</h1>
           </div>
-          {/* ))} */}
-          {this.state.reviews.map(review => (
+          {this.state.user.reviews && this.state.user.reviews.map(review => (
             <div key={review.id}>
               <p>{review.comment}</p>
 

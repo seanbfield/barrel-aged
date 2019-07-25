@@ -101,7 +101,6 @@ class App extends React.Component {
 
   async componentDidMount() {
     const data = await axios.get('http://localhost:3000/users');
-    console.log(data);
   }
 
 
