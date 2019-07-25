@@ -14,6 +14,7 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.19.1",
     "pg": "^7.11.0",
+    "react-star-rating": "^1.4.2",
     "react-with-gesture": "^4.0.8",
     "sequelize": "^5.10.1"
   },
