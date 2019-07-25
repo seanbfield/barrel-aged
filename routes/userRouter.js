@@ -60,11 +60,32 @@ userRouter.get('/', async (req, res, next) => {
 
 // Show User – SB
 
-userRouter.get('/:id', restrict, async (req, res, next) => {
+userRouter.get('/id/:id', restrict, async (req, res, next) => {
   try {
     const specificUser = await User.findByPk(req.params.id);
     res.json(specificUser);
   } catch (e) {
+    next(e);
+  }
+});
+
+// Show Logged In User - BW
+
+userRouter.get('/profile', restrict, async (req, res, next) => {
+  try {
+    const { username } = res.locals.user;
+    const data = await User.findOne({
+      where: {
+        username,
+      },
+      include: [
+        Review,
+      ],
+    });
+    const user = data.dataValues;
+    res.json(user);
+  }
+  catch (e) {
     next(e);
   }
 });
@@ -74,11 +95,13 @@ userRouter.get('/:id', restrict, async (req, res, next) => {
 userRouter.put('/:id', restrict, async (req, res, next) => {
   try {
     const { id } = req.params;
-    const user = await User.findOne({
+    const localUser = res.locals.user;
+    const data = await User.findOne({
       where: {
-        username: req.locals.user.username,
+        username: localUser.username,
       }
     });
+    const user = data.datavalues;
     if (user.id === id) {
       await User.update({
         first_name: req.body.first_name,

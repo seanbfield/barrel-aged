@@ -91,6 +91,26 @@ export const updateUser = async (userId, data) => {
   return resp.data;
 }
 
+// NB - See a user 
+export const userByID = async (id) => {
+  try {
+    const resp = await api.get(`/users/id/${id}`);
+    const datas = resp.data
+    console.log(datas);
+
+    return datas;
+  } catch (e) {
+    console.log(e.message)
+  }
+}
+
+// BW - User Profile
+export const userProfile = async () => {
+  getToken();
+  const resp = await api.get('/users/profile');
+  return resp.data;
+}
+
 // WHISKEY
 
 
@@ -117,15 +137,3 @@ export const postWhiskey = async (data) => {
   return resp.data;
 }
 
-// NB - See a user 
-export const userByID = async (id) => {
-  try {
-    const resp = await api.get(`/users/${id}`);
-    const datas = resp.data
-    console.log(datas);
-
-    return datas;
-  } catch (e) {
-    console.log(e.message)
-  }
-}
