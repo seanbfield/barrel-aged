@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { withRouter, Link } from 'react-router-dom';
-import { useSpring, animated } from 'react-spring';
 
 import logo from '../assets/graphics/logomark.png';
 
