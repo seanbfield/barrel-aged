@@ -25,7 +25,7 @@ class Whiskey extends React.Component {
 
   handleSubmit = async (reviewInfo) => {
     // Add the user id here 
-    const newReview = await createReview(1, this.state.whiskey.id, reviewInfo);
+    const newReview = await createReview(this.state.whiskey.id, reviewInfo);
     this.setState((prevState) => ({
       whiskey: {
         ...prevState.whiskey,
