@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { userProfile } from '../services/api-helper';
+import { userProfile, fetchWhiskey } from '../services/api-helper';
 
 import Header from '../components/Header';
 import CallToAction from '../components/CallToAction';
@@ -11,14 +11,17 @@ class User extends React.Component {
     super(props)
     this.state = {
       user: [],
+      whiskeys: [],
     };
   };
 
   // Render User
   componentDidMount = async () => {
     const user = await userProfile();
+    const whiskeys = await fetchWhiskey();
     this.setState({
       user: user,
+      whiskeys: whiskeys,
     });
   };
 
@@ -38,7 +41,11 @@ class User extends React.Component {
         <div className="review-list">
           {this.state.user.reviews && this.state.user.reviews.map(review => (
             <div key={review.id}>
-              <p>{review.comment}</p>
+              {this.state.whiskeys.map(whiskey => (
+                (whiskey.id === review.whiskeyId) && <h3>{whiskey.name}</h3>
+              ))}
+              <p>Rating: {review.rating}</p>
+              <p>Comment: {review.comment}</p>
             </div>
           ))}
         </div>
