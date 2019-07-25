@@ -1,9 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { useSpring, animated } from 'react-spring'
 
 import logo from '../assets/graphics/logomark.png'
 import RegisterForm from '../components/RegisterForm';
 import LoginForm from '../components/LoginForm';
+
+
 
 class Home extends React.Component {
   constructor() {
@@ -24,6 +27,7 @@ class Home extends React.Component {
       <div className="page home-page gradient-background">
         <div className="home-hero">
           <img src={logo} alt="Barrel-Aged Logomark" />
+
           <div>
             {/* SB - Toggle Form */}
             {(this.state.active === 'FIRST') && <LoginForm
