@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/images/wordmark-light.png'
+import logo from '../assets/graphics/wordmark-light.png'
 
 class AgeGate extends React.Component {
   state = {
