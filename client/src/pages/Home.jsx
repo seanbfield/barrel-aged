@@ -9,21 +9,31 @@ import LoginForm from '../components/LoginForm';
 
 
 class Home extends React.Component {
+
   render() {
+    console.log(this.props)
+    let display = ""
+
+    if (this.props.currentView === "login") {
+      display = <LoginForm
+        {...this.props}
+      />
+    } else {
+      display = <RegisterForm
+        {...this.props}
+      />
+    }
+
     return (
       <div className="page home-page">
-        <img src={logo} width="40%" className="app-logo" alt="Barrel-Aged Logomark" />
+        <div className="page home-page-logo">
+          <img src={logo} width="20%" className="app-logo" alt="Barrel-Aged Logomark" />
+        </div>
         <div className="hero home-hero">
-          <RegisterForm
-            {...this.props}
-          />
-          <LoginForm
-            {...this.props}
-          />
-          <div className="">
-            <h1>Welcome to Barrel-Aged!</h1>
-            <p></p>
-          </div>
+
+
+          {display}
+
         </div>
       </div>
     )

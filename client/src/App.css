@@ -1,10 +1,10 @@
 /* Default React CSS */
 
-.App {
+.app-main {
   text-align: center;
 }
 
-.App-header {
+.app-main-header {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,6 +35,11 @@
   -moz-opacity: 80%;
   -webkit-opacity: 80%;
   z-index: 2;
+ }
+
+ .p-white{
+   color:white;
+   text-shadow: 2px 2px black;
  }
 
  .age-gate-page h1 {
@@ -123,4 +128,22 @@
   height: 60px;
   border-radius: 50%;
   background-color: white;
+}
+
+/* Login Background */
+
+.home-page {
+  background: url('./assets/images/whiskey-barrels.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home-page-logo {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
 }
