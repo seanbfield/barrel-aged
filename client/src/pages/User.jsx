@@ -28,17 +28,20 @@ class User extends React.Component {
     return (
       <div className="page user-page">
         <Header />
-        <div className="user-info">
-          <div key={this.state.user.id}>
-            <h1>{this.state.user.email}</h1>
-            <h1>{this.state.user.username}</h1>
+        <div className="hero user-hero">
+          <div className="user-info">
+            <div key={this.state.user.id}>
+              <h1>{this.state.user.email}</h1>
+              <h1>{this.state.user.username}</h1>
+            </div>
           </div>
+        </div>
+        <div className="review-list">
           {this.state.user.reviews && this.state.user.reviews.map(review => (
             <div key={review.id}>
               <p>{review.comment}</p>
-
             </div>
-          ))}
+          ))};
         </div>
         <CallToAction />
         <Footer />

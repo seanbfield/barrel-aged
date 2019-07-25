@@ -6,8 +6,6 @@ import logo from '../assets/graphics/logomark.png'
 import RegisterForm from '../components/RegisterForm';
 import LoginForm from '../components/LoginForm';
 
-
-
 class Home extends React.Component {
 
   render() {
@@ -25,15 +23,10 @@ class Home extends React.Component {
     }
 
     return (
-      <div className="page home-page">
-        <div className="page home-page-logo">
-          <img src={logo} width="20%" className="app-logo" alt="Barrel-Aged Logomark" />
-        </div>
+      <div className="page home-page gradient-background">
         <div className="hero home-hero">
-
-
+          <img src={logo} alt="Barrel-Aged Logomark" />
           {display}
-
         </div>
       </div>
     )

@@ -52,8 +52,10 @@ class Landing extends React.Component {
     return (
       <div className="page landing-page">
         <Header />
+        <div className="hero landing-hero">
+        </div>
         <div id="whiskey-list">
-          <h2>Featured whiskeys:</h2>
+          <h2>Featured Whiskeys:</h2>
           {this.state.whiskeys.map(whiskey => (
             <div key={whiskey.id}>
               <h3>{whiskey.name}</h3>
@@ -67,11 +69,10 @@ class Landing extends React.Component {
               <button onClick={() => { this.sendToWhiskey(whiskey.id) }}>Review this whiskey</button>
             </div>
           ))}
-          <button onClick={this.logOut}>Log Out</button>
         </div>
         <CallToAction />
         <Footer />
-      </div>
+      </div >
     )
   }
 }
