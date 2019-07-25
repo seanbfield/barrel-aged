@@ -20,7 +20,7 @@ class ReviewForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="form review-form">
         <form onSubmit={(e) => {
           e.preventDefault()
           this.props.handleSubmit(this.state)

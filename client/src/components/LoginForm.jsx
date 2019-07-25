@@ -1,20 +1,17 @@
 import React from 'react';
 
 export default (props) => (
-  <>
+  <div className="form login-form">
     <h1>Login Form</h1>
     <form onSubmit={props.handleLoginSubmit}>
       <label
         htmlFor="email">Email</label>
-
       <input
         type="text"
         name="username"
         value={props.loginForm.username}
         id="name"
         onChange={props.handleLoginFormChange} />
-
-
       <label
         htmlFor="password">Password</label>
       <input
@@ -25,5 +22,5 @@ export default (props) => (
         onChange={props.handleLoginFormChange} />
       <input type="submit" value="Sign In!" />
     </form>
-  </>
+  </div>
 );

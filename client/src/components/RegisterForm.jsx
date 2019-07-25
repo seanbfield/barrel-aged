@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default (props) => (
-  <>
+  <div className="form register-form">
     <h3>Register Form</h3>
     <form onSubmit={props.handleRegisterSubmit}>
       <label
@@ -34,5 +34,5 @@ export default (props) => (
 
       <input type="submit" value="Sign Up!" />
     </form>
-  </>
+  </div>
 );

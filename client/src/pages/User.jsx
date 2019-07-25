@@ -1,9 +1,12 @@
 import React from 'react';
 
-//Deficiencies
 import { fetchWhiskey } from '../services/api-helper';
 import { findReview } from '../services/api-helper';
 import { userByID } from '../services/api-helper'
+
+import Header from '../components/Header';
+import CallToAction from '../components/CallToAction';
+import Footer from '../components/Footer';
 
 class User extends React.Component {
   constructor(props) {
@@ -13,8 +16,6 @@ class User extends React.Component {
     };
   };
 
-
-
   // Render My Reviews
   componentDidMount = async () => {
     const review = await findReview(this.props.currentUser.id)
@@ -23,25 +24,28 @@ class User extends React.Component {
     });
   };
 
-
-
   render() {
     const { currentUser } = this.props;
     return (
-      <div className="Users_Info">
-        {/* {this.state.currentUsers.map(user => ( */}
-        <div key={currentUser.id}>
-          <h1>{currentUser.email}</h1>
-          <h1>{currentUser.username}</h1>
-
-        </div>
-        {/* ))} */}
-        {this.state.reviews.map(review => (
-          <div key={review.id}>
-            <p>{review.comment}</p>
+      <div className="page user-page">
+        <Header />
+        <div className="user-info">
+          {/* {this.state.currentUsers.map(user => ( */}
+          <div key={currentUser.id}>
+            <h1>{currentUser.email}</h1>
+            <h1>{currentUser.username}</h1>
 
           </div>
-        ))}
+          {/* ))} */}
+          {this.state.reviews.map(review => (
+            <div key={review.id}>
+              <p>{review.comment}</p>
+
+            </div>
+          ))}
+        </div>
+        <CallToAction />
+        <Footer />
       </div>
     )
   }
