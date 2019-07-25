@@ -24,7 +24,7 @@
 
 /* Custom CSS */
 
- .auth-body {
+ .age-gate-page {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -37,8 +37,7 @@
   z-index: 2;
  }
 
-
- .age-gate-h1{
+ .age-gate-page h1 {
   color: white;
   text-shadow: 2px 2px black;
  }
