@@ -26,12 +26,13 @@ class User extends React.Component {
     return (
       <div className="page user-page">
         <Header />
-        <div className="hero user-hero">
-          <div className="user-info">
-            <div key={this.state.user.id}>
-              <h1>{this.state.user.email}</h1>
-              <h1>{this.state.user.username}</h1>
-            </div>
+        <div className="hero user-hero gradient-inspiration">
+          <h1>Welcome back, {this.state.user.username}!</h1>
+        </div>
+        <div className="user-info">
+          <div key={this.state.user.id}>
+            <h1>{this.state.user.email}</h1>
+            <h1>{this.state.user.username}</h1>
           </div>
         </div>
         <div className="review-list">
@@ -39,7 +40,7 @@ class User extends React.Component {
             <div key={review.id}>
               <p>{review.comment}</p>
             </div>
-          ))};
+          ))}
         </div>
         <CallToAction />
         <Footer />
