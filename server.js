@@ -2,8 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 
 const PORT = process.env.PORT || 3000;
 

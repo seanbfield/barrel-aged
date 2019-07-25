@@ -39,5 +39,6 @@ export default (props) => (
 
       <input className="form-button" type="submit" value="Sign Up!" />
     </form>
+    {props.loginError && <p>Registration failed, please check your information and try again.</p>}
   </div>
 );

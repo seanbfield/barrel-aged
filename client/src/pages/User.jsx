@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { fetchWhiskey } from '../services/api-helper';
-import { findReview } from '../services/api-helper';
 import { userProfile } from '../services/api-helper';
 
 import Header from '../components/Header';

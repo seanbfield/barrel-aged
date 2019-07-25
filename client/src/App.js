@@ -27,6 +27,7 @@ class App extends React.Component {
         password: '',
       },
       users: [],
+      loginError: false,
     }
   }
 
@@ -55,12 +56,16 @@ class App extends React.Component {
           password: '',
           email: ''
         },
+        loginError: false,
         currentUser: user,
         currentView: 'landing'
       });
       this.props.history.push('/landing')
     } catch (e) {
       console.log(e)
+      this.setState({
+        loginError: true,
+      });
     }
   }
 
@@ -90,12 +95,16 @@ class App extends React.Component {
           username: '',
           password: '',
         },
+        loginError: false,
         currentUser: user,
         currentView: 'landing'
       });
       this.props.history.push('/landing')
     } catch (e) {
       console.log(e)
+      this.setState({
+        loginError: true,
+      });
     }
   }
 
@@ -123,6 +132,7 @@ class App extends React.Component {
               handleRegisterFormChange={this.handleRegisterFormChange}
 
               loginForm={this.state.loginFormData}
+              loginError={this.state.loginError}
               handleLoginSubmit={this.handleLoginSubmit}
               handleLoginFormChange={this.handleLoginFormChange}
             />
