@@ -2,6 +2,7 @@ import React from 'react';
 import { showWhiskey } from '../services/api-helper';
 import ReviewForm from '../components/ReviewForm';
 import { createReview } from '../services/api-helper';
+import { Link } from 'react-router-dom';
 
 import Header from '../components/Header';
 import CallToAction from '../components/CallToAction';
@@ -75,6 +76,7 @@ class Whiskey extends React.Component {
           {this.state.showForm && <ReviewForm
             handleSubmit={this.handleSubmit}
           />}
+          <Link to='/landing'><button>Go back</button></Link>
         </div>
         <CallToAction />
         <Footer />
