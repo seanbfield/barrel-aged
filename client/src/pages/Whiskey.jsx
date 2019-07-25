@@ -30,7 +30,8 @@ class Whiskey extends React.Component {
       whiskey: {
         ...prevState.whiskey,
         reviews: [...prevState.whiskey.reviews, newReview]
-      }
+      },
+      showForm: false,
     }));
   };
 
