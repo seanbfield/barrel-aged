@@ -87,7 +87,7 @@ export const deleteReview = async (userId, reviewId) => {
 // MK - Update User
 export const updateUser = async (userId, data) => {
   getToken();
-  const resp = await api.put(`/users/${userId}`);
+  const resp = await api.put(`/users/${userId}`, data);
   return resp.data;
 }
 
