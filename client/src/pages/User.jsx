@@ -39,6 +39,7 @@ class User extends React.Component {
           </div>
         </div>
         <div className="review-list">
+          <h2>Reviews:</h2>
           {this.state.user.reviews && this.state.user.reviews.map(review => (
             <div key={review.id}>
               {this.state.whiskeys.map(whiskey => (
