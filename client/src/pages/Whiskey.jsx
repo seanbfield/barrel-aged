@@ -7,6 +7,8 @@ import Header from '../components/Header';
 import CallToAction from '../components/CallToAction';
 import Footer from '../components/Footer'
 
+import bottle from '../assets/graphics/bottle.png'
+
 class Whiskey extends React.Component {
   constructor(props) {
     super(props);
@@ -47,6 +49,9 @@ class Whiskey extends React.Component {
         <Header />
         <div className="whiskey-info">
           <h1>{this.state.whiskey.name}</h1>
+          {this.state.whiskey.url_to_image ?
+            <img src={this.state.whiskey.url_to_image} alt="Whiskey Image"></img> :
+            <img src={bottle} alt="Whiskey Image" width="20%"></img>}
           <p>Brand: {this.state.whiskey.brand}</p>
           <p>Type: {this.state.whiskey.type}</p>
           {this.state.whiskey.reviews && <div id='review-section'>
