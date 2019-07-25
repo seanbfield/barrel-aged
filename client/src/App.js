@@ -25,7 +25,8 @@ class App extends React.Component {
         username: '',
         email: '',
         password: '',
-      }
+      },
+      users: [],
     }
   }
 
@@ -100,8 +101,12 @@ class App extends React.Component {
 
 
   async componentDidMount() {
-    const data = await axios.get('http://localhost:3000/users');
-  }
+    const resp = await axios.get('http://localhost:3000/users');
+    const users = resp.data;
+    this.setState({
+      users: users,
+    });
+  };
 
 
   render() {
@@ -126,7 +131,8 @@ class App extends React.Component {
           <Route path="/landing" component={Landing} />
           <Route path="/whiskey/:id" render={(props) => (
             <Whiskey
-              id={props.match.params.id} />
+              id={props.match.params.id}
+              users={this.state.users} />
           )} />
           <Route path="/user" render={() => (
             <User
