@@ -1,25 +1,34 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
 
 import logo from '../assets/graphics/logomark.png';
 
-function Header() {
-  const props = useSpring({ opacity: 2, from: { opacity: 0 } })
-  return (
-    <animated.div style={props}>
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+  };
+
+  logOut = (props) => {
+    localStorage.clear();
+    this.props.history.push('/home');
+  };
+
+  render() {
+    return (
       <div className="header">
-        <Link to="/">
+        <Link to="/landing">
           <img src={logo} alt="Pandappers Panda Logo"></img>
         </Link>
-        <Link to="/landing">whiskey list</Link>
-        <Link to="/whiskey">whiskey</Link>
-        <Link to="/user">my profile</Link>
-        <Link to="/home">registration</Link>
+        <Link to="/user">dashboard</Link>
+        <Link to="/landing">whiskeys</Link>
+        <Link to="#">news</Link>
+        <Link to="#">contact</Link>
+        <button onClick={this.logOut}>Log Out</button>
       </div>
-    </animated.div>
-  )
+    )
+  }
 }
 
-export default Header;
+export default withRouter(Header);
