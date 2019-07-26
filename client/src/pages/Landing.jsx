@@ -52,8 +52,7 @@ class Landing extends React.Component {
     return (
       <div className="page landing-page">
         <Header />
-        <div className="hero landing-hero gradient-background">
-          <h1>Welcome to Barrel-Aged!</h1>
+        <div className="hero landing-hero">
         </div>
         <div id="whiskey-list">
           <h2>Featured Whiskeys:</h2>
@@ -67,7 +66,7 @@ class Landing extends React.Component {
               <p>{whiskey.type}</p>
               <p>{whiskey.description}</p>
               {whiskey.urlToImage && <img src={whiskey.urlToImage} />}
-              <button onClick={() => { this.sendToWhiskey(whiskey.id) }}>Review This Whiskey</button>
+              <button onClick={() => { this.sendToWhiskey(whiskey.id) }}>Review this whiskey</button>
             </div>
           ))}
         </div>
