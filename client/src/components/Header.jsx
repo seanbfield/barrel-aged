@@ -1,6 +1,7 @@
 import React from 'react';
-
 import { withRouter, Link } from 'react-router-dom';
+
+import MobileMenu from './MobileMenu'
 
 import logo from '../assets/graphics/logomark.png';
 
@@ -24,12 +25,15 @@ class Header extends React.Component {
         </div>
         <div id="header-nav">
           <ul>
-            <li><Link to="/user">dashboard</Link></li>
-            <li><Link to="/landing">whiskeys</Link></li>
-            <li><Link to="#">news</Link></li>
-            <li><Link to="#">contact</Link></li>
-            <li><Link onClick={this.logOut}>Log Out</Link></li>
+            <li className="smooth"><Link to="/user">dashboard</Link></li>
+            <li className="smooth"><Link to="/landing">whiskeys</Link></li>
+            <li className="smooth"><Link to="#">news</Link></li>
+            <li className="smooth"><Link to="#">contact</Link></li>
+            <li className="smooth"><Link onClick={this.logOut}>Log Out</Link></li>
           </ul>
+          <div className="mobile-menu" >
+            <MobileMenu />
+          </div>
         </div>
       </div>
     )

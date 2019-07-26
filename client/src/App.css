@@ -9,6 +9,20 @@ body {
   padding: 0;
 }
 
+h1, h2, h3, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+}
+
+h4 {
+  font-family: 'Sirin Stencil', cursive;
+}
+
+p, a {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
 .page {
   text-align: center;
   min-height: 100vh;
@@ -110,12 +124,32 @@ body {
 #header-nav li {
   display: inline;
   margin: 0 15px;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+#header-nav li:hover {
+  background: white;
 }
 
 #header-nav a {
   color: white;
   text-transform: uppercase;
   text-decoration: none;
+}
+
+.mobile-menu {
+  /* display: none; */
+}
+
+.MuiIconButton-root  {
+  color: white !important;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.MuiIconButton-root:hover {
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 
 /************** PAGES **************/
