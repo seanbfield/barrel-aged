@@ -205,7 +205,7 @@ userRouter.delete('/:user_id/review/:id', restrict, async (req, res, next) => {
           id: review.id,
         },
       });
-      res.json(user);
+      res.json(user.dataValues);
     } else {
       res.status(401).send('Not Authorized');
     }
