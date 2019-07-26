@@ -96,19 +96,28 @@ userRouter.get('/profile', restrict, async (req, res, next) => {
 userRouter.put('/:id', restrict, async (req, res, next) => {
   try {
     const { id } = req.params;
-    await User.update({
-      first_name: req.body.firstName,
-      username: req.body.username,
-      email: req.body.email,
-      location: req.body.location,
-      fav_whiskey: req.body.favWhiskey,
-    }, {
-        where: {
-          id,
-        },
-      });
-    const updateUser = await User.findByPk(id);
-    res.json(updateUser);
+    const localUser = res.locals.user;
+    const data = await User.findOne({
+      where: {
+        username: localUser.username,
+      }
+    });
+    const user = data.datavalues;
+    if (user.id === id) {
+      await User.update({
+        first_name: req.body.first_name,
+        username: req.body.username,
+        email: req.body.email,
+        location: req.body.location,
+        fav_whiskey: req.body.fav_whiskey,
+      }, {
+          where: {
+            id,
+          },
+        });
+      const updateUser = await User.findByPk(id);
+      res.json(updateUser);
+    }
   } catch (e) {
     next(e);
   }
