@@ -33,7 +33,8 @@ export default class News extends React.Component {
         <div className="body">
           {this.state.articles.map(newsitem => (
             <div> {newsitem.key}
-              <h4>News: {newsitem.content}</h4>
+              <h4>{newsitem.title}</h4>
+              <p>{newsitem.content}</p>
             </div>
           ))}
         </div>

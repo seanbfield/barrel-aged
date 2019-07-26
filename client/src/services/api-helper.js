@@ -4,6 +4,8 @@ const api = axios.create({
   baseURL: 'https://still-crag-31970.herokuapp.com/'
 })
 
+const APIKEY = '25e87626775c4538a49662d079461a3a'
+
 
 // RESPONSE
 
@@ -87,7 +89,7 @@ export const deleteReview = async (userId, reviewId) => {
 // MK - Update User
 export const updateUser = async (userId, data) => {
   getToken();
-  const resp = await api.put(`/users/${userId}`);
+  const resp = await api.put(`/users/${userId}`, data);
   return resp.data;
 }
 
@@ -137,3 +139,10 @@ export const postWhiskey = async (data) => {
   return resp.data;
 }
 
+
+export const fetchNews = async () => {
+  const resp = await axios.get(`https://newsapi.org/v2/everything?q=whiskey&from=2019-06-25&sortBy=publishedAt&apiKey=${APIKEY}`);
+  const data = resp.data.articles;
+  console.log(data);
+  return data;
+}

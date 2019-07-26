@@ -39,17 +39,17 @@ p, a {
 }
 
 .smooth {
-  transition: ease-in-out .4s;
-  -moz-transition: ease-in-out .4s;
-  -o-transition: ease-in-out .4s;
-  -webkit-transition: ease-in-out .4s;
+  transition: ease-in-out .3s;
+  -moz-transition: ease-in-out .3s;
+  -o-transition: ease-in-out .3s;
+  -webkit-transition: ease-in-out .3s;
 }
 
 .smooth:hover {
-  transition: ease-in-out .4s;
-  -moz-transition: ease-in-out .4s;
-  -o-transition: ease-in-out .4s;
-  -webkit-transition: ease-in-out .4s;
+  transition: ease-in-out .3s;
+  -moz-transition: ease-in-out .3s;
+  -o-transition: ease-in-out .3s;
+  -webkit-transition: ease-in-out .3s;
 }
 
 .box-shadow {
@@ -230,7 +230,6 @@ p, a {
 }
 
 .slider-fg {
-  cursor: -webkit-grab;
   background-color: #272727;
   color: rgba(255, 255, 255, 0.8);
   position: absolute;
@@ -242,13 +241,11 @@ p, a {
   border-radius: 5px;
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.2);
   font-size: 3em;
-
   font-weight: 600;
   transition: box-shadow 0.75s;
 }
 
 .slider-fg:active {
-  cursor: -webkit-grabbing;
   box-shadow: 0px 15px 30px -5px rgba(0, 0, 0, 0.4);
 }
 
