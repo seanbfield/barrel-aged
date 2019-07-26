@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { userProfile, fetchWhiskey, updateUser } from '../services/api-helper';
+import portrait from '../assets/graphics/bottle-label.png'
 
 import Header from '../components/Header';
 import CallToAction from '../components/CallToAction';
@@ -80,24 +81,30 @@ class User extends React.Component {
       <div className="page user-page">
         <Header />
         <div className="hero user-hero gradient-inspiration">
-          <h1>Welcome back, {(this.state.user.first_name ? this.state.user.first_name : this.state.user.username)}!</h1>
-        </div>
-        <div className="user-info">
-          <div key={this.state.user.id}>
-            <h1>Email: {this.state.user.email}</h1>
-            <h1>Username: {this.state.user.username}</h1>
-            {this.state.user.location && <h1>Location: {this.state.user.location}</h1>}
-            {this.state.user.fav_whiskey && <h1>Favorite Whiskey: {this.state.user.fav_whiskey}</h1>}
+          <div className="user-image" >
+            <img src={portrait} />
           </div>
-          <button onClick={this.showUpdateForm}>Add more info!</button>
+          <div className="user-info">
+            <div key={this.state.user.id}>
+              <h1>Welcome, {(this.state.user.first_name ? this.state.user.first_name : this.state.user.username)}!</h1>
+              <div className="user-details">
+                <p>Contact: {this.state.user.email}</p>
+                {this.state.user.location && <p>Location: {this.state.user.location}</p>}
+                {this.state.user.fav_whiskey && <p>Favorite Whiskey: {this.state.user.fav_whiskey}</p>}
+              </div>
+            </div>
+            <button onClick={this.showUpdateForm}>Update Profile</button>
+          </div>
         </div>
-        {this.state.updateForm &&
-          <UpdateUserForm
-            userForm={this.state.userForm}
-            handleUpdateSubmit={this.handleUpdateSubmit}
-            handleUserFormChange={this.handleUserFormChange}
-            updateError={this.state.updateError}
-          />}
+        <div className="update-form">
+          {this.state.updateForm &&
+            <UpdateUserForm
+              userForm={this.state.userForm}
+              handleUpdateSubmit={this.handleUpdateSubmit}
+              handleUserFormChange={this.handleUserFormChange}
+              updateError={this.state.updateError}
+            />}
+        </div>
         <div className="review-list">
           <h2>Reviews:</h2>
           {this.state.user.reviews && this.state.user.reviews.map(review => (

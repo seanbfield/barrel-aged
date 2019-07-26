@@ -59,7 +59,7 @@ class Landing extends React.Component {
           <h2>Featured Whiskeys:</h2>
           {this.state.whiskeys.map(whiskey => (
             <div key={whiskey.id}>
-              <h3>{whiskey.name}</h3>
+              <h4>{whiskey.name}</h4>
               <p>Rating: </p>{this.state.aggRatings.map(rating => (
                 (rating.id === whiskey.id) && (rating.rating ? <p>{rating.rating}</p> : <p>No Rating Available</p>)
               ))}

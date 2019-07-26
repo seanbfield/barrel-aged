@@ -52,7 +52,7 @@ class Whiskey extends React.Component {
 
         </div>
         <div className="whiskey-info">
-          <h1>{this.state.whiskey.name}</h1>
+          <h2>{this.state.whiskey.name}</h2>
           {this.state.whiskey.url_to_image ?
             <img src={this.state.whiskey.url_to_image} alt="Whiskey Image"></img> :
             <img src={bottle} alt="Whiskey Image" width="20%"></img>}

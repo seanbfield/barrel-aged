@@ -9,13 +9,14 @@ body {
   padding: 0;
 }
 
-h1, h2, h3, h5, h6 {
+h1, h2, h3 {
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
 }
 
-h4 {
-  font-family: 'Sirin Stencil', cursive;
+h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
 }
 
 p, a {
@@ -58,7 +59,7 @@ p, a {
 }
 
 .dark {
-  color: black;
+  color: #0F1626;
 }
 
 .eggshell {
@@ -94,7 +95,7 @@ p, a {
     rgba(171 ,152, 122, 0.8), 
     rgba(0, 0, 128, 0.4)
   ),
-    url('./assets/images/wheat-inspiration.jpg');
+    url('./assets/images/whiskey-barrels.jpg');
   background-size: cover;
   background-position: center center;
 }
@@ -123,23 +124,36 @@ p, a {
 
 #header-nav li {
   display: inline;
-  margin: 0 15px;
   padding: 5px 8px;
+  margin: 0 8px;
   border-radius: 5px;
 }
 
-#header-nav li:hover {
-  background: white;
-}
-
 #header-nav a {
+  padding: 8px 10px;
+  border-radius: 5px;
   color: white;
   text-transform: uppercase;
   text-decoration: none;
 }
 
+#header-nav a:hover {
+  color: #0F1626;
+  background: white;
+}
+
+#log-out {
+  background: #0F1626;
+  color: white
+}
+
+#log-out:hover {
+  color: #0F1626;
+  background: white;
+}
+
 .mobile-menu {
-  /* display: none; */
+  display: none;
 }
 
 .MuiIconButton-root  {
@@ -285,22 +299,44 @@ p, a {
 
 .toggle-button:hover {
   background: white;
-  color: black;
+  color: #0F1626;
 }
 
 /****** Landing & User ******/
 
 .landing-hero, .user-hero {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  min-height: 50vh;
+  min-height: 500px;
+  padding: 50px;
   color: white;
-
-
 }
 
-.landing-hero h1, .user-hero h1 {
-  
+.user-info {
+  text-align: left;
+  margin: 25px;
+  padding: 10px;
+  width: 40%;
+}
+
+.user-image {
+  margin: 25px;
+  padding: 10px;
+  width: 40%;
+}
+
+.user-image img {
+  max-width: 80%;
+  border-radius: 50%;
+}
+
+.user-details {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.update-form {
+  max-width: 500px;
 }
