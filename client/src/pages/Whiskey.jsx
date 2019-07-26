@@ -46,9 +46,9 @@ class Whiskey extends React.Component {
 
   render() {
     return (
-      <div className="page whiskey-page">
+      <div className="page">
         <Header />
-        <div className="hero whiskey-hero">
+        <div className="whiskey-hero">
 
         </div>
         <div className="whiskey-info">

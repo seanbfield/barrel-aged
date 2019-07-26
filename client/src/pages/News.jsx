@@ -1,8 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+
 import { fetchNews } from '../services/api-helper';
 
-// NB
-class News extends React.Component {
+import Header from '../components/Header';
+import CallToAction from '../components/CallToAction';
+import Footer from '../components/Footer';
+
+export default class News extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -20,16 +25,21 @@ class News extends React.Component {
 
   render() {
     return (
-      <div className="News_Data">
-        <h1>This is the news pg</h1>
-        {this.state.articles.map(newsitem => (
-          <div> {newsitem.key}
-            <h4>News: {newsitem.content}</h4>
-          </div>
-        ))}
+      <div className="page">
+        <Header />
+        <div className="news-hero gradient-background">
+          <h1>This is the news page.</h1>
+        </div>
+        <div className="body">
+          {this.state.articles.map(newsitem => (
+            <div> {newsitem.key}
+              <h4>News: {newsitem.content}</h4>
+            </div>
+          ))}
+        </div>
+        <CallToAction />
+        <Footer />
       </div>
     )
   }
 }
-
-export default News;

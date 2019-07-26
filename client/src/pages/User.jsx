@@ -78,9 +78,9 @@ class User extends React.Component {
 
   render() {
     return (
-      <div className="page user-page">
+      <div className="page">
         <Header />
-        <div className="hero user-hero gradient-inspiration">
+        <div className="user-hero gradient-inspiration">
           <div className="user-image" >
             <img src={portrait} />
           </div>
@@ -96,28 +96,30 @@ class User extends React.Component {
             <button onClick={this.showUpdateForm} id="update-profile">Update Profile</button>
           </div>
         </div>
-        <div className="update-form">
-          {this.state.updateForm &&
-            <UpdateUserForm
-              userForm={this.state.userForm}
-              handleUpdateSubmit={this.handleUpdateSubmit}
-              handleUserFormChange={this.handleUserFormChange}
-              updateError={this.state.updateError}
-            />}
+        <div className="body">
+          <div className="update-form">
+            {this.state.updateForm &&
+              <UpdateUserForm
+                userForm={this.state.userForm}
+                handleUpdateSubmit={this.handleUpdateSubmit}
+                handleUserFormChange={this.handleUserFormChange}
+                updateError={this.state.updateError}
+              />}
+          </div>
+          <div className="review-list">
+            <h2>Reviews:</h2>
+            {this.state.user.reviews && this.state.user.reviews.map(review => (
+              <div key={review.id}>
+                {this.state.whiskeys.map(whiskey => (
+                  (whiskey.id === review.whiskeyId) && <h3>{whiskey.name}</h3>
+                ))}
+                <p>Rating: {review.rating}</p>
+                <p>Comment: {review.comment}</p>
+              </div>
+            ))}
+          </div>
+          <CallToAction />
         </div>
-        <div className="review-list">
-          <h2>Reviews:</h2>
-          {this.state.user.reviews && this.state.user.reviews.map(review => (
-            <div key={review.id}>
-              {this.state.whiskeys.map(whiskey => (
-                (whiskey.id === review.whiskeyId) && <h3>{whiskey.name}</h3>
-              ))}
-              <p>Rating: {review.rating}</p>
-              <p>Comment: {review.comment}</p>
-            </div>
-          ))}
-        </div>
-        <CallToAction />
         <Footer />
       </div>
     )

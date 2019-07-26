@@ -32,6 +32,12 @@ p, a {
   align-items: center;
 }
 
+.body {
+  display: unset;
+  align-items: unset;
+  max-width: 90vw;
+}
+
 .smooth {
   transition: ease-in-out .25s;
   -moz-transition: ease-in-out .25s;
@@ -360,6 +366,12 @@ p, a {
 
 /****** Contact ******/
 
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .profile-img-round {
   display: inline-block;
   width: 100px;
@@ -368,20 +380,12 @@ p, a {
   object-fit: cover;
 }
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding-left: auto;
-  padding-right: auto;
-
-}
-
 .card {
-   flex: 0 1 16%;
-   border: 2.5px solid #fafafa;
+   flex: 0 1 22%;
+   border: 2.5px solid #f5f5f5;
    border-radius: 5px;
-   background-color: #272727;
+   color: #0F1626;
+   background-color: #f5f5f5;
 
 }
 
@@ -389,14 +393,16 @@ p, a {
 
 .footer {
   width: 100vw;
+  padding: 10px;
   background-color: #0F1626;
   color: white;
 }
 
-.footer-nav {
+#footer-nav {
   margin: 20px 0;
 }
 
 .footer-copyright {
   margin: 20px 0;
+  
 }

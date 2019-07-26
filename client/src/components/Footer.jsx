@@ -24,7 +24,7 @@ export default class Footer extends React.Component {
           </ul>
         </div>
         <div id="footer-copyright">
-          <p><em>This page was developed for the P3 Project of the General Assembly Software Engineering Immersive (Panda's Cohort).</em></p>
+          <p><em>This page was developed for the P3 Project of the General Assembly Software Engineering Immersive Panda's Cohort. For more, view our <a href="/contact">Contact</a> page.</em></p>
         </div>
       </div>
     )

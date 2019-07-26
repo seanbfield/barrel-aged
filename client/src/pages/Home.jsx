@@ -25,10 +25,9 @@ class Home extends React.Component {
   }
   render() {
     return (
-      <div className="page home-page gradient-background">
+      <div className="page gradient-background">
         <div className="home-hero">
           <img src={logo} alt="Barrel-Aged Logomark" />
-
           <div>
             {/* SB - Toggle Form */}
             {(this.state.active === 'FIRST') && <LoginForm
