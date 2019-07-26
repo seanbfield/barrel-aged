@@ -53,22 +53,20 @@ class Landing extends React.Component {
       <div className="page">
         <Header />
         <div className="landing-hero gradient-background">
-          <h1>Welcome to Barrel-Aged!</h1>
+          <h1>Welcome to Barrel-Aged.</h1>
         </div>
         <div className="body">
+          <h2>Featured Whiskeys:</h2>
           <div id="whiskey-list">
-            <h2>Featured Whiskeys:</h2>
             {this.state.whiskeys.map(whiskey => (
-              <div key={whiskey.id} className="">
-                <h4>{whiskey.name}</h4>
+              <div key={whiskey.id} className="whiskey-card box-shadow">
+                <h3>{whiskey.name}</h3>
                 <p>Rating: </p>{this.state.aggRatings.map(rating => (
-                  (rating.id === whiskey.id) && (rating.rating ? <p>{rating.rating}</p> : <p>No Rating Available</p>)
+                  (rating.id === whiskey.id) && (rating.rating ? <h3>{rating.rating} Star</h3> : <p>Sorry, no rating available.</p>)
                 ))}
-                <p>{whiskey.brand}</p>
-                <p>{whiskey.type}</p>
+                <h4>{whiskey.brand} {whiskey.type}</h4>
                 <p>{whiskey.description}</p>
-                {whiskey.urlToImage && <img src={whiskey.urlToImage} />}
-                <button onClick={() => { this.sendToWhiskey(whiskey.id) }}>Review This Whiskey</button>
+                <button onClick={() => { this.sendToWhiskey(whiskey.id) }} id="review-button">Review This Whiskey</button>
               </div>
             ))}
           </div>

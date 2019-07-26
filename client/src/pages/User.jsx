@@ -76,6 +76,10 @@ class User extends React.Component {
     });
   };
 
+  sendToWhiskey = (id) => {
+    this.props.history.push(`/whiskey/${id}`);
+  };
+
   render() {
     return (
       <div className="page">
@@ -93,7 +97,7 @@ class User extends React.Component {
                 {this.state.user.fav_whiskey && <p>Favorite Whiskey: {this.state.user.fav_whiskey}</p>}
               </div>
             </div>
-            <button onClick={this.showUpdateForm} id="update-profile">Update Profile</button>
+            <button onClick={this.showUpdateForm} id="update-profile-button">Update Profile</button>
           </div>
         </div>
         <div className="body">
@@ -107,14 +111,15 @@ class User extends React.Component {
               />}
           </div>
           <div className="review-list">
-            <h2>Reviews:</h2>
+            <h2>My Reviews:</h2>
             {this.state.user.reviews && this.state.user.reviews.map(review => (
-              <div key={review.id}>
+              <div key={review.id} className="review-card box-shadow">
                 {this.state.whiskeys.map(whiskey => (
                   (whiskey.id === review.whiskeyId) && <h3>{whiskey.name}</h3>
                 ))}
                 <p>Rating: {review.rating}</p>
                 <p>Comment: {review.comment}</p>
+                {/* <button onClick={() => { this.sendToWhiskey(whiskey.id) }} id="review-button">View Whiskey</button> */}
               </div>
             ))}
           </div>

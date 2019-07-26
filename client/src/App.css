@@ -275,7 +275,7 @@ p, a {
   height: 50px;
   border: 1px solid #000000;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .form-button {
@@ -320,6 +320,47 @@ p, a {
   color: white;
 }
 
+.whiskey-card, .review-card {
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 300px;
+  margin: 10px;
+  padding: 25px;
+  background: #f5f5f5;
+}
+
+.whiskey-card p, .review-card p {
+  margin: 10px;
+}
+
+.whiskey-card h3, .review-card h3 {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.whiskey-card h4, .review-card h4 {
+  text-transform: lowercase;
+  font-weight: 400;
+}
+
+.whiskey-card p, .review-card p {
+  margin: 5px;
+}
+
+#review-button {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border: none;
+  color: #0F1626;
+  background-color: transparent;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+#review-button:hover {
+
+}
+
 /****** User Dashboard ******/
 
 .user-info {
@@ -345,7 +386,7 @@ p, a {
   border-bottom: 1px solid white;
 }
 
-#update-profile {
+#update-profile-button {
     padding: 8px 10px;
     border: none;
     color: white;
@@ -354,7 +395,7 @@ p, a {
     text-decoration: none;
 }
   
-#update-profile:hover {
+#update-profile-button:hover {
     color: #0F1626;
     background: white;
 }
@@ -370,6 +411,7 @@ p, a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin: 20px;
 }
 
 .profile-img-round {
@@ -381,12 +423,12 @@ p, a {
 }
 
 .card {
-   flex: 0 1 22%;
+   flex: 0 1 22.5%;
+   padding: 10px;
    border: 2.5px solid #f5f5f5;
    border-radius: 5px;
    color: #0F1626;
    background-color: #f5f5f5;
-
 }
 
 /************** FOOTER **************/
@@ -402,7 +444,10 @@ p, a {
   margin: 20px 0;
 }
 
-.footer-copyright {
+#footer-copyright {
   margin: 20px 0;
-  
+}
+
+#footer-copyright a {
+  color: white;
 }
