@@ -17,14 +17,20 @@ class Header extends React.Component {
   render() {
     return (
       <div className="header">
-        <Link to="/landing">
-          <img src={logo} alt="Pandappers Panda Logo"></img>
-        </Link>
-        <Link to="/user">dashboard</Link>
-        <Link to="/landing">whiskeys</Link>
-        <Link to="#">news</Link>
-        <Link to="#">contact</Link>
-        <button onClick={this.logOut}>Log Out</button>
+        <div id="header-logo">
+          <Link to="/landing">
+            <img src={logo} alt="Pandappers Panda Logo"></img>
+          </Link>
+        </div>
+        <div id="header-nav">
+          <ul>
+            <li><Link to="/user">dashboard</Link></li>
+            <li><Link to="/landing">whiskeys</Link></li>
+            <li><Link to="/news">news</Link></li>
+            <li><Link to="/contact">contact</Link></li>
+            <li><Link onClick={this.logOut}>Log Out</Link></li>
+          </ul>
+        </div>
       </div>
     )
   }
