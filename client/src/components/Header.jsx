@@ -27,7 +27,7 @@ class Header extends React.Component {
           <ul>
             <li><Link to="/user" className="smooth">dashboard</Link></li>
             <li><Link to="/landing" className="smooth">whiskeys</Link></li>
-            <li><Link to="#" className="smooth">news</Link></li>
+            <li><Link to="/news" className="smooth">news</Link></li>
             <li><Link to="/contact" className="smooth">contact</Link></li>
             <li><Link onClick={this.logOut} className="smooth" id="log-out">Log Out</Link></li>
           </ul>

@@ -310,7 +310,7 @@ p, a {
   align-items: center;
   width: 100vw;
   min-height: 500px;
-  padding: 50px;
+  padding: 50px 10vw;
   color: white;
 }
 
@@ -335,6 +335,20 @@ p, a {
 .user-details {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
+}
+
+#update-profile {
+    padding: 8px 10px;
+    border: none;
+    color: white;
+    background-color: transparent;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+  
+#update-profile:hover {
+    color: #0F1626;
+    background: white;
 }
 
 .update-form {

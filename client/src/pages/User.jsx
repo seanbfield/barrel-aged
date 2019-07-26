@@ -93,7 +93,7 @@ class User extends React.Component {
                 {this.state.user.fav_whiskey && <p>Favorite Whiskey: {this.state.user.fav_whiskey}</p>}
               </div>
             </div>
-            <button onClick={this.showUpdateForm}>Update Profile</button>
+            <button onClick={this.showUpdateForm} id="update-profile">Update Profile</button>
           </div>
         </div>
         <div className="update-form">
