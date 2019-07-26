@@ -310,12 +310,12 @@ p, a {
 
 /************** INTERIOR PAGES **************/
 
-.landing-hero, .user-hero, .news-hero, .contact-hero {
+.landing-hero, .user-hero, .whiskey-hero, .news-hero, .contact-hero {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  min-height: 500px;
+  min-height: 250px;
   padding: 50px 10vw;
   color: white;
 }
@@ -324,10 +324,15 @@ p, a {
   display: inline-flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 300px;
+  border-radius: 5px;
+  width: 325px;
   margin: 10px;
   padding: 25px;
   background: #f5f5f5;
+}
+
+.whiskey-card img, .review-card img {
+  max-width: 100%;
 }
 
 .whiskey-card p, .review-card p {
@@ -347,7 +352,7 @@ p, a {
   margin: 5px;
 }
 
-#review-button {
+.review-button {
   margin-top: 10px;
   padding: 8px 10px;
   border: none;
@@ -357,8 +362,9 @@ p, a {
   text-decoration: none;
 }
 
-#review-button:hover {
-
+.review-button:hover {
+  color: white;
+  background-color: #0F1626;
 }
 
 /****** User Dashboard ******/

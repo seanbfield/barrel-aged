@@ -48,14 +48,13 @@ class Whiskey extends React.Component {
     return (
       <div className="page">
         <Header />
-        <div className="whiskey-hero">
-
+        <div className="whiskey-hero gradient-inspiration">
+          <h1>{this.state.whiskey.name}</h1>
         </div>
-        <div className="whiskey-info">
-          <h2>{this.state.whiskey.name}</h2>
+        <div className="whiskey-card">
           {this.state.whiskey.url_to_image ?
-            <img src={this.state.whiskey.url_to_image} alt="Whiskey Image"></img> :
-            <img src={bottle} alt="Whiskey Image" width="20%"></img>}
+            <img src={this.state.whiskey.url_to_image} alt="Whiskey"></img> :
+            <img src={bottle} alt="Whiskey"></img>}
           <p>Brand: {this.state.whiskey.brand}</p>
           <p>Type: {this.state.whiskey.type}</p>
           {this.state.whiskey.reviews && <div id='review-section'>
@@ -72,11 +71,11 @@ class Whiskey extends React.Component {
               </div>
             ))}
           </div>}
-          <button onClick={this.showReviewForm}>Add a review</button>
+          <button onClick={this.showReviewForm} className="smooth review-button">Add Review</button>
           {this.state.showForm && <ReviewForm
             handleSubmit={this.handleSubmit}
           />}
-          <Link to='/landing'><button>Go back</button></Link>
+          <Link to='/landing'><button className="smooth review-button">Go Back</button></Link>
         </div>
         <CallToAction />
         <Footer />

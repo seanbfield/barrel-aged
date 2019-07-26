@@ -66,7 +66,7 @@ class Landing extends React.Component {
                 ))}
                 <h4>{whiskey.brand} {whiskey.type}</h4>
                 <p>{whiskey.description}</p>
-                <button onClick={() => { this.sendToWhiskey(whiskey.id) }} id="review-button">Review This Whiskey</button>
+                <button onClick={() => { this.sendToWhiskey(whiskey.id) }} className="smooth review-button">Review This Whiskey</button>
               </div>
             ))}
           </div>
