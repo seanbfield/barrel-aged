@@ -36,6 +36,7 @@ p, a {
   display: unset;
   align-items: unset;
   max-width: 90vw;
+  padding-bottom: 50px;
 }
 
 .smooth {

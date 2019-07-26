@@ -19,7 +19,7 @@ export default class News extends React.Component {
   componentDidMount = async () => {
     const News = await fetchNews();
     this.setState({
-      News: News,
+      articles: News,
     });
   };
 
@@ -28,15 +28,16 @@ export default class News extends React.Component {
       <div className="page">
         <Header />
         <div className="news-hero gradient-background">
-          <h1>This is the news page.</h1>
+          <h1>Current Whiskey News</h1>
         </div>
         <div className="body">
-          {this.state.articles.map(newsitem => (
+          <h3>News coming soon.</h3>
+          {/* {this.state.articles.map(newsitem => (
             <div> {newsitem.key}
-              <h4>{newsitem.title}</h4>
-              <p>{newsitem.content}</p>
+              <h4>Title: {newsitem.title}</h4>
+              <p>News: {newsitem.description}</p>
             </div>
-          ))}
+          ))} */}
         </div>
         <CallToAction />
         <Footer />
