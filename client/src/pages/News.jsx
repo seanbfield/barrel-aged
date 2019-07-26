@@ -24,7 +24,8 @@ class News extends React.Component {
       <div className="News_Data">
         {this.state.articles.map(newsitem => (
           <div> {newsitem.key}
-            <h4>News: {newsitem.content}</h4>
+            <h4>Title: {newsitem.title}</h4>
+            <p>News: {newsitem.description}</p>
           </div>
         ))}
       </div>
