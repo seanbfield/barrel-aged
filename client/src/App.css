@@ -280,21 +280,36 @@ body {
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
+  border: 1px solid #fafafa;
+
 }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-left: auto;
-  padding-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
 
 }
 
 .card {
-   flex: 0 1 16%;
+   flex: 0 1 18%;
    border: 2.5px solid #fafafa;
    border-radius: 5px;
-   background-color: #272727;
+   background-color: #ab987a;
+   margin-right: 40px;
+   margin-left: 40px;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   margin-bottom: 20px;
+}
 
+.card-font {
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
 }
