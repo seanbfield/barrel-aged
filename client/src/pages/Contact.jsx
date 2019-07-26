@@ -32,7 +32,7 @@ function Contact() {
             <img src={"https://media.licdn.com/dms/image/C5603AQEVBB1N3JrIaw/profile-displayphoto-shrink_800_800/0?e=1569456000&v=beta&t=lEGUWia-pJWmQAMqAb4U2AQPLxFbFy7HLfbv0wD4jd8"} className="profile-img-round" />
             <h3>Brian</h3>
             <p>Brian is a software engineer based in New York. He uses his background in acting, fight choreography, and stage combat education to combine enthusiasm, improvisation, and storytelling with his expertise in full-stack web development to create compelling, immersive applications.</p>
-            < a href="https://github.com/GuildensternDies" target="_blank"> <img src={'https://addons-media.operacdn.com/media/extensions/25/170925/1.0.3-rev1/icons/icon_64x64_dd4e801f8a3053029c874cde7512b1e4.png'} alt="github-logo" /></a>
+            <a href="https://github.com/GuildensternDies" target="_blank"> <img src={'https://addons-media.operacdn.com/media/extensions/25/170925/1.0.3-rev1/icons/icon_64x64_dd4e801f8a3053029c874cde7512b1e4.png'} alt="github-logo" /></a>
           </article>
 
           <article className="card">
