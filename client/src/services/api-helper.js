@@ -142,7 +142,7 @@ export const postWhiskey = async (data) => {
 // NB - Render News
 export const fetchNews = async () => {
   const resp = await axios.get(`https://newsapi.org/v2/everything?q=whiskey&from=2019-06-25&sortBy=publishedAt&apiKey=${APIKEY}`)
-  const data = resp.data
+  const data = resp.data.articles
   console.log(data)
   return data;
 

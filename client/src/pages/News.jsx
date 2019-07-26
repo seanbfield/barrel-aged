@@ -7,21 +7,21 @@ class News extends React.Component {
     super()
     this.state = {
       articles: [],
-    };
-  };
+    }
+  }
 
   // Render User
   componentDidMount = async () => {
     const News = await fetchNews();
     this.setState({
-      News: News,
+      articles: News,
     });
   };
+
 
   render() {
     return (
       <div className="News_Data">
-        <h1>This is the news pg</h1>
         {this.state.articles.map(newsitem => (
           <div> {newsitem.key}
             <h4>News: {newsitem.content}</h4>
