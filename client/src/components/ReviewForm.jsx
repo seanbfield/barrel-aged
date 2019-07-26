@@ -36,6 +36,7 @@ class ReviewForm extends React.Component {
             placeholder="Review"
             onChange={this.handleChange}
             value={this.state.review}
+            className="form-input"
           />
           {/* <Star onChange={this.handleChange} /> */}
 

@@ -11,6 +11,9 @@ import Landing from './pages/Landing';
 import User from './pages/User';
 import Whiskey from './pages/Whiskey';
 import Home from './pages/Home';
+import Contact from './pages/Contact'
+import News from './pages/News'
+
 
 class App extends React.Component {
   constructor(props) {
@@ -139,6 +142,7 @@ class App extends React.Component {
 
           )} />
           <Route path="/landing" component={Landing} />
+          <Route path="/news" component={News} />
           <Route path="/whiskey/:id" render={(props) => (
             <Whiskey
               id={props.match.params.id}
@@ -153,6 +157,7 @@ class App extends React.Component {
               }}
             />
           )} />
+          <Route path="/contact" render={Contact} />
         </Switch>
       </>
     );

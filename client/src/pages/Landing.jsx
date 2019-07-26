@@ -50,27 +50,28 @@ class Landing extends React.Component {
 
   render() {
     return (
-      <div className="page landing-page">
+      <div className="page">
         <Header />
-        <div className="hero landing-hero">
+        <div className="landing-hero gradient-background">
+          <h1>Welcome to Barrel-Aged.</h1>
         </div>
-        <div id="whiskey-list">
+        <div className="body">
           <h2>Featured Whiskeys:</h2>
-          {this.state.whiskeys.map(whiskey => (
-            <div key={whiskey.id}>
-              <h3>{whiskey.name}</h3>
-              <p>Rating: </p>{this.state.aggRatings.map(rating => (
-                (rating.id === whiskey.id) && (rating.rating ? <p>{rating.rating}</p> : <p>No Rating Available</p>)
-              ))}
-              <p>{whiskey.brand}</p>
-              <p>{whiskey.type}</p>
-              <p>{whiskey.description}</p>
-              {whiskey.urlToImage && <img src={whiskey.urlToImage} />}
-              <button onClick={() => { this.sendToWhiskey(whiskey.id) }}>Review this whiskey</button>
-            </div>
-          ))}
+          <div id="whiskey-list">
+            {this.state.whiskeys.map(whiskey => (
+              <div key={whiskey.id} className="whiskey-card box-shadow">
+                <h3>{whiskey.name}</h3>
+                <p>Rating: </p>{this.state.aggRatings.map(rating => (
+                  (rating.id === whiskey.id) && (rating.rating ? <h3>{rating.rating} Star</h3> : <p>Sorry, no rating available.</p>)
+                ))}
+                <h4>{whiskey.brand} {whiskey.type}</h4>
+                <p>{whiskey.description}</p>
+                <button onClick={() => { this.sendToWhiskey(whiskey.id) }} className="smooth review-button">Review This Whiskey</button>
+              </div>
+            ))}
+          </div>
+          <CallToAction />
         </div>
-        <CallToAction />
         <Footer />
       </div >
     )
