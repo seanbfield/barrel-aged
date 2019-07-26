@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { userProfile, fetchWhiskey, updateUser } from '../services/api-helper';
+import { userProfile, fetchWhiskey, updateUser, deleteReview } from '../services/api-helper';
 
 import Header from '../components/Header';
 import CallToAction from '../components/CallToAction';
@@ -45,6 +45,14 @@ class User extends React.Component {
         [name]: value,
       },
     }));
+  }
+
+  deleteReviewSubmit = async (reviewId) => {
+    const userId = this.state.user.id;
+    const updatedUser = await deleteReview(userId, reviewId);
+    this.setState({
+      user: updatedUser,
+    })
   }
 
   handleUpdateSubmit = async (ev) => {
@@ -116,6 +124,7 @@ class User extends React.Component {
                 ))}
                 <p>Rating: {review.rating}</p>
                 <p>Comment: {review.comment}</p>
+                <button onClick={() => this.deleteReviewSubmit(review.id)} className="delete-button smooth">Delete review</button>
                 {/* <button onClick={() => { this.sendToWhiskey(whiskey.id) }} id="review-button">View Whiskey</button> */}
               </div>
             ))}
