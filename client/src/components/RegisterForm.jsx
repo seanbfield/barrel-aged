@@ -3,12 +3,9 @@ import React from 'react'
 
 export default (props) => (
   <div className="form register-form">
-    <h3>join us.</h3>
+    <h3>Join us!</h3>
     <form onSubmit={props.handleRegisterSubmit}
       className="form-size">
-      <label
-        htmlFor="name">Name</label>
-
       <input
         className="form-input"
         type="text"
@@ -16,9 +13,6 @@ export default (props) => (
         value={props.registerForm.username}
         id="name"
         onChange={props.handleRegisterFormChange} />
-
-      <label
-        htmlFor="password">Password</label>
       <input
         className="form-input"
         type="password"
@@ -26,9 +20,6 @@ export default (props) => (
         value={props.registerForm.password}
         id="password"
         onChange={props.handleRegisterFormChange} />
-
-      <label
-        htmlFor="email">Email</label>
       <input
         className="form-input"
         type="text"

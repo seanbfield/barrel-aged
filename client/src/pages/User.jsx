@@ -5,6 +5,9 @@ import { userProfile } from '../services/api-helper';
 import Header from '../components/Header';
 import CallToAction from '../components/CallToAction';
 import Footer from '../components/Footer';
+import UpdateUserForm from '../components/UpdateUserForm'
+
+import portrait from '../assets/graphics/bottle-label.png'
 
 class User extends React.Component {
   constructor(props) {
