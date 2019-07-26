@@ -34,9 +34,9 @@ class Home extends React.Component {
             />}
             {/* MK/SB - Toggle button */}
             {(this.state.active === 'FIRST') ?
-              <button type="button" onClick={this.handleClick} className="toggle-button smooth">
+              <button type="button" onClick={this.handleClick} className="toggle-button smooth clicked">
                 Register
-            </button> : <button type="button" onClick={this.handleClick} className="toggle-button smooth">
+            </button> : <button type="button" onClick={this.handleClick} className="toggle-button smooth clicked">
                 Login
             </button>
             }
