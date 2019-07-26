@@ -36,7 +36,18 @@ p, a {
   display: unset;
   align-items: unset;
   max-width: 90vw;
+  min-height: 40vh;
   padding-bottom: 50px;
+}
+
+.clicked {
+  cursor: pointer;
+}
+
+.clicked:active {
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+       box-shadow: inset 0px 0px 5px #c1c1c1;
 }
 
 .smooth {
@@ -102,7 +113,7 @@ p, a {
     rgba(171 ,152, 122, 0.8), 
     rgba(0, 0, 128, 0.4)
   ),
-    url('./assets/images/whiskey-barrels.jpg');
+    url('./assets/images/wheat-inspiration.jpg');
   background-size: cover;
   background-position: center center;
 }
@@ -166,7 +177,6 @@ p, a {
 #log-out-button:hover {
   background: rgba(15, 22, 38, 0.5)  !important;
 }
-
 
 .mobile-menu {
   display: none;
@@ -357,7 +367,7 @@ p, a {
   margin: 5px;
 }
 
-.review-button {
+.review-button, .delete-button {
   margin-top: 10px;
   padding: 8px 10px;
   border: none;
@@ -367,7 +377,7 @@ p, a {
   text-decoration: none;
 }
 
-.review-button:hover {
+.review-button:hover, .delete-button:hover {
   color: white;
   background-color: #0F1626;
 }
@@ -442,6 +452,22 @@ p, a {
    background-color: #f5f5f5;
 }
 
+/************** CALL TO ACTION **************/
+
+.call-to-action {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  min-height: 20vh;
+  margin: 0;
+  padding:25px;
+  color: white;
+}
+
+.cta-info {
+  margin: 0 auto;
+  max-width: 450px;
+}
+
 /************** FOOTER **************/
 
 .footer {
@@ -461,4 +487,14 @@ p, a {
 
 #footer-copyright a {
   color: white;
+}
+
+@media (max-width: 820px) {
+  .header-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: unset;
+  }
 }

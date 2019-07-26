@@ -81,7 +81,7 @@ class User extends React.Component {
     return (
       <div className="page">
         <Header />
-        <div className="user-hero gradient-inspiration">
+        <div className="user-hero gradient-background">
           <div className="user-image" >
             <img src={portrait} />
           </div>

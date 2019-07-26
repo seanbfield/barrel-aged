@@ -12,10 +12,10 @@ function AgeGate() {
           <animated.div style={props}>
             <img src={logo} alt="Barrel-Aged Logomark" />
             <h1>You must be 21 years of age or older to enter this website.</h1>
-            <p><em>By swiping right, you agree to this and other terms, as stated in our <Link to="#" className="light">Terms of Use.</Link></em></p>
+            <p><em>By entering, you agree to this and other terms, as stated in our <Link to="#" className="light">Terms of Use.</Link></em></p>
           </animated.div>
         </div>
-        <Link to='/home'><button className="form-button">Enter Site</button></Link>
+        <Link to='/home'><button className="form-button smooth clicked">Enter Site</button></Link>
       </div>
     </div>
   )
