@@ -30,6 +30,7 @@ p, a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .body {
@@ -39,17 +40,17 @@ p, a {
 }
 
 .smooth {
-  transition: ease-in-out .25s;
-  -moz-transition: ease-in-out .25s;
-  -o-transition: ease-in-out .25s;
-  -webkit-transition: ease-in-out .25s;
+  transition: ease-in-out .4s;
+  -moz-transition: ease-in-out .4s;
+  -o-transition: ease-in-out .4s;
+  -webkit-transition: ease-in-out .4s;
 }
 
 .smooth:hover {
-  transition: ease-in-out .25s;
-  -moz-transition: ease-in-out .25s;
-  -o-transition: ease-in-out .25s;
-  -webkit-transition: ease-in-out .25s;
+  transition: ease-in-out .4s;
+  -moz-transition: ease-in-out .4s;
+  -o-transition: ease-in-out .4s;
+  -webkit-transition: ease-in-out .4s;
 }
 
 .box-shadow {
@@ -93,6 +94,8 @@ p, a {
     url('./assets/images/whiskey-barrels.jpg');
   background-size: cover;
   background-position: center center;
+  /* filter: blur(5px);
+  -webkit-filter: blur(5px); */
 }
 
 .gradient-inspiration {
@@ -189,7 +192,7 @@ p, a {
  }
 
  .gate-hero, .home-hero {
-   max-width: 500px;
+   max-width: 600px;
    margin: 0 auto;
    padding: 20px;
    align-items: center;
@@ -198,11 +201,7 @@ p, a {
 
  .gate-hero img, .home-hero img {
    margin: 20px auto;
-   max-width: 60%;
- }
-
- .gate-hero a:hover {
-   color: #3491C6
+   max-width: 80%;
  }
  
 /* Slider */
@@ -225,6 +224,7 @@ p, a {
 }
 
 .slider-fg {
+  cursor: -webkit-grab;
   background-color: #272727;
   color: rgba(255, 255, 255, 0.8);
   position: absolute;
@@ -242,6 +242,7 @@ p, a {
 }
 
 .slider-fg:active {
+  cursor: -webkit-grabbing;
   box-shadow: 0px 15px 30px -5px rgba(0, 0, 0, 0.4);
 }
 
@@ -258,11 +259,11 @@ p, a {
 
 /****** Home ******/
 
-/* Login/Register Form */
+/* Login Form */
 
 .form {
-	margin: 25px auto;
-  padding: 1em 1.5em;
+	margin: 4em auto;
+	padding: 2em;
 	background: #fafafa;
   border: 1px solid #ebebeb;
   border-radius: 5px;
@@ -279,7 +280,7 @@ p, a {
 }
 
 .form-button {
-  margin: 20px 0 10px 0;
+  margin: 20px 0;
   width: 94%;
   height: 55px;
   border: 1px solid #000000;

@@ -1,12 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { useSpring, animated } from 'react-spring'
 
 import logo from '../assets/graphics/logomark.png'
 import RegisterForm from '../components/RegisterForm';
 import LoginForm from '../components/LoginForm';
-
-
 
 class Home extends React.Component {
   constructor() {
@@ -15,7 +12,6 @@ class Home extends React.Component {
       active: 'FIRST',
     }
   }
-
   handleClick = (ev) => {
     let active = this.state.active;
     let newActive = active === 'FIRST' ? 'SECOND' : 'FIRST';
@@ -38,9 +34,9 @@ class Home extends React.Component {
             />}
             {/* MK/SB - Toggle button */}
             {(this.state.active === 'FIRST') ?
-              <button type="button" onClick={this.handleClick} className="toggle-button smooth">
+              <button type="button" onClick={this.handleClick}>
                 Register
-            </button> : <button type="button" onClick={this.handleClick} className="toggle-button smooth">
+            </button> : <button type="button" onClick={this.handleClick}>
                 Login
             </button>
             }
