@@ -113,8 +113,7 @@ export const userProfile = async () => {
   return resp.data;
 }
 
-// WHISKEY
-
+// NB - WHISKEY
 
 // Show All Whiskeys
 export const fetchWhiskey = async () => {
