@@ -15,6 +15,7 @@ class Home extends React.Component {
       active: 'FIRST',
     }
   }
+
   handleClick = (ev) => {
     let active = this.state.active;
     let newActive = active === 'FIRST' ? 'SECOND' : 'FIRST';

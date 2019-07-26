@@ -1,4 +1,4 @@
-/************** Global **************/
+/************** GLOBAL **************/
 
 html {
   scroll-behavior: smooth;
@@ -122,14 +122,14 @@ p, a {
   float: right;
 }
 
-#header-nav li {
+#header-nav li, #footer-nav li {
   display: inline;
   padding: 5px 8px;
   margin: 0 8px;
   border-radius: 5px;
 }
 
-#header-nav a {
+#header-nav a, #footer-nav a {
   padding: 8px 10px;
   border-radius: 5px;
   color: white;
@@ -137,7 +137,7 @@ p, a {
   text-decoration: none;
 }
 
-#header-nav a:hover {
+#header-nav a:hover, #footer-nav a:hover {
   color: #0F1626;
   background: white;
 }
@@ -166,7 +166,7 @@ p, a {
   background-color: rgba(0, 0, 0, 0) !important;
 }
 
-/************** PAGES **************/
+/************** EXTERIOR PAGES **************/
 
 /****** Gate ******/
 
@@ -302,9 +302,9 @@ p, a {
   color: #0F1626;
 }
 
-/****** Landing & User ******/
+/************** INTERIOR PAGES **************/
 
-.landing-hero, .user-hero {
+.landing-hero, .user-hero, .news-hero, .contact-hero {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -313,6 +313,8 @@ p, a {
   padding: 50px 10vw;
   color: white;
 }
+
+/****** User Dashboard ******/
 
 .user-info {
   text-align: left;
@@ -353,4 +355,48 @@ p, a {
 
 .update-form {
   max-width: 500px;
+}
+
+
+/****** Contact ******/
+
+.profile-img-round {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: auto;
+  padding-right: auto;
+
+}
+
+.card {
+   flex: 0 1 16%;
+   border: 2.5px solid #fafafa;
+   border-radius: 5px;
+   background-color: #272727;
+
+}
+
+/************** FOOTER **************/
+
+.footer {
+  width: 100vw;
+  background-color: #0F1626;
+  color: white;
+}
+
+.footer-nav {
+  
+}
+
+.footer-copyright {
+
 }
