@@ -25,11 +25,11 @@ class Header extends React.Component {
         </div>
         <div id="header-nav">
           <ul>
-            <li><Link to="/user" className="smooth">dashboard</Link></li>
             <li><Link to="/landing" className="smooth">whiskeys</Link></li>
             <li><Link to="/news" className="smooth">news</Link></li>
             <li><Link to="/contact" className="smooth">contact</Link></li>
-            <li><Link onClick={this.logOut} className="smooth" id="log-out">Log Out</Link></li>
+            <li><Link to="/user" className="smooth" id="dashboard-button">dashboard</Link></li>
+            <li><Link onClick={this.logOut} className="smooth" id="log-out-button">Log Out</Link></li>
           </ul>
           <div className="mobile-menu" >
             <MobileMenu />

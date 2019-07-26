@@ -26,7 +26,7 @@ p, a {
 
 .page {
   text-align: center;
-  min-height: 100vh;
+  min-height: 100vh !important;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,8 +93,6 @@ p, a {
     url('./assets/images/whiskey-barrels.jpg');
   background-size: cover;
   background-position: center center;
-  /* filter: blur(5px);
-  -webkit-filter: blur(5px); */
 }
 
 .gradient-inspiration {
@@ -150,15 +148,24 @@ p, a {
   background: white;
 }
 
-#log-out {
-  background: #0F1626;
-  color: white
+#dashboard-button {
+  background: white !important;
+  color: #0F1626 !important;
 }
 
-#log-out:hover {
-  color: #0F1626;
-  background: white;
+#dashboard-button:hover {
+  background: rgba(255, 255, 255, 0.5) !important;
 }
+
+#log-out-button {
+  background: #0F1626 !important;
+  color: white !important;
+}
+
+#log-out-button:hover {
+  background: rgba(15, 22, 38, 0.5)  !important;
+}
+
 
 .mobile-menu {
   display: none;
