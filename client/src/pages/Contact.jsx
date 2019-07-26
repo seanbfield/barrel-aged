@@ -13,7 +13,6 @@ function Contact() {
         <Header />
 
         <h1>Meet the developers.</h1>
-
         <section className="cards">
           <article className="card">
             <img src={"https://media.licdn.com/dms/image/C4E03AQGTWMzd2DzVBQ/profile-displayphoto-shrink_800_800/0?e=1569456000&v=beta&t=l5sctHUNq_Yu3DmthrYcVON8Q_B5JerdEPxol6LEd1Q"} className="profile-img-round" />
