@@ -2,7 +2,7 @@ import React from 'react';
 
 export default (props) => (
   <div className="form user-form box-shadow">
-    <h2>hello.</h2>
+    <h2>Update Your Profile</h2>
     <form onSubmit={props.handleUpdateSubmit}>
       <input
         className="form-input"
@@ -11,7 +11,9 @@ export default (props) => (
         placeholder="First Name"
         value={props.userForm.firstName}
         id="first-name"
-        onChange={props.handleUserFormChange} />
+        onChange={props.handleUserFormChange}
+        className="form-input"
+      />
       <input
         className="form-input"
         type="text"
@@ -19,7 +21,8 @@ export default (props) => (
         placeholder="Username"
         value={props.userForm.username}
         id="username"
-        onChange={props.handleUserFormChange} />
+        onChange={props.handleUserFormChange} className="form-input"
+      />
       <input
         className="form-input"
         type="text"
@@ -27,7 +30,8 @@ export default (props) => (
         placeholder="Email"
         value={props.userForm.email}
         id="email"
-        onChange={props.handleUserFormChange} />
+        onChange={props.handleUserFormChange} className="form-input"
+      />
       <input
         className="form-input"
         type="text"
@@ -35,7 +39,8 @@ export default (props) => (
         placeholder="Location"
         value={props.userForm.location}
         id="location"
-        onChange={props.handleUserFormChange} />
+        onChange={props.handleUserFormChange}
+        className="form-input" />
       <input
         className="form-input"
         type="text"
@@ -43,7 +48,8 @@ export default (props) => (
         placeholder="Favorite Whiskey"
         value={props.userForm.favWhiskey}
         id="fav-whiskey"
-        onChange={props.handleUserFormChange} />
+        onChange={props.handleUserFormChange}
+        className="form-input" />
       <input type="submit" value="Update" className="form-button smooth" />
     </form>
     {props.updateError && <p>Your request could not be processed.</p>}

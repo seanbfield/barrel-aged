@@ -14,6 +14,7 @@ import Home from './pages/Home';
 import Contact from './pages/Contact'
 import News from './pages/News'
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);

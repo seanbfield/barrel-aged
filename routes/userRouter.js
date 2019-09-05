@@ -96,6 +96,7 @@ userRouter.get('/profile', restrict, async (req, res, next) => {
 userRouter.put('/:id', restrict, async (req, res, next) => {
   try {
     const { id } = req.params;
+    debugger;
     await User.update({
       first_name: req.body.firstName,
       username: req.body.username,
@@ -194,20 +195,17 @@ userRouter.put('/:user_id/review/:id', restrict, async (req, res, next) => {
 
 userRouter.delete('/:user_id/review/:id', restrict, async (req, res, next) => {
   try {
-    const user = await User.findOne({
-      where: {
-        username: req.locals.user.username,
-      }
-    });
+    const user = await User.findByPk(req.params.user_id);
     const review = await Review.findByPk(req.params.id);
+    debugger;
     if (
-      user.id === review.userId) {
+      user.dataValues.id === review.dataValues.userId) {
       await Review.destroy({
         where: {
           id: review.id,
         },
       });
-      res.json('Review deleted');
+      res.json(user.dataValues);
     } else {
       res.status(401).send('Not Authorized');
     }

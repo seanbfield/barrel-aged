@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://still-crag-31970.herokuapp.com/'
+  baseURL: 'http://localhost:3000/'
 })
 
 const APIKEY = '25e87626775c4538a49662d079461a3a'
@@ -139,11 +139,10 @@ export const postWhiskey = async (data) => {
   return resp.data;
 }
 
-// NB - Render News
+
 export const fetchNews = async () => {
   const resp = await axios.get(`https://newsapi.org/v2/everything?q=whiskey&from=2019-06-25&sortBy=publishedAt&apiKey=${APIKEY}`)
-  const data = resp.data
+  const data = resp.data.articles
   console.log(data)
   return data;
-
 }
