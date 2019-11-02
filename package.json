@@ -16,7 +16,7 @@
     "pg": "^7.11.0",
     "react-star-rating": "^1.4.2",
     "react-with-gesture": "^4.0.8",
-    "sequelize": "^5.10.1"
+    "sequelize": "^5.15.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
